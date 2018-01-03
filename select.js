@@ -1,7 +1,7 @@
 (function($){
 
   // json = { date: "...", blogs: nnn, refs: {...} }
-  $.getJSON('./Twoday_HTTP_Refs.json', function(json){
+  $.getJSON('https://rawgit.com/NeonWilderness/tdhttp/master/Twoday_HTTP_Refs.json', function(json){
     $(function() {
         var ViewModel = function() {
           this.blogs = ko.observableArray(Object.keys(json.refs).sort());

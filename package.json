@@ -4,8 +4,8 @@
   "description": "Finding outdated http references on Twoday",
   "main": "index.js",
   "scripts": {
-    "build": "generate",
-    "test": "node index --to=9",
+    "build": "node index --from=0 --to=49 --delay=50 --rebuild",
+    "test": "node index --to=4 --rebuild",
     "deploy": "echo \"To be added.\""
   },
   "author": "NeonWilderness",
@@ -14,7 +14,7 @@
     "axios": "^0.17.1",
     "cheerio": "^1.0.0-rc.2",
     "simple-node-logger": "^0.93.33",
-    "yargs": "^10.0.3"
+    "yargs": "^10.1.0"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
