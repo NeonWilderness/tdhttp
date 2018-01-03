@@ -32,9 +32,10 @@ class Blogs {
       let href = $('[rel*="shortcut"]').attr('href');
       if (href.length) {
         let tdDomain = href.match(/static\/(.*)\/images/);
-        return (tdDomain ? tdDomain[1].toLowerCase() : '');
-      } else 
-        return '';
+        if (tdDomain) return tdDomain[1];
+      }
+      let fallback = domain.match(/www\.([a-z0-9-_]*)\./);
+      return (fallback ? fallback[1] : '');
     }
 
     async readBlogs(page) {

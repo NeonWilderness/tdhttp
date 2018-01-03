@@ -7,9 +7,7 @@ function logSortedArray(obj, name) {
   }
   arr.sort( (a,b) => b.count-a.count );
   console.log(`===== ${name.toUpperCase()} =====`);
-  for (let entry of arr) {
-    console.log(entry.key, '=', entry.count);
-  }
+  arr.map( entry => { console.log(entry.key, '=', entry.count); });
 }
 
 let file = fs.readFileSync("./Twoday_HTTP_Refs.json", 'utf8');

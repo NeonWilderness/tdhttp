@@ -53,7 +53,7 @@
       });
     })
   .fail( function(){
-    window.toastr.error('Die HTTP-Referenzen der Blogs konnten nicht gelesen werden!');
+    window.toastr.error('Sorry, die HTTP-Referenzen der Blogs können derzeit nicht gelesen werden!');
   });
 
 })(jQuery);
