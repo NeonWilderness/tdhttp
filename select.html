@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Select your blog to identify any useless http refs (test)</title>
+  <link rel="stylesheet" href="https://static.twoday.net/cdn/files/foundation55-min-css.css">
+  <link rel="stylesheet" href="https://static.twoday.net/cdn/files/awesomeeditorcore-min-css.css">
+  <link rel="stylesheet" href="https://static.twoday.net/cdn/files/rainy-min-css.css">
+  <style>
+    body { padding: 20px 0; }
+    .container { width:70%; margin: 0 auto; }
+  </style>
+</head>
+<body>
+  <div class="container storyContent">
+    <p>Bitte wählen Sie unten Ihren Blog aus, um unwirksame http-Aufrufe anzuzeigen, die in Ihrer Homepage verwendet werden:</p>
+    <fieldset>
+      <legend>http-Referenzen von <span title="data-bind=text:blogCount"></span> Twoday-Blogs (Stand: <span title="data-bind=text:lastUpdate"></span>)</legend>
+      <div class="row">
+        <div class="small-3 columns">
+          <a href="#" title="data-bind=attr:{href:'https:'+optBlog()+'.twoday.net/'}">
+            <img class="userIcon th" title="data-bind=event:{error:defaultIcon}, attr:{src:blogIcon}" src="https://static.twoday.net/icon.gif" width="58" alt="Icon">
+          </a>
+        </div>
+        <div class="small-9 columns">
+          <div class="row collapse">
+            <div class="small-2 columns"><span class="prefix">https://</span></div>
+            <div class="small-8 columns">
+              <select title="data-bind=options:blogs, value:optBlog"></select>
+            </div>
+            <div class="small-2 columns"><span class="postfix">.twoday.net</span></div>
+          </div> 
+        </div>
+      </div>
+      <div class="row" style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid #ddd">
+        <div class="small-3 columns">
+          <img src="http://www.s522667522.online.de/public/images/https.jpg" alt="https">
+        </div>
+        <div class="small-9 columns">
+          <div class="alert-box" title="data-bind=css:alertStatus, html:message"></div>
+          <div title="data-bind=html:httpRefs"></div>
+        </div>
+      </div>
+    </fieldset>
+    <a href="./select.js" class="storyScript" rel="#"></a>
+  </div>
+  <script src="https://static.twoday.net/sys.files/js/jquery/jquery.min.js"></script>
+  <script src="https://static.twoday.net/cdn/files/fastclick-min-js.js"></script>
+  <script src="https://static.twoday.net/cdn/files/foundation55-min-js.js"></script>
+  <script>
+    $('[title^=data-]').foundation2day().init({ validateDataAttribs: true, initFoundation5: {} });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+  <script src="https://static.twoday.net/cdn/files/storyscript-min-js.js"></script>
+  <script>$('.storyScript').storyScript().init();</script>
+</body>
+</html>

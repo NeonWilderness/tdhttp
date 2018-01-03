@@ -1,0 +1,25 @@
+{
+  "name": "tdhttp",
+  "version": "1.0.0",
+  "description": "Finding outdated http references on Twoday",
+  "main": "index.js",
+  "scripts": {
+    "build": "generate",
+    "test": "node index --to=9",
+    "deploy": "echo \"To be added.\""
+  },
+  "author": "NeonWilderness",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "cheerio": "^1.0.0-rc.2",
+    "simple-node-logger": "^0.93.33",
+    "yargs": "^10.0.3"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/cheerio": "^0.22.7",
+    "@types/jquery": "^3.2.17",
+    "@types/knockout": "^3.4.47"
+  }
+}
