@@ -37,5 +37,16 @@ for (let blog of blogs) {
     }
   }
 }
+let hosts = Object.keys(domains).reduce( (all, item, index) => {
+  let domainParts = item.split('.');
+  if (domainParts.length>2) domainParts.splice(0, domainParts.length-2);
+  let domain = domainParts.join('.');
+  if (all.hasOwnProperty(domain))
+    all[domain] += domains[item];
+  else
+    all[domain] = domains[item];
+  return all;  
+}, {});
 logSortedArray(tags, 'Tags');
 logSortedArray(domains, 'Domains');
+logSortedArray(hosts, 'Hosts');
