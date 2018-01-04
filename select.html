@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Select your blog to identify any useless http refs (test)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://static.twoday.net/cdn/files/foundation55-min-css.css">
   <link rel="stylesheet" href="https://static.twoday.net/cdn/files/awesomeeditorcore-min-css.css">
   <link rel="stylesheet" href="https://static.twoday.net/cdn/files/rainy-min-css.css">
@@ -29,6 +30,9 @@
             <div class="small-2 columns"><span class="prefix">https://</span></div>
             <div class="small-8 columns">
               <select title="data-bind=options:blogs, value:optBlog"></select>
+              <div id="loadIcon" style="position:absolute;top:8px;left:1em;z-index:10;text-align:center;color:#008cba">
+                <i class="fa fa-spinner fa-pulse" style="font-size:24px"></i><span style="margin-left:.8em;font-size:.8em;font-weight:bold">Lade Daten...</span>
+              </div>
             </div>
             <div class="small-2 columns"><span class="postfix">.twoday.net</span></div>
           </div> 
@@ -39,7 +43,7 @@
           <img src="http://www.s522667522.online.de/public/images/https.jpg" alt="https">
         </div>
         <div class="small-9 columns">
-          <div class="alert-box" title="data-bind=css:alertStatus, html:message"></div>
+          <div class="alert-box" title="data-bind=css:alertStatus, html:message">Loading...</div>
           <div title="data-bind=html:httpRefs"></div>
         </div>
       </div>

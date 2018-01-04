@@ -50,6 +50,7 @@
           }, this);
         };
         ko.applyBindings( new ViewModel() );
+        $('#loadIcon').hide();
       });
     })
   .fail( function(){
