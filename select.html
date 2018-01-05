@@ -11,39 +11,39 @@
   <link rel="stylesheet" href="https://static.twoday.net/cdn/files/rainy-min-css.css">
   <style>
     body { padding: 20px 0; }
-    .container { width:70%; margin: 0 auto; }
+    .container { width:750px; margin: 0 auto; padding: 15px; }
   </style>
 </head>
 <body>
   <div class="container storyContent">
+    <p><img class="neonimg th" src="http://www.s522667522.online.de/public/images/https-umstellung.jpg" /></p>
     <p>Bitte wählen Sie unten Ihren Blog aus, um unwirksame http-Aufrufe anzuzeigen, die in Ihrer Homepage verwendet werden:</p>
     <fieldset>
       <legend>http-Referenzen von <span title="data-bind=text:blogCount"></span> Twoday-Blogs (Stand: <span title="data-bind=text:lastUpdate"></span>)</legend>
       <div class="row">
-        <div class="small-3 columns">
+        <div class="small-2 columns">
           <a href="#" title="data-bind=attr:{href:'https:'+optBlog()+'.twoday.net/'}">
             <img class="userIcon th" title="data-bind=event:{error:defaultIcon}, attr:{src:blogIcon}" src="https://static.twoday.net/icon.gif" width="58" alt="Icon">
           </a>
         </div>
-        <div class="small-9 columns">
+        <div class="small-10 columns">
           <div class="row collapse">
-            <div class="small-2 columns"><span class="prefix">https://</span></div>
+            <div class="small-2 columns"><span class="prefix" style="font-size:.75rem">https://</span></div>
             <div class="small-8 columns">
               <select title="data-bind=options:blogs, value:optBlog"></select>
-              <div id="loadIcon" style="position:absolute;top:8px;left:1em;z-index:10;text-align:center;color:#008cba">
-                <i class="fa fa-spinner fa-pulse" style="font-size:24px"></i><span style="margin-left:.8em;font-size:.8em;font-weight:bold">Lade Daten...</span>
-              </div>
             </div>
-            <div class="small-2 columns"><span class="postfix">.twoday.net</span></div>
+            <div class="small-2 columns"><span class="postfix" style="font-size:.75rem">.twoday.net</span></div>
           </div> 
         </div>
       </div>
       <div class="row" style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid #ddd">
-        <div class="small-3 columns">
+        <div class="small-2 columns">
           <img src="http://www.s522667522.online.de/public/images/https.jpg" alt="https">
         </div>
-        <div class="small-9 columns">
-          <div class="alert-box" title="data-bind=css:alertStatus, html:message">Loading...</div>
+        <div class="small-10 columns">
+          <div class="alert-box" title="data-bind=css:alertStatus, html:message">
+            <i class="fa fa-spinner fa-pulse" style="font-size:1.45em"></i><span style="margin-left:1em;font-weight:bold">Lade Bloginformationen...</span>
+          </div>
           <div title="data-bind=html:httpRefs"></div>
         </div>
       </div>
