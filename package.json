@@ -4,8 +4,8 @@
   "description": "Finding outdated http references on Twoday",
   "main": "index.js",
   "scripts": {
-    "build": "node index --from=0 --to=49 --delay=50 --rebuild",
-    "test": "node index --to=4 --rebuild",
+    "build": "node ./src/index --from=0 --to=49 --delay=50 --rebuild",
+    "test": "node ./src/index --to=4 --rebuild",
     "deploy": "echo \"To be added.\""
   },
   "author": "NeonWilderness",

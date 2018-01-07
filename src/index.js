@@ -18,6 +18,5 @@ const to = Math.min(argv.to || 4, 49);
 const delay = Math.max(argv.delay || 20, 20);
 const rebuild = !!argv.rebuild;
 if (from>to) throw new Error('from-Page must be less of equal to to-Page!');
-//console.log(JSON.stringify(argv));
 console.log(`Using params: from=${from}, to=${to}, delay=${delay}ms, rebuild=${rebuild}.`);
 new Blogs(delay, rebuild).readBlogrollPages(from, to);

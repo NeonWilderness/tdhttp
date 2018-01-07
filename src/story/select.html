@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Select your blog to identify any useless http refs (test)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://static.twoday.net/cdn/files/foundation55-min-css.css">
   <link rel="stylesheet" href="https://static.twoday.net/cdn/files/awesomeeditorcore-min-css.css">
@@ -97,15 +98,19 @@
         </div>
       </div>
     </fieldset>
-    <p>Falls Sie eine grüne Nachricht erhalten: Prima! Ihre Homepage und die dort angezeigten Beiträge  enthalten keine unwirksamen http-Aufrufe. Sie brauchen nichts zu unternehmen.</p>
-    <p>Eine rote Nachricht zeigt an, dass in Ihrem Blog unwirksame http-Aufrufe gefunden wurden. Diese werden unter der Nachrichtenbox vollständig mit jeweiligem HTML-Befehl und aufgerufener URL gelistet.</p>
-    <h5 class="top20">2. http-Referenzen im Blog finden</h5>
+    <p>Falls Sie eine grüne Nachricht erhalten: Prima! Ihre Homepage und die dort angezeigten Beiträge enthalten keine unwirksamen http-Aufrufe. Sie brauchen <u>nichts</u> zu unternehmen.</p>
+    <p>Eine rote Nachricht zeigt an, dass in Ihrem Blog unwirksame http-Aufrufe gefunden wurden. Diese werden unter der Nachrichtenbox vollständig mit dem jeweiligem HTML-Befehl und der aufgerufenen (evtl. abgekürzten) URL gelistet.</p>
+    <h5 class="top20">2. Analyse: Stellt der Anbieter den Dienst auch per HTTPS bereit?</h5>
+    <p>Zunächst macht es Sinn, zu prüfen, ob die verwendete http-URL überhaupt noch existiert. Mancher Anbieter ist aus dem Markt gegangen oder von anderen Unternehmen übernommen worden (Bsp. formspring.me). Falls die URL-Adresse gültig ist und Sie dieses Angebot/diese Funktion weiter in Ihrem Blog nutzen möchten, ist zu prüfen, ob dieser Service auch im sicheren HTTPS Modus verfügbar ist. Für die wichtigsten und am häufigsten verwendeten Dienste finden Sie nachstehend diese Information &mdash; für andere müssen Sie diese ggf. selbst ermitteln.</p>
+    <h5 class="top20">3. http-Referenzen im Blog finden</h5>
     <p>Twoday-Blogs setzen sich aus sog. Skins zusammen, welche das Layout und die Darstellung des Blogs bestimmen. Der wichtigste Skin, in dem wohl die meisten http-Referenzen zu finden sein werden, ist der Skin der Hauptseite <b>Site.page</b>.</p>
-    <p>Zu den Skins gelangen Sie über Klick auf <span class="label blue">Admin</span><sup>1)</sup> &rarr; <span class="label blue">Layout</span> &rarr; <span class="label blue">Skins (HTML)</span>. Die von Ihnen in der Vergangenheit bearbeiteten (d.h. veränderten) Skins finden Sie aufgelistet, wenn Sie auf <span class="label blue">Bearbeitete Skins</span> klicken. Alle dort angezeigten Skins könnten http-Referenzen enthalten, z.B. gerne in <b>Story.display</b> oder <b>Site.weblogStatus</b>.</p>
-    <cite><sup>1)</sup> <span style="font-size:.85em;line-height:inherit">Falls Sie Ihre Menüleiste ausgeblendet haben, gelangen Sie mit <span class="code">{ihrblogname}.twoday.net/manage</span> in den Admin-Bereich</cite>
-    <p>Eine weitere gute Möglichkeit sind die Sidebar-Module. Klicken Sie auf der Admin-Seite oben auf den Tab <span class="label blue">Module</span><sup>2)</sup> und prüfen Sie z.B. den Inhalt der Freetext-Module (1-5), ob dort eine der unwirksamen http-Referenzen verwendet wird.</p>
+    <p>Zu den Skins gelangen Sie über Klick auf <span class="label blue">Admin</span><sup>1)</sup> &rarr; <span class="label blue">Layout</span> &rarr; <span class="label blue">Skins (HTML)</span>. Die von Ihnen in der Vergangenheit bearbeiteten (d.h. veränderten) Skins finden Sie aufgelistet, wenn Sie auf <span class="label blue">Bearbeitete Skins</span> klicken. Alle dort angezeigten Skins könnten http-Referenzen enthalten, oft z.B. in <b>Story.display</b> oder <b>Site.weblogStatus</b>.</p>
+    <cite><sup>1)</sup> <span style="font-size:.85em;line-height:inherit">Falls Sie Ihre Menüleiste ausgeblendet haben, kommen Sie mit <span class="code">{ihrblogname}.twoday.net/manage</span> in den Admin-Bereich</cite>
+    <p>Weitere potenzielle Fundorte von gesuchten http-Referenzen sind die <b>Sidebar-Module</b>. Klicken Sie auf der Admin-Seite oben auf den Tab <span class="label blue">Module</span><sup>2)</sup> und prüfen Sie z.B. den Inhalt der <em>Freetext-Module (1-5)</em> oder das <em>Web-Counter Modul</em>, ob dort eine der unwirksamen http-URLs verwendet wird.</p>
     <cite><sup>2)</sup> <span style="font-size:.85em;line-height:inherit">Zu den Sidebar-Modulen gelangen Sie auch über die URL <span class="code">{ihrblogname}.twoday.net/modules/sidebar</span></cite>
-    <a href="https://rawgit.com/NeonWilderness/tdhttp/master/select.js" class="storyScript" rel="#"></a>
+    <h5 class="top20">4. Das Web-Counter Problem</h5>
+    <p>Im Web-Counter Modul bietet Twoday im Standard drei verschiedene Counter an: ... </p>
+    <a href="https://rawgit.com/NeonWilderness/tdhttp/master/src/story/select.js" class="storyScript" rel="#"></a>
   </div>
   <script src="https://static.twoday.net/sys.files/js/jquery/jquery.min.js"></script>
   <script src="https://static.twoday.net/cdn/files/fastclick-min-js.js"></script>
@@ -114,7 +119,11 @@
     $('[title^=data-]').foundation2day().init({ validateDataAttribs: true, initFoundation5: {} });
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.min.js"></script>
   <script src="https://static.twoday.net/cdn/files/storyscript-min-js.js"></script>
-  <script>$('.storyScript').storyScript().init();</script>
+  <script>
+    toastr.options = {closeButton: true, positionClass: 'toast-top-right', timeOut: '9000'};
+    $('.storyScript').storyScript().init();
+  </script>
 </body>
 </html>

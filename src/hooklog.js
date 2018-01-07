@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 function hook_stream(stream, callback) {
   let old_write = stream.write
@@ -15,7 +16,7 @@ function hook_stream(stream, callback) {
   }
 }
 
-let log_file = fs.createWriteStream(__dirname + '/build.log', {flags : 'w'});
+let log_file = fs.createWriteStream(path.resolve(process.cwd(), 'build.log'), {flags : 'w'});
 
 let unhook_stdout = hook_stream(process.stdout, function(string, encoding, fd) {
   log_file.write(string, encoding)
