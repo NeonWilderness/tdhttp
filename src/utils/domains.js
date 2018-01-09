@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 function logSortedArray(obj, name) {
   let arr = [];
@@ -10,7 +11,7 @@ function logSortedArray(obj, name) {
   arr.map( entry => { console.log(entry.key, '=', entry.count); });
 }
 
-let file = fs.readFileSync("./Twoday_HTTP_Refs.json", 'utf8');
+let file = fs.readFileSync(path.resolve(process.cwd(), 'Twoday_HTTP_Refs.json'), 'utf8');
 let json = JSON.parse(file);
 let { date, refs } = json;
 
