@@ -11,15 +11,17 @@ function logSortedArray(obj, name) {
   arr.map( entry => { console.log(entry.key, '=', entry.count); });
 }
 
-let file = fs.readFileSync(path.resolve(process.cwd(), 'Twoday_HTTP_Refs.json'), 'utf8');
+let filename = path.resolve(process.cwd(), 'Twoday_HTTP_Refs.json'); 
+console.log(`Processing file ${filename}.`);
+let file = fs.readFileSync(filename, 'utf8');
 let json = JSON.parse(file);
-let { date, refs } = json;
+let { date, data } = json;
 
 let tags = {};
 let domains = {};
-let blogs = Object.keys(refs);
+let blogs = Object.keys(data);
 for (let blog of blogs) {
-  let badrefs = refs[blog];
+  let badrefs = data[blog].refs;
   for (let badref of badrefs) {
     let [ tag, url ] = badref.split(' | ');
     if (tags.hasOwnProperty(tag))

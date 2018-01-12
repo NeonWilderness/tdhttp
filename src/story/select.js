@@ -4,7 +4,7 @@
   $.getJSON('https://rawgit.com/NeonWilderness/tdhttp/master/Twoday_HTTP_Refs.json', function(json){
     $(function() {
         var ViewModel = function() {
-          this.blogs = ko.observableArray(Object.keys(json.refs).sort());
+          this.blogs = ko.observableArray(Object.keys(json.data).sort());
           this.blogCount = ko.pureComputed( function() {
             return json.blogs;
           }); 
@@ -25,7 +25,7 @@
             e.currentTarget.src = 'https://static.twoday.net/icon.gif';
           };
           this.badRefs = ko.pureComputed( function() {
-            return (json.refs.hasOwnProperty(this.optBlog()) ? json.refs[this.optBlog()].length : 0);
+            return (json.data.hasOwnProperty(this.optBlog()) ? json.data[this.optBlog()].refs.length : 0);
           }, this);
           this.alertStatus = ko.pureComputed( function() {
             return (this.badRefs()>0 ? 'alert' : 'success');
@@ -37,7 +37,7 @@
           }, this);
           this.httpRefs = ko.pureComputed( function() {
             let refText = '';
-            let refs = json.refs[this.optBlog()];
+            let refs = json.data[this.optBlog()].refs;
             for (let ref of refs) {
               let parts = ref.split(' | ');
               let tag = parts[0];
@@ -48,6 +48,10 @@
             }
             return refText;
           }, this);
+          this.layoutName = ko.pureComputed( function() {
+            return json.data[this.optBlog()].layoutName;
+          }, this);
+          
         };
         ko.applyBindings( new ViewModel() );
         $('#loadIcon').hide();

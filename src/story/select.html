@@ -18,7 +18,7 @@
 <body>
   <div class="container storyContent">
     <p><img class="neonimg th" src="http://www.s522667522.online.de/public/images/https-umstellung.jpg" /></p>
-    <p>Vor ziemlich genau <a target="_blank" href="https://help.twoday.net/stories/1022603145/#1022603276">einem Jahr</a> hat Twoday auf einen zweigleisigen Protokollbetrieb umgestellt: seither können alle Blog- und Plattformseiten entweder im <span class="code">http</span>- oder im <span class="code">https</span>-Modus aufgerufen werden.</p>
+    <p class="dropcaps">Vor ziemlich genau <a target="_blank" href="https://help.twoday.net/stories/1022603145/#1022603276">einem Jahr</a> hat Twoday auf einen zweigleisigen Protokollbetrieb umgestellt: seither können alle Blog- und Plattformseiten entweder im <span class="code">http</span>- oder im <span class="code">https</span>-Modus aufgerufen werden.</p>
     <p>Leider gibt es keine strikte Festlegung, welcher Modus verlässlich genutzt wird und so ist man, je nachdem, mit welchem Aufruf man zu <em>twoday.net</em> gelangt ist, mal im unsicheren <span class="label red">http</span>, mal im sicheren <span class="label blue">https</span> Mode:</p>
     <table>
       <thead>
@@ -54,13 +54,13 @@
         </tr>
       </tbody>
     </table>
-    <p>Da man so nicht sicherstellen kann, in welchem Modus Besucher auf den eigenen Blog gelangen (und die Wahr&shy;schein&shy;lich&shy;keit für <span class="label blue">https</span> zudem deutlich größer ist), hat das gravierende Auswirkungen auf die Blog&shy;funktio&shy;na&shy;li&shy;tät. Ist ein Besucher nämlich im https-Modus, verweigert der Browser die Ausführung und Anzeige aller Ressourcen, die im Blog per "unsicherer" http-URL aufgerufen werden, z.B.</p>
+    <p>Da man so nicht sicherstellen kann, in welchem Modus Besucher auf das eigene Blog gelangen (und die Wahr&shy;schein&shy;lich&shy;keit für <span class="label blue">https</span> zudem deutlich größer ist), hat das gravierende Auswirkungen auf die Blog&shy;funktio&shy;na&shy;li&shy;tät. Ist ein Besucher nämlich <b>im https-Modus, verweigert der Browser die Ausführung und Anzeige aller Ressourcen, die im Blog per "unsicherer" http-URL aufgerufen werden</b>, z.B.</p>
     <ul>
       <li><span class="code">script</span>-Aufrufe (z.B. Counter, Statistiken, IP-Anzeigen)</li>
       <li><span class="code">embed</span>-Befehle (z.B. Youtube-Videos)</li>
       <li><span class="code">iframe</span>-Einbettungen (z.B. Wetter-Widgets, Facebook, FeedJit Live Traffic)</li>
     </ul>
-    <p>Dies bedeutet, dass Ihre Counter-/Statistik-Skripte nicht ausgeführt werden, Embed-Videos schwarz bleiben und iframe-Einbettungen nicht erscheinen. Die Lösung des Problems ist im Grunde einfach:</p>
+    <p>Dies bedeutet, dass Ihre Counter-/Statistik-Skripte nicht ausgeführt werden, Embed-Videos schwarz bleiben und iframe-Einbettungen nicht erscheinen! Die Lösung dieses Problems ist im Grunde einfach:</p>
     <cite><b>Nur URLs, die mit https beginnen, werden <u>immer</u> ausgeführt!</b></cite>
     <p>Ein Besucherzähler, der nur Besucher zählt, die über <em>http</em> auf den Blog kommen, ist sinnlos, ebenso wie ein embed-YouTube-Video, das bei einem Besucher angezeigt wird und beim nächsten nicht.</p>
     <p class="panel"><span class="label yellow" style="margin-right:10px">Tipp</span>Stellen Sie alle <span class="code">script</span>-, <span class="code">embed</span>- und <span class="code">iframe</span>-Aufrufe in Ihrem Blog auf <span class="code">https://</span> um.</p>
@@ -99,17 +99,23 @@
       </div>
     </fieldset>
     <p>Falls Sie eine grüne Nachricht erhalten: Prima! Ihre Homepage und die dort angezeigten Beiträge enthalten keine unwirksamen http-Aufrufe. Sie brauchen <u>nichts</u> zu unternehmen.</p>
-    <p>Eine rote Nachricht zeigt an, dass in Ihrem Blog unwirksame http-Aufrufe gefunden wurden. Diese werden unter der Nachrichtenbox vollständig mit dem jeweiligem HTML-Befehl und der aufgerufenen (evtl. abgekürzten) URL gelistet.</p>
+    <p>Eine rote Nachricht zeigt an, dass in Ihrem Blog unwirksame http-Aufrufe gefunden wurden. Diese werden unter der Nachrichtenbox vollständig mit dem jeweiligem HTML-Befehl und der verwendeten (hier evtl. verkürzt angezeigten) URL gelistet.</p>
     <h5 class="top20">2. Analyse: Stellt der Anbieter den Dienst auch per HTTPS bereit?</h5>
     <p>Zunächst macht es Sinn, zu prüfen, ob die verwendete http-URL überhaupt noch existiert. Mancher Anbieter ist aus dem Markt gegangen oder von anderen Unternehmen übernommen worden (Bsp. formspring.me). Falls die URL-Adresse gültig ist und Sie dieses Angebot/diese Funktion weiter in Ihrem Blog nutzen möchten, ist zu prüfen, ob dieser Service auch im sicheren HTTPS Modus verfügbar ist. Für die wichtigsten und am häufigsten verwendeten Dienste finden Sie nachstehend diese Information &mdash; für andere müssen Sie diese ggf. selbst ermitteln.</p>
     <h5 class="top20">3. http-Referenzen im Blog finden</h5>
     <p>Twoday-Blogs setzen sich aus sog. Skins zusammen, welche das Layout und die Darstellung des Blogs bestimmen. Der wichtigste Skin, in dem wohl die meisten http-Referenzen zu finden sein werden, ist der Skin der Hauptseite <b>Site.page</b>.</p>
-    <p>Zu den Skins gelangen Sie über Klick auf <span class="label blue">Admin</span><sup>1)</sup> &rarr; <span class="label blue">Layout</span> &rarr; <span class="label blue">Skins (HTML)</span>. Die von Ihnen in der Vergangenheit bearbeiteten (d.h. veränderten) Skins finden Sie aufgelistet, wenn Sie auf <span class="label blue">Bearbeitete Skins</span> klicken. Alle dort angezeigten Skins könnten http-Referenzen enthalten, oft z.B. in <b>Story.display</b> oder <b>Site.weblogStatus</b>.</p>
+    <p>Zu den Skins gelangen Sie über Klick auf <span class="label blue">Admin</span><sup>1)</sup> &rarr; <span class="label blue">Layout</span> &rarr; <span class="label blue">Skins (HTML)</span>. Die von Ihnen in der Vergangenheit bearbeiteten (d.h. irgendwann einmal veränderten) Skins finden Sie aufgelistet, wenn Sie auf <span class="label blue">Bearbeitete Skins</span> klicken. Alle dort angezeigten Skins könnten http-Referenzen enthalten, oft z.B. in <b>Story.display</b> oder <b>Site.weblogStatus</b>.</p>
     <cite><sup>1)</sup> <span style="font-size:.85em;line-height:inherit">Falls Sie Ihre Menüleiste ausgeblendet haben, kommen Sie mit <span class="code">{ihrblogname}.twoday.net/manage</span> in den Admin-Bereich</cite>
     <p>Weitere potenzielle Fundorte von gesuchten http-Referenzen sind die <b>Sidebar-Module</b>. Klicken Sie auf der Admin-Seite oben auf den Tab <span class="label blue">Module</span><sup>2)</sup> und prüfen Sie z.B. den Inhalt der <em>Freetext-Module (1-5)</em> oder das <em>Web-Counter Modul</em>, ob dort eine der unwirksamen http-URLs verwendet wird.</p>
     <cite><sup>2)</sup> <span style="font-size:.85em;line-height:inherit">Zu den Sidebar-Modulen gelangen Sie auch über die URL <span class="code">{ihrblogname}.twoday.net/modules/sidebar</span></cite>
-    <h5 class="top20">4. Das Web-Counter Problem</h5>
-    <p>Im Web-Counter Modul bietet Twoday im Standard drei verschiedene Counter an: ... </p>
+    <h5 class="top20">4. Twodays Web-Counter Problem</h5>
+    <p>Im <span class="label">Web Counter Modul</span> bietet Twoday im Standard drei verschiedene Counter-Einbindungen an: <em>blogcounter.de</em>, <em>sitemeter.com</em> und <em>blogstats.de</em>:</p>
+    <p><img class="neonimg th" src="http://www.s522667522.online.de/public/images/webcountermodul.jpg" /></p>
+    <p><b>Jede dieser drei Optionen ist mittlerweile unbrauchbar</b>: <em>blogcounter.de</em> bietet keinen sicheren https-Modus an (und zählt daher nur http-Besuche), <em>sitemeter.com</em> und <em>blogstats.de</em> existieren nicht mehr. Sollten Sie eine dieser Optionen gewählt haben, deaktivieren Sie sie am besten!</p>
+    <p>Nutzen Sie stattdessen die verbleibende Option "Anderer Counter" und kopieren Sie in das Textfeld den Code zur Einbindung des von Ihnen gewählten Counters mit https-Fähigkeit. Kostenlose Counter mit https-Eignung gibt es z.B. bei <a target="_blank" href="https://www.statcounter.com">statcounter.com</a> oder <a target="_blank" href="https://www.trendcounter.com">trendcounter.com</a> <span style="font-size:.85em;line-height:inherit">(weitere Empfehlungen gerne hier als Kommentar posten)</span>.</p>
+    <h5 class="top20">5. Twodays Google Analytics Problem</h5>
+    <p>Im nicht direkt zugreifbaren Skin <span class="code">root.statsCounter</span>, der in jede Twoday-Blogseite eingebaut wird, liegt ein weiteres Problem verborgen: Twodays eigener Google-Analytics-Aufruf funktioniert nicht unter https, da die Skripteinbettung mit einer fixen http-Adresse gespeichert ist. Dadurch wird kein einziger Twoday-Besuch via https gezählt. Außerdem ist das derzeit gerufene Skript (<em>urchin.js</em>) schon ewig veraltet und sollte längst durch eine neue Version ersetzt worden sein (<em>analytics.js</em>). Das können wir bei dieser Bereinigungsaktion gleich mit beheben.</p>
+    <p>Ihr Layoutname: <span title="data-bind=text:layoutName"></span></p>
     <a href="https://rawgit.com/NeonWilderness/tdhttp/master/src/story/select.js" class="storyScript" rel="#"></a>
   </div>
   <script src="https://static.twoday.net/sys.files/js/jquery/jquery.min.js"></script>

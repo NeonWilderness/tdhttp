@@ -8,17 +8,30 @@ const setTimeout = require('timers').setTimeout;
 const tdHome = "https://www.twoday.net/main?start=";
 const refFile = path.resolve(process.cwd(), 'Twoday_HTTP_Refs.json');
 
+/*
+interface RefData {
+  layoutName: string; // active layout name of blog (if found, else empty string)
+  refs: string[];     // array of urls
+}
+interface RefFile {
+  date: string;       // CreateDate or LastUpdate
+  blogs: Number;      // Number of blogs (=keys in data)
+  data: {
+    [blogname: string]: refData: 
+  }
+}
+*/
 class Blogs {
 
   constructor(delay, rebuild) {
     this.delay = delay;
-    if (rebuild) {
+    if (rebuild) { // rebuild from scratch
       this.lastUpdate = null;
       this.httpRefs = {};
-    } else {
+    } else { // add to existing entries
       let file = JSON.parse(fs.readFileSync(refFile, 'utf8'));
       this.lastUpdate = file.date;
-      this.httpRefs = file.refs;
+      this.httpRefs = file.data;
     }
   }
 
@@ -39,6 +52,10 @@ class Blogs {
       return (fallback ? fallback[1] : '');
     }
 
+    initRef(blog) {
+      this.httpRefs[blog] = { layoutName: '', refs: [] };
+    }
+
     async readBlogs(page) {
     try {
       const blogrollPage = await axios.get(`${tdHome}${page*15}`);
@@ -53,13 +70,13 @@ class Blogs {
         let href = el.attribs.href.match(/\/\/(.*).twoday.net/);
         if (href) {
           let blogname = href[1].toLowerCase();
-          this.httpRefs[blogname] = [];
+          this.initRef(blogname);
         } else {
-          (async() =>{ // inject IIFE async function inside cheerio's sync each function
+          (async() =>{ // inject IIFE async function inside cheerio's sync each-function
             const tdBlog = await this.readBusinessDomain(el.attribs.href);
             if (tdBlog.length) {
               console.log(`Switching to twoday domain: ${tdBlog}.twoday.net from ${el.attribs.href}.`);
-              this.httpRefs[tdBlog] = [];
+              this.initRef(tdBlog);
             } else console.log(`No secondary twoday domain found for ${el.attribs.href}.`);
           })();
         }
@@ -75,7 +92,7 @@ class Blogs {
     blogs.sort();
     let countAllRefs = 0;
     for (let blog of blogs) {
-      let refs = this.httpRefs[blog];
+      let refs = this.httpRefs[blog].refs;
       countAllRefs += refs.length;
       console.log(`->Blog ${blog} (${refs.length})`);
       if (refs.length) {
@@ -88,7 +105,7 @@ class Blogs {
     fs.writeFileSync(refFile, JSON.stringify({
       date: this.lastUpdate,
       blogs: blogs.length, 
-      refs: this.httpRefs
+      data: this.httpRefs
     }), 'utf8');
     console.log(`JSON file written: ${countAllRefs} http refs in ${blogs.length} blogs.`);
   }
@@ -110,6 +127,10 @@ class Blogs {
       const blogHomepage = await axios.get(`https://${blogname}.twoday.net/`);
       console.log(`Analyzing site ${blogname}, len=${blogHomepage.data.length}`);
       let $ = cheerio.load(blogHomepage.data);
+      // Find and store the blog's active layout name, if any
+      let layoutRefs = $('body').html().match(/\/layouts\/(.*?)\//);
+      if (layoutRefs) this.httpRefs[blogname].layoutName = layoutRefs[1];
+      // Find and push all relevant http url references
       $('[src^="http://"]')
       .filter( (i, el) => {
         let src = el.attribs.src || '';
@@ -117,8 +138,8 @@ class Blogs {
       })
       .each( (i, el) => {
         let entry = `${el.name} | ${el.attribs.src}`;
-        if (this.httpRefs[blogname].indexOf(entry)<0) this.httpRefs[blogname].push(entry);
-      })
+        if (this.httpRefs[blogname].refs.indexOf(entry)<0) this.httpRefs[blogname].refs.push(entry);
+      });
     }
     catch(err) {
       console.log(err);
