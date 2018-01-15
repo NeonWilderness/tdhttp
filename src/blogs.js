@@ -17,7 +17,7 @@ interface RefFile {
   date: string;       // CreateDate or LastUpdate
   blogs: Number;      // Number of blogs (=keys in data)
   data: {
-    [blogname: string]: refData: 
+    [blogname: string]: RefData: 
   }
 }
 */

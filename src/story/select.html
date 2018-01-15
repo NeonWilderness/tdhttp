@@ -100,8 +100,29 @@
     </fieldset>
     <p>Falls Sie eine grüne Nachricht erhalten: Prima! Ihre Homepage und die dort angezeigten Beiträge enthalten keine unwirksamen http-Aufrufe. Sie brauchen <u>nichts</u> zu unternehmen.</p>
     <p>Eine rote Nachricht zeigt an, dass in Ihrem Blog unwirksame http-Aufrufe gefunden wurden. Diese werden unter der Nachrichtenbox vollständig mit dem jeweiligem HTML-Befehl und der verwendeten (hier evtl. verkürzt angezeigten) URL gelistet.</p>
-    <h5 class="top20">2. Analyse: Stellt der Anbieter den Dienst auch per HTTPS bereit?</h5>
-    <p>Zunächst macht es Sinn, zu prüfen, ob die verwendete http-URL überhaupt noch existiert. Mancher Anbieter ist aus dem Markt gegangen oder von anderen Unternehmen übernommen worden (Bsp. formspring.me). Falls die URL-Adresse gültig ist und Sie dieses Angebot/diese Funktion weiter in Ihrem Blog nutzen möchten, ist zu prüfen, ob dieser Service auch im sicheren HTTPS Modus verfügbar ist. Für die wichtigsten und am häufigsten verwendeten Dienste finden Sie nachstehend diese Information &mdash; für andere müssen Sie diese ggf. selbst ermitteln.</p>
+    <h5 class="top20">2. Stellt der Anbieter den Dienst auch per HTTPS bereit?</h5>
+    <p>Zunächst macht es Sinn, zu prüfen, ob die verwendete http-URL überhaupt noch existiert. Mancher Anbieter ist aus dem Markt gegangen oder von anderen Unternehmen übernommen worden (Bsp. <em>sitemeter.com</em>, <em>formspring.me</em>). Falls die URL-Adresse gültig ist und Sie dieses Angebot/diese Funktion weiter in Ihrem Blog nutzen möchten, ist zu prüfen, ob dieser Service auch im sicheren HTTPS Modus verfügbar ist.</p><p>Für die wichtigsten und am häufigsten verwendeten Dienste finden Sie nachstehend diese Information &mdash; für andere müssen Sie diese ggf. selbst ermitteln. Ist die URL jedoch nicht mehr sinnvoll nutzbar, entfernen Sie die Referenz (z.B. den Script-Aufruf) aus dem Skin und speichern ihn neu ab.</p>
+    <p class="aligncenter"><a href="#" class="button secondary small radius" title="data-bind=click:toggleHostList">Infos zu den am häufigsten benutzten URLs anzeigen&emsp;<i class="fa" title="data-bind=css:{'fa-chevron-right':!visibleHostList(),'fa-chevron-down':visibleHostList()}"></i></a></p>
+    <table title="data-bind=visible:visibleHostList">
+      <thead>
+        <tr>
+          <th>URL / Domäne</th>
+          <th>Häufigkeit</th>
+          <th>Existiert noch?</th>
+          <th>Bietet HTTPS?</th>
+          <th>Empfehlung</th>
+        </tr>
+      </thead>
+      <tbody title="data-bind=foreach:sortedHostList">
+        <tr>
+          <td title="data-bind=text:host"></td>
+          <td title="data-bind=text:count"></td>
+          <td title="data-bind=text:(alive?'Ja':'Nein')"></td>
+          <td title="data-bind=text:(https?'Ja':'Nein')"></td>
+          <td title="data-bind=text:text"></td>
+        </tr>
+      </tbody>
+    </table>
     <h5 class="top20">3. http-Referenzen im Blog finden</h5>
     <p>Twoday-Blogs setzen sich aus sog. Skins zusammen, welche das Layout und die Darstellung des Blogs bestimmen. Der wichtigste Skin, in dem wohl die meisten http-Referenzen zu finden sein werden, ist der Skin der Hauptseite <b>Site.page</b>.</p>
     <p>Zu den Skins gelangen Sie über Klick auf <span class="label blue">Admin</span><sup>1)</sup> &rarr; <span class="label blue">Layout</span> &rarr; <span class="label blue">Skins (HTML)</span>. Die von Ihnen in der Vergangenheit bearbeiteten (d.h. irgendwann einmal veränderten) Skins finden Sie aufgelistet, wenn Sie auf <span class="label blue">Bearbeitete Skins</span> klicken. Alle dort angezeigten Skins könnten http-Referenzen enthalten, oft z.B. in <b>Story.display</b> oder <b>Site.weblogStatus</b>.</p>
@@ -114,10 +135,57 @@
     <p><b>Jede dieser drei Optionen ist mittlerweile unbrauchbar</b>: <em>blogcounter.de</em> bietet keinen sicheren https-Modus an (und zählt daher nur http-Besuche), <em>sitemeter.com</em> und <em>blogstats.de</em> existieren nicht mehr. Sollten Sie eine dieser Optionen gewählt haben, deaktivieren Sie sie am besten!</p>
     <p>Nutzen Sie stattdessen die verbleibende Option "Anderer Counter" und kopieren Sie in das Textfeld den Code zur Einbindung des von Ihnen gewählten Counters mit https-Fähigkeit. Kostenlose Counter mit https-Eignung gibt es z.B. bei <a target="_blank" href="https://www.statcounter.com">statcounter.com</a> oder <a target="_blank" href="https://www.trendcounter.com">trendcounter.com</a> <span style="font-size:.85em;line-height:inherit">(weitere Empfehlungen gerne hier als Kommentar posten)</span>.</p>
     <h5 class="top20">5. Twodays Google Analytics Problem</h5>
-    <p>Im nicht direkt zugreifbaren Skin <span class="code">root.statsCounter</span>, der in jede Twoday-Blogseite eingebaut wird, liegt ein weiteres Problem verborgen: Twodays eigener Google-Analytics-Aufruf funktioniert nicht unter https, da die Skripteinbettung mit einer fixen http-Adresse gespeichert ist. Dadurch wird kein einziger Twoday-Besuch via https gezählt. Außerdem ist das derzeit gerufene Skript (<em>urchin.js</em>) schon ewig veraltet und sollte längst durch eine neue Version ersetzt worden sein (<em>analytics.js</em>). Das können wir bei dieser Bereinigungsaktion gleich mit beheben.</p>
-    <p>Ihr Layoutname: <span title="data-bind=text:layoutName"></span></p>
-    <a href="https://rawgit.com/NeonWilderness/tdhttp/master/src/story/select.js" class="storyScript" rel="#"></a>
+    <p>Im nicht direkt zugreifbaren Skin <span class="code">root.statsCounter</span>, der in jede Twoday-Blogseite eingebaut wird, liegt ein weiteres Problem verborgen: Twodays eigener Google-Analytics-Aufruf funktioniert nicht unter https, da die Skripteinbettung mit einer fixen http-Adresse gespeichert ist. Dadurch wird kein einziger Twoday-Besuch via https gezählt. Außerdem ist das derzeit gerufene Skript (<em>urchin.js</em>) schon ewig veraltet und sollte längst durch eine neue Version ersetzt worden sein (<em>analytics.js</em>). Dieses Problem können wir bei unserer Be&shy;reini&shy;gungs&shy;aktion gleich mit beheben.</p>
+    <fieldset>
+      <legend>Twoday Analytics Problem beheben für Blog:</legend>
+      <div class="row">
+        <div class="small-2 columns">
+          <a href="#" title="data-bind=attr:{href:'https:'+optBlog()+'.twoday.net/'}">
+            <img class="userIcon th" title="data-bind=event:{error:defaultIcon}, attr:{src:blogIcon}" src="https://static.twoday.net/icon.gif" width="58" alt="Icon">
+          </a>
+        </div>
+        <div class="small-10 columns">
+          <div class="row collapse">
+            <div class="small-2 columns"><span class="prefix" style="font-size:.75rem">https://</span></div>
+            <div class="small-8 columns">
+              <select title="data-bind=options:blogs, value:optBlog"></select>
+            </div>
+            <div class="small-2 columns"><span class="postfix" style="font-size:.75rem">.twoday.net</span></div>
+          </div> 
+        </div>
+      </div>
+      <div class="row" style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid #ddd">
+        <div class="small-2 columns" style="padding-top:13px">
+          Schritt <span class="redNumber">1</span>
+        </div>
+        <div class="small-10 columns">
+          <a id="copy2clipboard" href="#" class="button success small radius" title="data-bind=click:copySkin">Kopiere den korrigierten Skininhalt in die <b>Zwischenablage</b>...<i class="fa fa-check fa-lg" style="margin-left:15px;color:#ffbf00" title="data-bind=visible:wasCopied"></i></a>
+        </div>
+      </div>
+      <div class="row">
+          <div class="small-2 columns" style="padding-top:13px">
+            Schritt <span class="redNumber">2</span>
+          </div>
+          <div class="small-10 columns">
+            <a id="gotoSkin" target="_blank" href="#" class="button small radius" title="data-bind=attr:{href:layoutUrl}">Skin-Editor für <b>root.statsCounter</b> des Blogs <b title="data-bind=text:optBlog()"></b> aufrufen...</a>
+            <cite style="margin-left:0;width:100%">
+            <p>Damit der Link zum Skin-Editor funktioniert, müssen Sie bei Twoday angemeldet sein und für den ausgewählten Blog Administratorrechte besitzen. Im Skin-Editor angekommen, führen Sie bitte folgende Aktion aus:</p>
+            <ol>
+              <li>In das große (letzte) Textfeld klicken.</li>
+              <li>Taste <span class="code"><span title="data-bind=text:StrgCmd()"></span>-A</span> drücken, um den gesamten Inhalt zu markieren.</li>
+              <li>Taste <span class="code"><span title="data-bind=text:StrgCmd()"></span>-V</span> drücken, um den markierten Inhalt mit dem neuen zu ersetzen.</li>
+              <li>Ganz unten auf <span class="code">Speichern und Schließen</span> klicken.</li>
+            </ol>
+          </cite>
+          </div>
+        </div>
+        <div class="row">Führen Sie die zwei Schritte für jeden Ihrer Blogs durch (respektive die Blogs, auf die Sie Administrator&shy;zugriff besitzen).</div>
+      </fieldset>
+    <!-- a href="https://rawgit.com/NeonWilderness/tdhttp/master/src/story/select.js" class="storyScript" rel="#"></a-->
+    <a href="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" class="storyScript" rel="#"></a>
+    <a href="./select.js" class="storyScript" rel="#"></a>
   </div>
+  <script src="https://static.twoday.net/cdn/files/yepnope154-min-js.js"></script>
   <script src="https://static.twoday.net/sys.files/js/jquery/jquery.min.js"></script>
   <script src="https://static.twoday.net/cdn/files/fastclick-min-js.js"></script>
   <script src="https://static.twoday.net/cdn/files/foundation55-min-js.js"></script>

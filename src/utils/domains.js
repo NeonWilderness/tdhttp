@@ -2,13 +2,34 @@ const fs = require('fs');
 const path = require('path');
 
 function logSortedArray(obj, name) {
+  let isHosts = (name === 'Hosts');
+  if (isHosts) {
+    var filename = path.resolve(process.cwd(), 'Twoday_HTTP_Hosts.json');
+    var hosts = JSON.parse(fs.readFileSync(filename, 'utf8'));
+  }
   let arr = [];
   for (let key of Object.keys(obj)) {
     arr.push({ key, count: obj[key]});
   }
   arr.sort( (a,b) => b.count-a.count );
   console.log(`===== ${name.toUpperCase()} =====`);
-  arr.map( entry => { console.log(entry.key, '=', entry.count); });
+  arr.map( entry => { 
+    console.log(entry.key, '=', entry.count);
+    if (isHosts && entry.count > 3) {
+      if (hosts.hasOwnProperty(entry.key))
+        hosts[entry.key].count = entry.count;
+      else;
+        hosts[entry.key] = { count: entry.count, alive: false, https: false, text: '' };
+    }
+  });
+  if (isHosts) {
+    fs.writeFileSync(filename, JSON.stringify(hosts));
+    let sortedHosts = [];
+    Object.keys(hosts)
+      .sort()
+      .map( host => sortedHosts.push({host, ...hosts[host]}) );
+    fs.writeFileSync(path.resolve(process.cwd(), 'Twoday_HTTP_Hosts_Sorted.json'), JSON.stringify(sortedHosts));
+  }
 }
 
 let filename = path.resolve(process.cwd(), 'Twoday_HTTP_Refs.json'); 

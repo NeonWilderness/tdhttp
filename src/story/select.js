@@ -3,7 +3,8 @@
   // json = { date: "...", blogs: nnn, refs: {...} }
   $.getJSON('https://rawgit.com/NeonWilderness/tdhttp/master/Twoday_HTTP_Refs.json', function(json){
     $(function() {
-        var ViewModel = function() {
+        let $copy2clipboard = $('#copy2clipboard');
+        let ViewModel = function() {
           this.blogs = ko.observableArray(Object.keys(json.data).sort());
           this.blogCount = ko.pureComputed( function() {
             return json.blogs;
@@ -48,9 +49,47 @@
             }
             return refText;
           }, this);
-          this.layoutName = ko.pureComputed( function() {
-            return json.data[this.optBlog()].layoutName;
+          this.StrgCmd = function(){
+            return (navigator.platform.substr(0,3).toLowerCase()=="mac" ? 'Cmd' : 'Strg');
+          }
+          this.wasCopied = ko.observable(false);
+          this.copySkin = function(){
+            let clipboard = new Clipboard($copy2clipboard[0], {
+              text: function(){
+                return `<!-- Begin Google Analytics Twoday -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-163565-3', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics Twoday -->`;
+              }
+            });
+            clipboard.on('success', function(e) { debugger;
+              this.wasCopied(true);
+              toastr.info('Der neue Skin-Inhalt wurde in die Zwischenablage kopiert!');
+            }.bind(this));
+            clipboard.on('error', function(e) {
+                console.log('Clipboard error', e);
+            });
+          };
+          this.layoutUrl = ko.pureComputed( function() {
+            let blog = this.optBlog();
+            return `https://${blog}.twoday.net/layouts/${json.data[blog].layoutName}/skins/edit?key=root.statsCounter`;
           }, this);
+          this.sortedHostList = ko.observableArray();
+          this.visibleHostList = ko.observable(false);
+          this.toggleHostList = function(){
+            this.visibleHostList(!this.visibleHostList());
+            if (this.sortedHostList.length) return;
+            //$.getJSON('https://rawgit.com/NeonWilderness/tdhttp/master/Twoday_HTTP_Hosts_Sorted.json', function(json){
+            $.getJSON('/Twoday_HTTP_Hosts_Sorted.json', function(json){
+              this.sortedHostList(json);
+            }.bind(this));
+          }
           
         };
         ko.applyBindings( new ViewModel() );
