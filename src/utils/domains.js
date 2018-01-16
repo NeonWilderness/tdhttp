@@ -18,7 +18,7 @@ function logSortedArray(obj, name) {
     if (isHosts && entry.count > 3) {
       if (hosts.hasOwnProperty(entry.key))
         hosts[entry.key].count = entry.count;
-      else;
+      else
         hosts[entry.key] = { count: entry.count, alive: false, https: false, text: '' };
     }
   });

@@ -103,7 +103,8 @@
     <h5 class="top20">2. Stellt der Anbieter den Dienst auch per HTTPS bereit?</h5>
     <p>Zunächst macht es Sinn, zu prüfen, ob die verwendete http-URL überhaupt noch existiert. Mancher Anbieter ist aus dem Markt gegangen oder von anderen Unternehmen übernommen worden (Bsp. <em>sitemeter.com</em>, <em>formspring.me</em>). Falls die URL-Adresse gültig ist und Sie dieses Angebot/diese Funktion weiter in Ihrem Blog nutzen möchten, ist zu prüfen, ob dieser Service auch im sicheren HTTPS Modus verfügbar ist.</p><p>Für die wichtigsten und am häufigsten verwendeten Dienste finden Sie nachstehend diese Information &mdash; für andere müssen Sie diese ggf. selbst ermitteln. Ist die URL jedoch nicht mehr sinnvoll nutzbar, entfernen Sie die Referenz (z.B. den Script-Aufruf) aus dem Skin und speichern ihn neu ab.</p>
     <p class="aligncenter"><a href="#" class="button secondary small radius" title="data-bind=click:toggleHostList">Infos zu den am häufigsten benutzten URLs anzeigen&emsp;<i class="fa" title="data-bind=css:{'fa-chevron-right':!visibleHostList(),'fa-chevron-down':visibleHostList()}"></i></a></p>
-    <table title="data-bind=visible:visibleHostList">
+    <style>#hostTable .fa-check{color:#368a55;}#hostTable .fa-times{color:#f04124;}</style>
+    <table id="hostTable" title="data-bind=visible:visibleHostList">
       <thead>
         <tr>
           <th>URL / Domäne</th>
@@ -116,9 +117,9 @@
       <tbody title="data-bind=foreach:sortedHostList">
         <tr>
           <td title="data-bind=text:host"></td>
-          <td title="data-bind=text:count"></td>
-          <td title="data-bind=text:(alive?'Ja':'Nein')"></td>
-          <td title="data-bind=text:(https?'Ja':'Nein')"></td>
+          <td class="aligncenter" title="data-bind=text:count"></td>
+          <td class="aligncenter"><i class="fa fa-lg" title="data-bind=css:(alive?'fa-check':'fa-times')"></i></td>
+          <td class="aligncenter"><i class="fa fa-lg" title="data-bind=css:(https?'fa-check':'fa-times')"></i></td>
           <td title="data-bind=text:text"></td>
         </tr>
       </tbody>
