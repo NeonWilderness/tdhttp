@@ -85,8 +85,7 @@
           this.toggleHostList = function(){
             this.visibleHostList(!this.visibleHostList());
             if (this.sortedHostList.length) return;
-            //$.getJSON('https://rawgit.com/NeonWilderness/tdhttp/master/Twoday_HTTP_Hosts_Sorted.json', function(json){
-            $.getJSON('/Twoday_HTTP_Hosts_Sorted.json', function(json){
+            $.getJSON('https://rawgit.com/NeonWilderness/tdhttp/master/Twoday_HTTP_Hosts_Sorted.json', function(json){
               this.sortedHostList(json);
             }.bind(this));
           }

@@ -7,7 +7,8 @@
     "build": "node ./src/index --from=0 --to=49 --delay=50 --rebuild",
     "stats": "node ./src/utils/domains",
     "test": "node ./src/index --to=4 --rebuild",
-    "deploy": "echo \"To be added.\""
+    "deploytest": "node ./src/utils/upload",
+    "deployprod": "node ./src/utils/upload --build"
   },
   "author": "NeonWilderness",
   "license": "MIT",
@@ -20,7 +21,10 @@
   "devDependencies": {
     "@types/axios": "^0.14.0",
     "@types/cheerio": "^0.22.7",
-    "@types/jquery": "^3.2.17",
-    "@types/knockout": "^3.4.47"
+    "@types/jquery": "^3.2.18",
+    "@types/knockout": "^3.4.47",
+    "dotenv-safe": "^4.0.4",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
   }
 }
