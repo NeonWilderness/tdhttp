@@ -99,7 +99,7 @@
     <p>Eine rote Nachricht zeigt an, dass in Ihrem Blog unwirksame http-Aufrufe gefunden wurden. Diese werden unter der Nachrichtenbox vollständig mit dem jeweiligem HTML-Befehl und der verwendeten (hier evtl. verkürzt angezeigten) URL gelistet.</p>
     <h5 class="top20">2. Stellt der Anbieter den Dienst auch per HTTPS bereit?</h5>
     <p>Zunächst macht es Sinn, zu prüfen, ob die verwendete http-URL überhaupt noch existiert. Mancher Anbieter ist aus dem Markt gegangen oder von anderen Unternehmen übernommen worden (Bsp. <em>sitemeter.com</em>, <em>formspring.me</em>). Falls die URL-Adresse gültig ist und Sie dieses Angebot/diese Funktion weiter in Ihrem Blog nutzen möchten, ist zu prüfen, ob dieser Service auch im sicheren HTTPS Modus verfügbar ist.</p><p>Für die wichtigsten und am häufigsten verwendeten Dienste finden Sie nachstehend diese Information &mdash; für andere müssen Sie diese ggf. selbst ermitteln. Ist die URL jedoch nicht mehr sinnvoll nutzbar, entfernen Sie die Referenz (z.B. den Script-Aufruf) aus dem Skin und speichern ihn neu ab.</p>
-    <p class="aligncenter"><a href="#" class="button secondary small radius" title="data-bind=click:toggleHostList">Infos zu den am häufigsten benutzten URLs anzeigen&emsp;<i class="fa" title="data-bind=css:{'fa-chevron-right':!visibleHostList(),'fa-chevron-down':visibleHostList()}"></i></a></p><style>#hostTable .fa-check{color:#368a55;}#hostTable .fa-times{color:#f04124;}</style>
+    <p class="aligncenter bottom0"><a href="#" class="button bottom0 secondary small radius" title="data-bind=click:toggleHostList">Infos zu den am häufigsten benutzten URLs anzeigen&emsp;<i class="fa" title="data-bind=css:{'fa-chevron-right':!visibleHostList(),'fa-chevron-down':visibleHostList()}"></i></a></p><style>#hostTable .fa-check{color:#368a55;}#hostTable .fa-times{color:#f04124;}.blinker{color:rgba(0,0,0,0.5);-webkit-animation:blink 2s infinite;animation:blink 2s infinite;}</style>
     <table id="hostTable" title="data-bind=visible:visibleHostList">
       <thead>
         <tr>
@@ -126,11 +126,19 @@
     <cite><sup>1)</sup> <span style="font-size:.85em;line-height:inherit">Falls Sie Ihre Menüleiste ausgeblendet haben, kommen Sie mit <span class="code">{ihrblogname}.twoday.net/manage</span> in den Admin-Bereich</cite>
     <p>Weitere potenzielle Fundorte von gesuchten http-Referenzen sind die <b>Sidebar-Module</b>. Klicken Sie auf der Admin-Seite oben auf den Tab <span class="label blue">Module</span><sup>2)</sup> und prüfen Sie z.B. den Inhalt der <em>Freetext-Module (1-5)</em> oder das <em>Web-Counter Modul</em>, ob dort eine der unwirksamen http-URLs verwendet wird.</p>
     <cite><sup>2)</sup> <span style="font-size:.85em;line-height:inherit">Zu den Sidebar-Modulen gelangen Sie auch über die URL <span class="code">{ihrblogname}.twoday.net/modules/sidebar</span></cite>
+    <p>Arbeiten Sie nun Ihre Liste der unwirksamen http-Referenzen ab, bis Sie alle Aufrufe gefunden und diese
+      <ul>
+        <li>entweder auf <span class="label blue">https</span> geändert haben,</li>
+        <li>mit einem neuen Anbieter (z.B. ein neuer Counter) ersetzt haben,</li>
+        <li>oder aus dem Code entfernt haben.</li>
+      </ul>
+    </p>
     <h5 class="top20">4. Twodays Web-Counter Problem</h5>
-    <p>Im <span class="label">Web Counter Modul</span> bietet Twoday im Standard drei verschiedene Counter-Einbindungen an: <em>blogcounter.de</em>, <em>sitemeter.com</em> und <em>blogstats.de</em>:</p>
+    <p>Im <span class="label">Web Counter Modul</span> bietet Twoday im Standard drei vordefinierte Counter-Einbindungen an: <em>blogcounter.de</em>, <em>sitemeter.com</em> und <em>blogstats.de</em>:</p>
     <p><img class="neonimg th" src="http://www.s522667522.online.de/public/images/webcountermodul.jpg" /></p>
-    <p><b>Jede dieser drei Optionen ist mittlerweile unbrauchbar</b>: <em>blogcounter.de</em> bietet keinen sicheren https-Modus an (und zählt daher nur http-Besuche), <em>sitemeter.com</em> und <em>blogstats.de</em> existieren nicht mehr. Sollten Sie eine dieser Optionen gewählt haben, deaktivieren Sie sie am besten!</p>
+    <p><b>Jede dieser drei Optionen ist mittlerweile unbrauchbar</b>: <em>blogcounter.de</em> bietet keinen sicheren https-Modus an (und zählt daher nur http-Besuche), <em>sitemeter.com</em> und <em>blogstats.de</em> existieren nicht mehr. Sollten Sie eine dieser Optionen gewählt haben, deaktivieren Sie sie!</p>
     <p>Nutzen Sie stattdessen die verbleibende Option "Anderer Counter" und kopieren Sie in das Textfeld den Code zur Einbindung des von Ihnen gewählten Counters mit https-Fähigkeit. Kostenlose Counter mit https-Eignung gibt es z.B. bei <a target="_blank" href="https://www.statcounter.com">statcounter.com</a> oder <a target="_blank" href="https://www.trendcounter.com">trendcounter.com</a> <span style="font-size:.85em;line-height:inherit">(weitere Empfehlungen gerne hier als Kommentar posten)</span>.</p>
+    <p>Der jeweilige Counter-Anbieter gibt vor, welcher Einbettungscode von Ihnen in das Textfeld "Anderer Counter" zu kopieren ist.</p>
     <h5 class="top20">5. Twodays Google Analytics Problem</h5>
     <p>Im nicht direkt zugreifbaren Skin <span class="code">root.statsCounter</span>, der in jede Twoday-Blogseite eingebaut wird, liegt ein weiteres Problem verborgen: Twodays eigener Google-Analytics-Aufruf funktioniert nicht unter https, da die Skripteinbettung mit einer fixen http-Adresse gespeichert ist. Dadurch wird kein einziger Twoday-Besuch via https gezählt. Außerdem ist das derzeit gerufene Skript (<em>urchin.js</em>) schon ewig veraltet und sollte längst durch eine neue Version ersetzt worden sein (<em>analytics.js</em>). Dieses Problem können wir bei unserer Be&shy;reini&shy;gungs&shy;aktion gleich mit beheben: wir ersetzen den veralteten Code im Skin <span class="code">root.statsCounter</span> durch einen korrekten, aktuell gültigen Code.</p>
     <fieldset>
@@ -155,12 +163,13 @@
           <a id="copy2clipboard" href="#" class="button success small radius" title="data-bind=click:copySkin">Kopiere den korrigierten Skininhalt in die <b>Zwischenablage</b>...<i class="fa fa-check fa-lg" style="margin-left:15px;color:#ffbf00" title="data-bind=visible:wasCopied"></i></a>
         </div>
       </div>
+      <div class="row aligncenter" style="margin-bottom:20px" title="data-bind=visible:wasCopied"><i class="fa fa-chevron-down fa-2x blinker"></i></div>
       <div class="row">
           <div class="small-2 columns" style="padding-top:13px">
             Schritt <span class="redNumber">2</span>
           </div>
           <div class="small-10 columns">
-            <a id="gotoSkin" target="_blank" href="#" class="button small radius" title="data-bind=attr:{href:layoutUrl}">Skin-Editor für <b>root.statsCounter</b> des Blogs <b title="data-bind=text:optBlog()"></b> aufrufen...</a>
+            <a id="gotoSkin" target="_blank" href="#" class="button small radius" title="data-bind=attr:{href:layoutUrl}, css:{'disabled':!wasCopied()}">Skin-Editor für <b>root.statsCounter</b> des Blogs <b title="data-bind=text:optBlog()"></b> aufrufen...</a>
             <cite style="margin-left:0;width:100%">
             <p>Damit der Link zum Skin-Editor funktioniert, müssen Sie bei Twoday angemeldet sein und für den ausgewählten Blog Administratorrechte besitzen. Im Skin-Editor angekommen, führen Sie bitte folgende Aktion aus:</p>
             <ol>

@@ -19,12 +19,14 @@
             });
           }); 
           this.optBlog = ko.observable(this.blogs[0]);
+          this.optBlog.subscribe( function(){ this.wasCopied(false); }, this);
           this.blogIcon = ko.pureComputed( function() {
             return `https://${this.optBlog()}.twoday.net/images/icon`;
           }, this);
           this.defaultIcon = function(vm, e) {
             e.currentTarget.src = 'https://static.twoday.net/icon.gif';
           };
+
           this.badRefs = ko.pureComputed( function() {
             return (json.data.hasOwnProperty(this.optBlog()) ? json.data[this.optBlog()].refs.length : 0);
           }, this);
