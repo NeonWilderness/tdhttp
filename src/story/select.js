@@ -89,11 +89,15 @@ ga('send', 'pageview');
           }
         });
         clipboard.on('success', function(e) {
-          vm.wasCopied(true);
-          toastr.info('Der korrekte neue Skin-Inhalt wurde in die Zwischenablage kopiert!');
+          if (/avLoggedIn=1;/.test(document.cookie)) {
+            vm.wasCopied(true);
+            toastr.info('Der korrekte neue Skin-Inhalt wurde in die Zwischenablage kopiert!');
+          } else {
+            toastr.error('Bevor Sie diese Funktion ausführen können, müssen Sie sich zuerst bei Twoday anmelden!')
+          }
         });
         clipboard.on('error', function(e) {
-          console.log('Clipboard error', e);
+          toastr.error(`Clipboard Fehler: ${e}.`);
         });
         $('#loadIcon').hide();
       });
