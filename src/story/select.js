@@ -33,7 +33,7 @@
           }, this);
           this.message = ko.pureComputed( function() {
             return (this.badRefs()>0 
-            ? `In Ihrer Homepage wurde${this.badRefs()===1 ? '' : 'n'} <b>${this.badRefs()===1 ? 'eine' : this.badRefs()} http-Referenz${this.badRefs()===1 ? '' : 'en'}</b> gefunden, die im https-Modus unwirksam ${this.badRefs()===1 ? 'ist' : 'sind'}. Ersetzen Sie diese nach Möglichkeit durch ${this.badRefs()===1 ? 'einen https-Aufruf' : 'https-Aufrufe'}, wenn der Anbieter diese Möglichkeit bereitstellt! Im <b>FAQ</b> unten finden Sie weitere Lösungshinweise.`
+            ? `In Ihrer Homepage wurde${this.badRefs()===1 ? '' : 'n'} <b>${this.badRefs()===1 ? 'eine' : this.badRefs()} http-Referenz${this.badRefs()===1 ? '' : 'en'}</b> gefunden, die im https-Modus unwirksam ${this.badRefs()===1 ? 'ist' : 'sind'}. Ersetzen Sie diese nach Möglichkeit durch ${this.badRefs()===1 ? 'einen https-Aufruf' : 'https-Aufrufe'}, wenn der Anbieter diese Möglichkeit bereitstellt! Andernfalls entfernen Sie diese Referenz.`
             : 'Alles gut. Sie nutzen keine Aufrufe von http-Adressen in Ihrer Homepage!');
           }, this);
           this.httpRefs = ko.pureComputed( function() {
@@ -54,27 +54,6 @@
           }
           this.wasCopied = ko.observable(false);
           this.copySkin = function(){
-            let clipboard = new Clipboard($copy2clipboard[0], {
-              text: function(){
-                return `<!-- Begin Google Analytics Twoday -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-163565-3', 'auto');
-  ga('send', 'pageview');
-</script>
-<!-- End Google Analytics Twoday -->`;
-              }
-            });
-            clipboard.on('success', function(e) { debugger;
-              this.wasCopied(true);
-              toastr.info('Der neue Skin-Inhalt wurde in die Zwischenablage kopiert!');
-            }.bind(this));
-            clipboard.on('error', function(e) {
-                console.log('Clipboard error', e);
-            });
           };
           this.layoutUrl = ko.pureComputed( function() {
             let blog = this.optBlog();
@@ -91,12 +70,34 @@
           }
           
         };
-        ko.applyBindings( new ViewModel() );
+        let vm = new ViewModel();
+        ko.applyBindings( vm );
+        let clipboard = new Clipboard($copy2clipboard[0], {
+          text: function(){
+            return `<!-- Begin Google Analytics Twoday -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-163565-3', 'auto');
+ga('send', 'pageview');
+</script>
+<!-- End Google Analytics Twoday -->`;
+          }
+        });
+        clipboard.on('success', function(e) {
+          vm.wasCopied(true);
+          toastr.info('Der korrekte neue Skin-Inhalt wurde in die Zwischenablage kopiert!');
+        });
+        clipboard.on('error', function(e) {
+          console.log('Clipboard error', e);
+        });
         $('#loadIcon').hide();
       });
     })
   .fail( function(){
-    window.toastr.error('Sorry, die HTTP-Referenzen der Blogs können derzeit nicht gelesen werden!');
+    toastr.error('Sorry, die HTTP-Referenzen der Blogs können derzeit nicht gelesen werden!');
   });
 
 })(jQuery);

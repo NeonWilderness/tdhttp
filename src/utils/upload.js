@@ -63,7 +63,7 @@ let getIncomingData = function(body, response, resolveWithFullResponse){
  */
 let updateStory = function(story){
     let $ = cheerio.load(fs.readFileSync(story.src, 'utf8'), {decodeEntities: false});
-    let storyContent = $(story.selector).html(); console.log(storyContent);
+    let storyContent = $(story.selector).html();
     let storyEditUrl = `${blogUrl}${story.name}/edit`;
     console.log('Preparing to edit story:', storyEditUrl, `(len=${storyContent.length})`);
     req.get({

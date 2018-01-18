@@ -44,7 +44,7 @@ class Blogs {
       const businessSite = await axios.get(`${domain.replace('https', 'http')}`);
       let $ = cheerio.load(businessSite.data);
       let href = $('[rel*="shortcut"]').attr('href');
-      if (href.length) {
+      if (href) {
         let tdDomain = href.match(/static\/(.*)\/images/);
         if (tdDomain) return tdDomain[1];
       }
