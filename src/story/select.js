@@ -55,11 +55,13 @@
             return (navigator.platform.substr(0,3).toLowerCase()=="mac" ? 'Cmd' : 'Strg');
           }
           this.wasCopied = ko.observable(false);
-          this.copySkin = function(){
-          };
           this.layoutUrl = ko.pureComputed( function() {
             let blog = this.optBlog();
-            return `https://${blog}.twoday.net/layouts/${json.data[blog].layoutName}/skins/edit?key=root.statsCounter`;
+            let layoutName = json.data[blog].layoutName;
+            return (layoutName.length
+                    ? `https://${blog}.twoday.net/layouts/${layoutName}/skins/edit?key=root.statsCounter`
+                    : 'javascript:void(0)'
+                    );
           }, this);
           this.sortedHostList = ko.observableArray();
           this.visibleHostList = ko.observable(false);
@@ -74,6 +76,7 @@
         };
         let vm = new ViewModel();
         ko.applyBindings( vm );
+        $('#loadIcon').hide();
         let clipboard = new Clipboard($copy2clipboard[0], {
           text: function(){
             return `<!-- Begin Google Analytics Twoday -->
@@ -89,7 +92,7 @@ ga('send', 'pageview');
           }
         });
         clipboard.on('success', function(e) {
-          if (/avLoggedIn=1;/.test(document.cookie)) {
+          if (/avLoggedIn=1/.test(document.cookie)) {
             vm.wasCopied(true);
             toastr.info('Der korrekte neue Skin-Inhalt wurde in die Zwischenablage kopiert!');
           } else {
@@ -99,7 +102,6 @@ ga('send', 'pageview');
         clipboard.on('error', function(e) {
           toastr.error(`Clipboard Fehler: ${e}.`);
         });
-        $('#loadIcon').hide();
       });
     })
   .fail( function(){
