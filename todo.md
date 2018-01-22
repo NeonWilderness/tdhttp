@@ -1,6 +1,5 @@
 # Todo List
-- [ ] Add selectize.js for blog selection fields
-- [ ] Add googledrive and adapt img references
+- [x] Add googledrive and adapt img references
 - [ ] Add class "knockout" to site.cdnSettings as load trigger for knockoutjs
 - [x] Add script based deployment of article to Twoday
 - [x] Implement delay between axios GET promises (Promise.all)

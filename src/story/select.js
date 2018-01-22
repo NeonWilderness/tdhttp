@@ -19,14 +19,17 @@
             });
           }); 
           this.optBlog = ko.observable(this.blogs[0]);
-          this.optBlog.subscribe( function(){ this.wasCopied(false); }, this);
+          this.layoutName = ko.observable('');
+          this.optBlog.subscribe( function(){
+            this.layoutName(json.data[this.optBlog()].layoutName);
+            this.wasCopied(false); 
+          }, this);
           this.blogIcon = ko.pureComputed( function() {
             return `https://${this.optBlog()}.twoday.net/images/icon`;
           }, this);
           this.defaultIcon = function(vm, e) {
             e.currentTarget.src = 'https://static.twoday.net/icon.gif';
           };
-
           this.badRefs = ko.pureComputed( function() {
             return (json.data.hasOwnProperty(this.optBlog()) ? json.data[this.optBlog()].refs.length : 0);
           }, this);
@@ -51,13 +54,15 @@
             }
             return refText;
           }, this);
+          this.prepLink = function(){ return false; };
+          this.visibleLayoutGif = ko.observable(false);
+          this.toggleLayoutGif = function(){ this.visibleLayoutGif(!this.visibleLayoutGif()); }
           this.StrgCmd = function(){
             return (navigator.platform.substr(0,3).toLowerCase()=="mac" ? 'Cmd' : 'Strg');
-          }
+          };
           this.wasCopied = ko.observable(false);
           this.layoutUrl = ko.pureComputed( function() {
-            let blog = this.optBlog();
-            let layoutName = json.data[blog].layoutName;
+            let layoutName = this.layoutName();
             return (layoutName.length
                     ? `https://${blog}.twoday.net/layouts/${layoutName}/skins/edit?key=root.statsCounter`
                     : 'javascript:void(0)'
@@ -71,8 +76,7 @@
             $.getJSON('https://rawgit.com/NeonWilderness/tdhttp/master/Twoday_HTTP_Hosts_Sorted.json', function(json){
               this.sortedHostList(json);
             }.bind(this));
-          }
-          
+          };
         };
         let vm = new ViewModel();
         ko.applyBindings( vm );

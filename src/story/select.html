@@ -18,7 +18,7 @@
 <body>
   <div class="container storyContent">
     <p class="knockout"><img class="googledrive" alt="https-umstellung.jpg"></p>
-    <div class="panel" style="font-size:.9em"><i class="fa fa-medkit fa-3x pull-left muted"></i>Ihre Blogcounter- und Statistiklösungen funktionieren nicht mehr richtig? Ihre Sidebar-Widgets erscheinen nicht? Eingebettete Videos werden mal angezeigt - und dann wieder nicht? Hier finden Sie die Lösung dieser Probleme, die übrigens auch zu der viel kritisierten Google-Penalty beitragen. Ein Grund mehr für alle Twoday-BloggerInnen, zumindest mal diesen Stein des Anstoßes beiseite zu räumen.</div>
+    <div class="panel" style="font-size:.9em"><i class="fa fa-medkit fa-3x pull-left muted"></i>Ihre Blogcounter- und Statistiklösungen funktionieren nicht mehr richtig? Ihre Sidebar-Widgets erscheinen nicht? Eingebettete Videos werden mal angezeigt - und dann wieder nicht? Hier finden Sie die Lösung dieser Probleme, die übrigens auch zu der viel kritisierten Google-Penalty beitragen. Ein Grund mehr für alle Twoday-BloggerInnen, zumindest mal diesen Stein des Anstoßes aktiv beiseite zu räumen.</div>
     <p class="dropcaps">Vor ziemlich genau <a target="_blank" href="https://help.twoday.net/stories/1022603145/#1022603276">einem Jahr</a> hat Twoday auf einen zweigleisigen Protokollbetrieb umgestellt: seither können alle Blog- und Plattformseiten entweder im <span class="code">http</span>- oder im <span class="code">https</span>-Modus aufgerufen werden.</p>
     <p>Leider gibt es keine strikte Festlegung, welcher Modus verlässlich genutzt wird und so ist man, je nachdem, mit welchem Aufruf man zu <em>twoday.net</em> gelangt ist, mal im unsicheren <span class="label red">http</span>, mal im sicheren (weil verschlüsselten) <span class="label blue">https</span> Mode:</p>
     <table>
@@ -30,7 +30,7 @@
       </thead>
       <tbody>
         <tr>
-          <td><a target="_blank" href="twoday.net">twoday.net</a></td>
+          <td><a target="_blank" href="//twoday.net">twoday.net</a></td>
           <td><span class="label red">http</span></td>
         </tr>
         <tr>
@@ -38,7 +38,7 @@
           <td><span class="label red">http</span></td>
         </tr>
         <tr>
-          <td><a target="_blank" href="www.twoday.net"><b>www.</b>twoday.net</a></td>
+          <td><a target="_blank" href="//www.twoday.net"><b>www.</b>twoday.net</a></td>
           <td><span class="label blue">https</span></td>
         </tr>
         <tr>
@@ -65,9 +65,10 @@
     <cite><b>Nur URLs, die mit https beginnen, werden <u>immer</u> (d.h. in allen Modi) ausgeführt!</b></cite>
     <p>Ein Besucherzähler, der nur Besucher zählt, die über <em>http</em> auf den Blog kommen, ist sinnlos, ebenso wie ein embed-YouTube-Video, das bei einem Besucher angezeigt wird und beim nächsten nicht.</p>
     <p class="panel"><span class="label yellow" style="margin-right:10px">Tipp</span>Stellen Sie alle <span class="code">script</span>-, <span class="code">embed</span>- und <span class="code">iframe</span>-Aufrufe in Ihrem Blog auf <span class="code">https://</span> um.</p>
-    <p>Im Prinzip ist diese Umstellung sehr einfach: Sie müssen die unwirksamen http-Referenzen identifizieren und im Blog (= Ihren Twoday Skins) finden, dann prüfen, ob der Anbieter auch https bereitstellt, um anschließend das <span class="label red">http</span>-Kürzel auf <span class="label blue">https</span> zu ändern. Im folgenden beschreibe ich, wie das am effektivsten geht.</p>
+    <p>Im Prinzip ist diese Umstellung sehr einfach: Sie müssen die unwirksamen http-Referenzen identifizieren und im Blog (= Ihren Twoday Skins oder Beiträgen) finden, dann prüfen, ob der Anbieter auch https bereitstellt, um anschließend das <span class="label red">http</span>-Kürzel auf <span class="label blue">https</span> zu ändern. Im folgenden beschreibe ich, wie das am effektivsten geht.</p>
     <h5 class="top20">1. Unwirksame http-Referenzen identifizieren</h5>
     <p>Zur Unterstützung habe ich ein kleines Tool entwickelt, das für die zuletzt geänderten 750 Twoday-Blogs (das sind die ersten fünfzig Seiten der Twoday-Blogroll) alle unwirksamen http-Aufrufe findet und auflistet.</p>
+    <cite>Das Tool durchsucht dabei nicht Ihren gesamten Blog, sondern nur die aktuelle Homepage und die dort angezeigten Beiträge. Die letzte Analyse fand statt am <span title="data-bind=text:lastUpdate"></span>.</cite>
     <p>Bitte wählen Sie in der nachstehenden Auswahlbox Ihren Blog aus, um unwirksame http-Aufrufe anzuzeigen, die in Ihrer Homepage verwendet werden:</p>
     <fieldset>
       <legend>http-Referenzen von <span title="data-bind=text:blogCount"></span> Twoday-Blogs (Stand: <span title="data-bind=text:lastUpdate"></span>)</legend>
@@ -99,7 +100,7 @@
     <p>Eine rote Nachricht zeigt an, dass in Ihrem Blog unwirksame http-Aufrufe gefunden wurden. Diese werden unter der Nachrichtenbox vollständig mit dem jeweiligem HTML-Befehl und der verwendeten (hier evtl. verkürzt angezeigten) URL gelistet.</p>
     <h5 class="top20">2. Stellt der Anbieter den Dienst auch per HTTPS bereit?</h5>
     <p>Zunächst macht es Sinn, zu prüfen, ob die verwendete http-URL überhaupt noch existiert. Mancher Anbieter ist aus dem Markt gegangen oder von anderen Unternehmen übernommen worden (Bsp. <em>sitemeter.com</em>, <em>formspring.me</em>). Falls die URL-Adresse gültig ist und Sie dieses Angebot/diese Funktion weiter in Ihrem Blog nutzen möchten, ist zu prüfen, ob dieser Service auch im sicheren HTTPS Modus verfügbar ist.</p><p>Für die wichtigsten und am häufigsten verwendeten Dienste finden Sie nachstehend diese Information &mdash; für andere müssen Sie diese ggf. selbst ermitteln. Ist die URL jedoch nicht mehr sinnvoll nutzbar, entfernen Sie die Referenz (z.B. den Script-Aufruf) aus dem Skin und speichern ihn neu ab.</p>
-    <p class="aligncenter bottom0"><a href="#" class="button bottom0 secondary small radius" title="data-bind=click:toggleHostList">Infos zu den am häufigsten benutzten URLs anzeigen&emsp;<i class="fa" title="data-bind=css:{'fa-chevron-right':!visibleHostList(),'fa-chevron-down':visibleHostList()}"></i></a></p><style>#hostTable .fa-check{color:#368a55;}#hostTable .fa-times{color:#f04124;}.blinker{color:rgba(0,0,0,0.5);-webkit-animation:blink 2s infinite;animation:blink 2s infinite;}</style>
+    <p class="aligncenter bottom0"><a href="#" class="button bottom0 secondary small radius" title="data-bind=click:toggleHostList">Infos zu den am häufigsten benutzten Diensten anzeigen&emsp;<i class="fa" title="data-bind=css:{'fa-chevron-right':!visibleHostList(),'fa-chevron-down':visibleHostList()}"></i></a></p><style>#hostTable .fa-check{color:#368a55;}#hostTable .fa-times{color:#f04124;}.blinker{color:rgba(0,0,0,0.5);-webkit-animation:blink 2s infinite;animation:blink 2s infinite;}#closeHostList{cursor:pointer;float:right}#closeHostList .fa-times{color:#ccc}#closeHostList:hover .fa-times{color:#aaa}#lasttipps>li{margin-bottom:.8em}</style>
     <table id="hostTable" title="data-bind=visible:visibleHostList">
       <thead>
         <tr>
@@ -107,7 +108,7 @@
           <th>Häufigkeit</th>
           <th>Existiert noch?</th>
           <th>Bietet HTTPS?</th>
-          <th>Empfehlung</th>
+          <th>Empfehlung<span id="closeHostList" title="data-bind=click:visibleHostList(false)|data-!title=Tabelle ausblenden">&emsp;<i class="fa fa-times fa-lg"></i></span></th>
         </tr>
       </thead>
       <tbody title="data-bind=foreach:sortedHostList">
@@ -126,7 +127,8 @@
     <cite><sup>1)</sup> <span style="font-size:.85em;line-height:inherit">Falls Sie Ihre Menüleiste ausgeblendet haben, kommen Sie mit <span class="code">{ihrblogname}.twoday.net/manage</span> in den Admin-Bereich</cite>
     <p>Weitere potenzielle Fundorte von gesuchten http-Referenzen sind die <b>Sidebar-Module</b>. Klicken Sie auf der Admin-Seite oben auf den Tab <span class="label blue">Module</span><sup>2)</sup> und prüfen Sie z.B. den Inhalt der <em>Freetext-Module (1-5)</em> oder das <em>Web-Counter Modul</em>, ob dort eine der unwirksamen http-URLs verwendet wird.</p>
     <cite><sup>2)</sup> <span style="font-size:.85em;line-height:inherit">Zu den Sidebar-Modulen gelangen Sie auch über die URL <span class="code">{ihrblogname}.twoday.net/modules/sidebar</span></cite>
-    <p>Arbeiten Sie nun Ihre Liste der unwirksamen http-Referenzen ab, bis Sie alle Aufrufe gefunden und diese
+    <p>Außer in den Skins und Modulen können unwirksame http-Referenzen auch in den Beiträgen selbst vorkommen, wobei dies dann meist <span class="code">embed</span>-Befehle sind (<span class="code">script</span> / <span class="code">iframe</span> sind in Beiträgen ja generell verboten). Wenn Sie embed-Befehle finden, stellen Sie sicher, dass diese <b>nur noch https-Quellen</b> (z.B. Videos) aufrufen.</p>
+    <p>Arbeiten Sie Ihre Liste der unwirksamen http-Referenzen ab, bis Sie alle Aufrufe gefunden und diese
       <ul>
         <li>entweder auf <span class="label blue">https</span> geändert haben,</li>
         <li>mit einem neuen Anbieter (z.B. ein neuer Counter) ersetzt haben,</li>
@@ -152,6 +154,11 @@
               <select title="data-bind=options:blogs, value:optBlog"></select>
             </div>
             <div class="small-2 columns"><span class="postfix" style="font-size:.75rem">.twoday.net</span></div>
+          </div>
+          <div class="row" title="data-bind=visible:layoutName().length===0">
+            <p style="padding:0 15px;font-size:0.9em">Ich kann den Layout-Namen dieses Blogs nicht selbsttätig ermitteln, da Sie bei der Neu&shy;anlage keinen eigenen Namen vergeben haben. Bitte <a href="#" title="data-bind=click:toggleLayoutGif">ermitteln Sie den Layout-Namen daher selbst</a> und geben Sie ihn in das unten angezeigte Feld ein!</p>
+            <p title="data-bind=visible:visibleLayoutGif"><img class="googledrive" alt="meinlayoutname.gif"></p>
+            <div class="small-offset-2 small-8 columns end"><label>Ihr Layout-Name<input type="text" title="data-bind=value:layoutName"></label></div>
           </div> 
         </div>
       </div>
@@ -181,11 +188,17 @@
           </cite>
           </div>
         </div>
-        <div class="row"><div class="panel" style="margin:0 20px">Führen Sie diese zwei Schritte nacheinander <b>für jeden Ihrer Blogs</b> durch (respektive die Blogs, auf die Sie Administrator&shy;zugriff besitzen).</div></div>
+        <div class="row"><div class="panel" style="margin:0 20px">Führen Sie diese zwei Schritte nacheinander <b>für jedes Ihrer Blogs</b> durch (respektive die Blogs, auf die Sie <u>Administrator&shy;zugriff</u> besitzen).</div></div>
       </fieldset>
-    <a href="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" class="storyScript" rel="#"></a>
+      <h5 class="top20">6. Letzte <s>Worte</s> Tipps</h5>
+      <ol id="lasttipps">
+        <li>Verwenden Sie keine Ressourcen mehr, die <u>nur</u> über <span class="label red">http</span> erreichbar sind. Einzige Ausnahme sind Bilder, die (derzeit noch) im sicheren Modus angezeigt werden, auch wenn sie nur eine http-Url haben. Aber: Wenn der Bildspeicherplatz (wie z.B. Flickr, Cloudinary) ein https-Protokoll anbietet, nutzen Sie dieses und binden Bilder über https ein!</li>
+        <li>Verwenden Sie keine Flash-Ressourcen mehr (SWF-Dateien). Flash ist tot, böse und steht mit dem Teufel im Bunde. Es hat Gründe, warum Chrome, Firefox u.a. die Ausführung von Flash im Browser mittlerweile im Standard gesperrt haben. Wirklich! Kein Flash mehr!</li>
+        <li>Wenn Sie Videos noch über <span class="code">embed</span> einbinden wollen, verwenden Sie nur noch https-Adressen. Nutzen Sie für Videos und andere Dienste von derzeit 20 Plattformen alternativ das bewährte <a target="_blank" href="https://neonwilderness.twoday.net/stories/videoload2">Videoload-Tool</a>, welches immer die korrekten https-Adressen generiert.</li>
+      </ol>
     <a href="https://rawgit.com/NeonWilderness/tdhttp/master/src/story/select.js" class="storyScript" rel="#"></a>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
   <script src="https://static.twoday.net/cdn/files/yepnope154-min-js.js"></script>
   <script src="https://static.twoday.net/sys.files/js/jquery/jquery.min.js"></script>
   <script src="https://static.twoday.net/cdn/files/gdimages-min-js.js"></script>

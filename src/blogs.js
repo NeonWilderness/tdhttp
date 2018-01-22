@@ -122,6 +122,13 @@ class Blogs {
     log.unhook_stderr();
   }
 
+  async readMainCss(blogname) {
+    const css = await axios.get(`http://${blogname}.twoday.net/main.css`);
+    const regex = new RegExp(`${blogname}\\/layouts\\/(.*?)\\/`, 'i');
+    let layoutRefs = css.data.match(regex);
+    return (layoutRefs ? layoutRefs[1] : '');
+  }
+
   async readHomepage(blogname) {
     try {
       const blogHomepage = await axios.get(`https://${blogname}.twoday.net/`);
@@ -129,7 +136,11 @@ class Blogs {
       let $ = cheerio.load(blogHomepage.data);
       // Find and store the blog's active layout name, if any
       let layoutRefs = $('body').html().match(/\/layouts\/(.*?)\//);
-      if (layoutRefs) this.httpRefs[blogname].layoutName = layoutRefs[1];
+      if (layoutRefs) {
+        this.httpRefs[blogname].layoutName = layoutRefs[1];
+      } else {
+        this.httpRefs[blogname].layoutName = await this.readMainCss(blogname);
+      }
       // Find and push all relevant http url references
       $('[src^="http://"]')
       .filter( (i, el) => {
