@@ -54,7 +54,7 @@
             }
             return refText;
           }, this);
-          this.prepLink = function(){ return false; };
+          this.dummyLink = function(){ return false; };
           this.visibleLayoutGif = ko.observable(false);
           this.toggleLayoutGif = function(){ this.visibleLayoutGif(!this.visibleLayoutGif()); }
           this.StrgCmd = function(){
