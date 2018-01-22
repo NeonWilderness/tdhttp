@@ -56,7 +56,7 @@
           }, this);
           this.dummyLink = function(){ return false; };
           this.visibleLayoutGif = ko.observable(false);
-          this.toggleLayoutGif = function(){ this.visibleLayoutGif(!this.visibleLayoutGif()); }
+          this.toggleLayoutGif = function(){ this.visibleLayoutGif(!this.visibleLayoutGif()); };
           this.StrgCmd = function(){
             return (navigator.platform.substr(0,3).toLowerCase()=="mac" ? 'Cmd' : 'Strg');
           };
@@ -64,7 +64,7 @@
           this.layoutUrl = ko.pureComputed( function() {
             let layoutName = this.layoutName();
             return (layoutName.length
-                    ? `https://${blog}.twoday.net/layouts/${layoutName}/skins/edit?key=root.statsCounter`
+                    ? `https://${this.optBlog()}.twoday.net/layouts/${layoutName}/skins/edit?key=root.statsCounter`
                     : 'javascript:void(0)'
                     );
           }, this);
@@ -100,7 +100,7 @@ ga('send', 'pageview');
             vm.wasCopied(true);
             toastr.info('Der korrekte neue Skin-Inhalt wurde in die Zwischenablage kopiert!');
           } else {
-            toastr.error('Bevor Sie diese Funktion ausführen können, müssen Sie sich zuerst bei Twoday anmelden!')
+            toastr.error('Bevor Sie diese Funktion ausführen können, müssen Sie sich zuerst bei Twoday anmelden!');
           }
         });
         clipboard.on('error', function(e) {
