@@ -63,7 +63,7 @@
           this.wasCopied = ko.observable(false);
           this.layoutUrl = ko.pureComputed( function() {
             let layoutName = this.layoutName();
-            return (layoutName.length
+            return (layoutName.length && this.wasCopied()
                     ? `https://${this.optBlog()}.twoday.net/layouts/${layoutName}/skins/edit?key=root.statsCounter`
                     : 'javascript:void(0)'
                     );

@@ -18,7 +18,7 @@
 <body>
   <div class="container storyContent">
     <p class="knockout clipboard"><img class="googledrive" alt="https-umstellung.jpg"></p>
-    <div class="panel" style="font-size:.9em"><i class="fa fa-medkit fa-3x pull-left muted"></i>Ihre Blogcounter- und Statistiklösungen funktionieren nicht mehr richtig? Ihre Sidebar-Widgets erscheinen nicht? Eingebettete Videos werden mal angezeigt - und dann wieder nicht? Hier finden Sie die Lösung dieser Probleme, die übrigens auch zu der viel kritisierten Google-Penalty beitragen. Ein Grund mehr für alle Twoday-BloggerInnen, zumindest mal diesen Stein des Anstoßes aktiv beiseite zu räumen.</div>
+    <div class="panel" style="font-size:.9em"><i class="fa fa-medkit fa-3x pull-left muted"></i>Ihre Blogcounter- und Statistiklösungen funktionieren nicht mehr richtig? Ihre Sidebar-Widgets erscheinen nicht? Eingebettete Videos werden mal angezeigt &mdash; und dann wieder nicht? Hier finden Sie die Lösung dieser Probleme, die übrigens auch zu der viel kritisierten Google-Penalty beitragen. Ein Grund mehr für alle Twoday-BloggerInnen, zumindest mal diesen Stein des Anstoßes aktiv beiseite zu räumen.</div>
     <p class="dropcaps">Vor ziemlich genau <a target="_blank" href="https://help.twoday.net/stories/1022603145/#1022603276">einem Jahr</a> hat Twoday auf einen zweigleisigen Protokollbetrieb umgestellt: seither können alle Blog- und Plattformseiten entweder im <span class="code">http</span>- oder im <span class="code">https</span>-Modus aufgerufen werden.</p>
     <p>Leider gibt es keine strikte Festlegung, welcher Modus verlässlich genutzt wird und so ist man, je nachdem, mit welchem Aufruf man zu <em>twoday.net</em> gelangt ist, mal im unsicheren <span class="label red">http</span>, mal im sicheren (weil verschlüsselten) <span class="label blue">https</span> Mode:</p>
     <table>
@@ -176,7 +176,7 @@
             Schritt <span class="redNumber">2</span>
           </div>
           <div class="small-10 columns">
-            <a id="gotoSkin" target="_blank" href="javascript:void(0)" class="button small radius" title="data-bind=css:{'disabled':!wasCopied()}, attr:{href:layoutUrl}, click:dummyLink">Skin-Editor für <b>root.statsCounter</b> des Blogs <b title="data-bind=text:optBlog()"></b> aufrufen...</a>
+            <a id="gotoSkin" target="_blank" href="javascript:void(0)" class="button small radius" title="data-bind=css:{'disabled':!wasCopied()}, attr:{href:layoutUrl}">Skin-Editor für <b>root.statsCounter</b> des Blogs <b title="data-bind=text:optBlog()"></b> aufrufen...</a>
             <cite style="margin-left:0;width:100%">
             <p>Damit der Link zum Skin-Editor funktioniert, müssen Sie bei Twoday angemeldet sein und für den ausgewählten Blog Administratorrechte besitzen. Im Skin-Editor angekommen, führen Sie bitte folgende Aktion aus:</p>
             <ol>
@@ -196,6 +196,7 @@
         <li>Verwenden Sie keine Flash-Ressourcen mehr (SWF-Dateien). Flash ist tot, böse und steht mit dem Teufel im Bunde. Es hat Gründe, warum Chrome, Firefox u.a. die Ausführung von Flash im Browser mittlerweile im Standard gesperrt haben. Wirklich! Kein Flash mehr!</li>
         <li>Wenn Sie Videos noch über <span class="code">embed</span> einbinden wollen, verwenden Sie nur noch https-Adressen. Nutzen Sie für Videos und andere Dienste von derzeit 20 Plattformen alternativ das bewährte <a target="_blank" href="https://neonwilderness.twoday.net/stories/videoload2">Videoload-Tool</a>, welches immer die korrekten https-Adressen generiert.</li>
       </ol>
+      <p>Ich werde die Analysedaten über die unwirksamen http-Adressen in unregelmäßigen Abständen aktualisieren. Sie können dann anhand der neuen Daten kontrollieren, ob Sie bereits alle Probleme erfolgreich bereinigt haben.</p>
     <a href="https://rawgit.com/NeonWilderness/tdhttp/master/src/story/select.js" class="storyScript" rel="#"></a>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
