@@ -9,7 +9,7 @@ This tool reads Twodays first 50 blogroll pages (each page holds 15 blog site re
 
 The results are conveniently display in a blog article, where people can select their own blogname to learn more about the ineffective http references on their own site.
 
-The FAQ that comes with the article explains potential solutions and how to migrate to working https links (in case this is offered by the respective provider).
+The article explains potential solutions, how to find http-references in Twoday's skin file system and how to migrate to working https links (in case this is offered by the respective provider).
 
 ### Ingredients
 The [blog](https://neonwilderness.twoday.net/) that features this article/tool utilizes Twoday-adapted versions of [**Foundation 5**](https://foundation.zurb.com/sites/docs/v/5.5.3/) and [**Knockout**](http://knockoutjs.com/) &mdash; *select.html* and *select.js* are hence built with these frameworks.

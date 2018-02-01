@@ -68,7 +68,7 @@
     <p>Im Prinzip ist diese Umstellung sehr einfach: Sie müssen die unwirksamen http-Referenzen identifizieren und im Blog (= Ihren Twoday Skins oder Beiträgen) finden, dann prüfen, ob der Anbieter auch https bereitstellt, um anschließend das <span class="label red">http</span>-Kürzel auf <span class="label blue">https</span> zu ändern. Im folgenden beschreibe ich, wie das am effektivsten geht.</p>
     <h5 class="top20">1. Unwirksame http-Referenzen identifizieren</h5>
     <p>Zur Unterstützung habe ich ein kleines Tool entwickelt, das für die zuletzt geänderten 750 Twoday-Blogs (das sind die ersten fünfzig Seiten der Twoday-Blogroll) alle unwirksamen http-Aufrufe findet und auflistet.</p>
-    <cite>Das Tool durchsucht dabei nicht Ihren gesamten Blog, sondern nur die aktuelle Homepage und die dort angezeigten Beiträge. Die letzte Analyse fand statt am <span title="data-bind=text:lastUpdate"></span>.</cite>
+    <cite>Das Tool durchsucht dabei nicht Ihren gesamten Blog, sondern nur die aktuelle Homepage und die dort angezeigten Beiträge. Die Analyseergebnisse werden nicht unmittelbar/realtime ermittelt, sondern reflektieren Resultate des letzten Analyselaufs vom <span title="data-bind=text:lastUpdate"></span>.</cite>
     <p>Bitte wählen Sie in der nachstehenden Auswahlbox Ihren Blog aus, um unwirksame http-Aufrufe anzuzeigen, die in Ihrer Homepage verwendet werden:</p>
     <fieldset>
       <legend>http-Referenzen von <span title="data-bind=text:blogCount"></span> Twoday-Blogs (Stand: <span title="data-bind=text:lastUpdate"></span>)</legend>
@@ -196,7 +196,8 @@
         <li>Verwenden Sie keine Flash-Ressourcen mehr (SWF-Dateien). Flash ist tot, böse und steht mit dem Teufel im Bunde. Es hat Gründe, weshalb Chrome, Firefox u.a. die Ausführung von Flash im Browser mittlerweile standardmäßig gesperrt haben. Wirklich! Kein Flash mehr!</li>
         <li>Wenn Sie Videos noch über <span class="code">embed</span> einbinden wollen, verwenden Sie nur noch https-Adressen. Nutzen Sie für Videos und andere Dienste von derzeit 20 Plattformen alternativ das bewährte <a target="_blank" href="https://neonwilderness.twoday.net/stories/videoload2">Videoload-Tool</a>, welches immer die korrekten https-Adressen generiert.</li>
       </ol>
-      <p>Ich werde die Analysedaten über die unwirksamen http-Adressen in unregelmäßigen Abständen aktualisieren. Sie können dann anhand der neuen Daten kontrollieren, ob Sie bereits alle Probleme erfolgreich bereinigt haben.</p>
+      <p class="bottom0">Ich werde die Analysedaten über die unwirksamen http-Adressen in unregelmäßigen Abständen aktualisieren. Sie können dann anhand der neuen Daten kontrollieren, ob Sie bereits alle Probleme erfolgreich bereinigt haben.</p>
+      <p class="aligncenter" style="font-size:.85em;color:#888">Dieses Tool ist Open Source — Lizenz <a target="_blank" href="https://opensource.org/licenses/MIT">MIT</a> — Code <a target="_blank" href="https://github.com/NeonWilderness/tdhttp">Github</a></p>
     <a href="https://rawgit.com/NeonWilderness/tdhttp/master/src/story/select.js" class="storyScript" rel="#"></a>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>

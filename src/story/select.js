@@ -79,7 +79,7 @@
           };
         };
         let vm = new ViewModel();
-        ko.applyBindings( vm );
+        ko.applyBindings( vm, document.getElementById('cleanupyourblog') );
         $('#loadIcon').hide();
         let clipboard = new Clipboard($copy2clipboard[0], {
           text: function(){
