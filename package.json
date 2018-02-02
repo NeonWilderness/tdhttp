@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "node ./src/index --from=0 --to=49 --delay=50 --rebuild",
+    "progress": "node ./src/utils/progress",
     "stats": "node ./src/utils/domains",
     "test": "node ./src/index --to=4 --delay=50 --rebuild",
     "deploytest": "node ./src/utils/upload",
