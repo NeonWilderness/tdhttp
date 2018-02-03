@@ -10,8 +10,10 @@ const refFile = path.resolve(process.cwd(), 'Twoday_HTTP_Refs.json');
 
 /*
 interface RefData {
-  layoutName: string; // active layout name of blog (if found, else empty string)
-  refs: string[];     // array of urls
+  layoutName: string;     // active layout name of blog (if found, else empty string)
+  daysLastChange: number; // number of days ago when the last article was published
+  analytics: boolean;     // indicates if the new Twoday Google Analytics has been installed
+  refs: string[];         // array of urls
 }
 interface RefFile {
   date: string;       // CreateDate or LastUpdate
@@ -52,8 +54,24 @@ class Blogs {
       return (fallback ? fallback[1] : '');
     }
 
-    initRef(blog) {
-      this.httpRefs[blog] = { layoutName: '', refs: [] };
+    initRef(blog, daysLastChange) {
+      this.httpRefs[blog] = { layoutName: '', daysLastChange, refs: [] };
+    }
+
+    getDaysLastChange($, blogname) {
+      try {
+        let timeLastChange = $(`a[href^="https://${blogname}.twoday.net/stories/"]`)
+          .eq(0)
+          .next()
+          .text()
+          .match(/vor ([0-9]+)\s(.*)/);
+        if (timeLastChange) {
+          let [, count, unit] = timeLastChange;
+          return (unit==='Tagen' ? parseInt(count) : 1);
+        } else return 1;
+      } catch(e) {
+        return 0;
+      }
     }
 
     async readBlogs(page) {
@@ -70,7 +88,8 @@ class Blogs {
         let href = el.attribs.href.match(/\/\/(.*).twoday.net/);
         if (href) {
           let blogname = href[1].toLowerCase();
-          this.initRef(blogname);
+          let daysLastChange = this.getDaysLastChange($, blogname);
+          this.initRef(blogname, daysLastChange);
         } else {
           (async() =>{ // inject IIFE async function inside cheerio's sync each-function
             const tdBlog = await this.readBusinessDomain(el.attribs.href);
@@ -141,6 +160,8 @@ class Blogs {
       } else {
         this.httpRefs[blogname].layoutName = await this.readMainCss(blogname);
       }
+      // Check if new Google analytics code is present
+      this.httpRefs[blogname].analytics = /Google Analytics Twoday/.test(blogHomepage.data);
       // Find and push all relevant http url references
       $('[src^="http://"]')
       .filter( (i, el) => {

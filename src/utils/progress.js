@@ -5,7 +5,6 @@
  * -- call pattern: node ./src/utils/progress --first={current|1|2|3...} --second={current|1|2|3...}
  * -- defaults: --first=current (if not given)
  */
-const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 const argv = require('yargs').argv;
@@ -40,16 +39,6 @@ const getFullFilename = (id) => {
   return path.resolve(process.cwd(), dir, `Twoday_HTTP_Refs${id}.json`);
 };
 
-/**
- * async function to verify if blog incorporates new Twoday Analytics code
- * @param {string} blog Twoday blogname
- * @returns {boolean} TRUE if homepage has new google analytics code, otherwise false
- */
-async function checkGoogleAnalytics(blog) {
-  const blogHomepage = await axios.get(`https://${blog}.twoday.net/`);
-  return (blogHomepage.data.indexOf('<!-- Begin Google Analytics Twoday -->') >= 0);
-}
-
 // handle and sanitize script parameters
 let first = argv.first || 'current';
 let second = argv.second || getHighestArchiveNumber().toString();
@@ -65,16 +54,13 @@ let diff = Object.keys(file1.data).reduce((all, blog, index) => {
     let firstRefs = file1.data[blog].refs.length;
     let secondRefs = file2.data[blog].refs.length;
     let change = firstRefs - secondRefs;
-    if (change < 0) {
-      const rootStat = checkGoogleAnalytics(blog);
+    let rootStat = file1.data[blog].analytics;
+    if (change < 0 || rootStat) {
       all.push({ blog, refs: firstRefs, change, rootStat });
     }
   }
   return all;
 }, []);
-Promise.all(diff.map(item => item.rootStat)).then((results) => {
-  results.forEach( (value, index) => { diff[index].rootStat = value; });
-  console.dir(diff.sort((a, b) => a.change - b.change));
-  let days = Math.round((Date.parse(file1.date) - Date.parse(file2.date)) / (24*60*60*1000));
-  console.log(`${diff.length} people have updated their blog/s in ${days} days.`);
-});
+console.dir(diff.sort((a, b) => a.change - b.change));
+let days = Math.round((Date.parse(file1.date) - Date.parse(file2.date)) / (24 * 60 * 60 * 1000));
+console.log(`${diff.length} people have updated their blog/s in ${days} days.`);
