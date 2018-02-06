@@ -67,7 +67,7 @@ class Blogs {
           .match(/vor ([0-9]+)\s(.*)/);
         if (timeLastChange) {
           let [, count, unit] = timeLastChange;
-          return (unit==='Tagen' ? parseInt(count) : 1);
+          return (unit.substr(0,5)==='Tagen' ? parseInt(count) : 1);
         } else return 1;
       } catch(e) {
         return 0;

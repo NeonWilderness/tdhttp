@@ -8,6 +8,7 @@
 const fs = require('fs');
 const path = require('path');
 const argv = require('yargs').argv;
+const daysAgo = 90; // xx days ago last new story was added: qualifies blog as active (<=xx) or inactive (>xx)
 
 /**
  * Identifies and returns the highest archived JSON file number in the './archive' directory
@@ -49,18 +50,52 @@ let file2 = JSON.parse(fs.readFileSync(getFullFilename(second)));
 console.log(`Comparing ${isNaN(first) ? first + " json file" : "archive version " + first} to ${isNaN(second) ? second + " json file" : "archive version " + second}`);
 
 // compare and log differences
+let activeBlogs = 0, inactiveBlogs = 0;
+let activeRefsBlogs = 0, inactiveRefsBlogs = 0;
+let activeRootBlogs = 0, inactiveRootBlogs = 0;
+let candidates = [];
+let excludes = ['bernhardrappold','hstd','flog','matsblog'];
 let diff = Object.keys(file1.data).reduce((all, blog, index) => {
+  let file1blog = file1.data[blog];
+  if (file1blog.daysLastChange > daysAgo) 
+    inactiveBlogs++; 
+  else {
+    activeBlogs++;
+    if (file1blog.refs.length && excludes.indexOf(blog)<0) 
+      candidates.push({blog, refs: file1blog.refs.length, daysLastChange: file1blog.daysLastChange});
+  }
   if (blog in file2.data) {
-    let firstRefs = file1.data[blog].refs.length;
+    let file2blog = file2.data[blog];
+    if (file1blog.daysLastChange > daysAgo) {
+      if (file2blog.refs.length) inactiveRefsBlogs++;
+      if (!file2blog.analytics) inactiveRootBlogs++;
+    } else {
+      if (file2blog.refs.length) activeRefsBlogs++;
+      if (!file2blog.analytics) activeRootBlogs++;
+    }
+    let firstRefs = file1blog.refs.length;
     let secondRefs = file2.data[blog].refs.length;
     let change = firstRefs - secondRefs;
-    let rootStat = file1.data[blog].analytics;
-    if (change < 0 || rootStat) {
-      all.push({ blog, refs: firstRefs, change, rootStat });
+    let rootStat = file1blog.analytics;
+    let daysLastChange = file1blog.daysLastChange;
+    if ((firstRefs === 0 && change < 0) || rootStat) {
+      all.push({ blog, refs: firstRefs, change, rootStat, daysLastChange });
     }
   }
   return all;
 }, []);
-console.dir(diff.sort((a, b) => a.change - b.change));
+let result = {
+  activeBlogs,
+  inactiveBlogs,
+  activeRefsBlogs,
+  inactiveRefsBlogs,
+  activeRootBlogs,
+  inactiveRootBlogs,
+  blogs: diff.sort((a, b) => a.change - b.change),
+  candidates: candidates.sort((a, b) => b.refs - a.refs).slice(0,10)
+};
+console.dir(result);
 let days = Math.round((Date.parse(file1.date) - Date.parse(file2.date)) / (24 * 60 * 60 * 1000));
-console.log(`${diff.length} people have updated their blog/s in ${days} days.`);
+console.log(`${diff.length} blogs were updated in ${days} days.`);
+fs.writeFileSync(path.resolve(process.cwd(), 'Twoday_Results.json'), JSON.stringify(result));
+console.log('Result file written');

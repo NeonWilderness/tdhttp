@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Results of actual change</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://static.twoday.net/cdn/files/foundation55-min-css.css">
+  <link rel="stylesheet" href="https://static.twoday.net/cdn/files/awesomeeditorcore-min-css.css">
+  <link rel="stylesheet" href="https://static.twoday.net/cdn/files/rainy-min-css.css">
+  <style>
+    body { padding: 20px 0; }
+    .container { width:750px; margin: 0 auto; padding: 15px; }
+  </style>
+</head>
+<body>
+  <div class="container storyContent">
+    <p class="knockout"><img class="googledrive" alt="https-ergebnisse.jpg"></p>
+    <p class="dropcaps">Jede Initiative, und besonders eine zur Verbesserung dieser Blogplattform, ist sinnlos, wenn man nicht deren Wirksamkeit misst, mindestens um zu analysieren, ob der Aufwand sich gelohnt hat, oder ob man die Maßnahme vielleicht verbessern kann, oder &mdash; ganz elementar &mdash; ob überhaupt noch Interesse an einer organisierten Heilung von Mängeln besteht.</p>
+    <p>Nun ist von den inaktiven Blogs (die habe ich für mich mal definiert als die Blogs, bei denen die letzten 90 Tage kein neuer Artikel hinzugekommen ist) wahrscheinlich eh nichts mehr zu erwarten, aber immerhin bleiben noch <b><span title="data-bind=text:getTotal('active')"></span> aktive Blogs</b>, deren Besitzer:Innen noch ein Interesse an der Fehler&shy;freiheit und einer minimalen Erhal&shy;tungs&shy;pflege dieser Plattform haben könnten.</p>
+    <p>Doppelt schade, wenn man nach doch angemessener Zeit feststellt, dass nur wenige Mutige das Angebot aufgegriffen haben und die große Masse bislang nicht bereit war, das wenige eigene Mögliche beizusteuern, um Twoday zumindest graduell zu verbessern (oder sagen wir besser: nicht weiter absinken zu lassen).</p>
+    <p><b>Sieben</b>. Obwohl, eigentlich sind's nur sechs, da Frau Araxe gleich zwei ihrer Blogs in der Liste verantwortet. Sechs also haben mitgemacht. Hm, tatsächlich nicht besonders ermutigend, wenn eine Lösung von <b>weniger als <span title="data-bind=text:ceilPercent()"></span></b> derjenigen genutzt wird, für die sie gemacht wurde. Daher geht mein Dank an die Sechs, die Bloghelden, die Technik-Avantgardisten, die Nicht-Aufgeber, die Anpacker und Macher, die, die nicht nur Rumnörgeln, sondern selbst einen Beitrag leisten (Bonuslob für Herrn Blödbabbler für die 100%-Abdeckung, zweites Bonuslob für Frau Araxe als einzige teilnehmende Frau ;).</p>
+    <style>.panel .fa-heart{color:#f04124;}.primus{border:3px solid #f04124;}</style>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th class="aligncenter">Aktive Blogs</th>
+          <th class="aligncenter">Inaktive Blogs</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Übersicht</td>
+          <td>
+            <ul class="pricing-table">
+              <li class="bullet-item">Letzte Änderung &lt;= <span title="data-bind=text:daysAgo()"></span></li>
+              <li class="bullet-item"><b><span title="data-bind=text:getTotal('active')"></span></b> Twoday Blogs</li>
+              <li class="bullet-item">davon <b><span title="data-bind=text:getRefsIssue('active')"></span></b> mit http-Problemen</li>
+              <li class="bullet-item">und <b><span title="data-bind=text:getRootIssue('active')"></span></b> mit altem rootStat-Skin</li>
+              <li class="bullet-item">bereinigt wurden: <b><span title="data-bind=text:filterBlogs('active').length"></span></b></li>
+            </ul>            
+          </td>
+          <td>
+            <ul class="pricing-table">
+              <li class="bullet-item">Letzte Änderung &gt; <span title="data-bind=text:daysAgo()"></span></li>
+              <li class="bullet-item"><b><span title="data-bind=text:getTotal('inactive')"></span></b> Twoday Blogs</li>
+              <li class="bullet-item">davon <b><span title="data-bind=text:getRefsIssue('inactive')"></span></b> mit http-Problemen</li>
+              <li class="bullet-item">und <b><span title="data-bind=text:getRootIssue('inactive')"></span></b> mit altem rootStat-Skin</li>
+              <li class="bullet-item">bereinigt wurden: <b><span title="data-bind=text:filterBlogs('inactive').length"></span></b></li>
+            </ul>            
+          </td>
+        </tr>
+        <tr>
+          <td>HTTP-Referenzen bereinigt?</td>
+          <td><span title="data-bind=html:getRefsPercent('active')"></span></td>
+          <td><span title="data-bind=html:getRefsPercent('inactive')"></span></td>
+        </tr>
+        <tr>
+            <td>Skin <em>root.statsCounter</em> bereinigt?</td>
+            <td><span title="data-bind=html:getRootPercent('active')"></span></td>
+            <td><span title="data-bind=html:getRootPercent('inactive')"></span></td>
+          </tr>
+        </tbody>
+    </table>
+    <div class="panel">
+      <h5 class="aligncenter">Die ultimative Heldenliste</h5>
+      <p class="aligncenter" style="margin-top:1.5em"><img class="googledrive noadds" alt="heldenkranz.png" width="150"></p>
+      <p><i class="fa fa-heart"></i>&emsp;Diese großherzigen, lösungsorientierten, avantgardistischen, community-unterstützenden Vorreiter-Blogs haben ihre Blog-Bereinigung bereits erfolgreich durchgeführt (mit Herrn Blödbabbler als primus inter pares, weil Doppel-<b>ja</b> rules!!! Respekt!!).&emsp;<i class="fa fa-heart"></i></p>
+    </div>
+    <table style="border-collapse:collapse;border:0;margin:0 auto;">
+      <thead>
+        <td>Blogheld</td>
+        <td>Referenzen bereinigt?</td>
+        <td>root.statsCounter bereinigt?</td>
+      </thead>
+      <tbody title="data-bind=foreach:listOfGoodGuys()">
+        <tr title="data-bind=css:{primus:refs==='ja'&&root==='ja'}">
+          <td><span class="label blue" title="data-bind=text:blog"></span></td>
+          <td><span title="data-bind=text:refs"></span><div style="display:inline-block;margin-left:.5em" title="data-bind=if:(refs==='ja')"><span title="data-bind=text:change"></span></div></td>
+          <td title="data-bind=text:root"></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:1em" class="panel callout aligncenter"><b><i class="fa fa-heart"></i> Sie <i class="fa fa-heart"></i> wollen auch auf die Heldenliste?&emsp;<a target="_blank" href="https://neonwilderness.twoday.net/stories/cleanupyourblog/">Hier</a> startet der sichere Weg dahin.</b></p>
+    <h5 style="margin-top:1.5em">Motivationshilfe für Nachzügler</h5>
+    <p>Womöglich sind sich einige Blogger:Innen noch gar nicht richtig bewusst, was der <span class="label blue">https</span>-Modus für ihr Blog bedeutet und dass die meisten ihrer Besucher dort sehr viele leere Stellen bzw. nicht funktionierende Sidebar-Elemente sehen. Ein Aufruf des eigenen Blogs mit vorangehendem <span class="code">https://</span>-Kürzel hilft beim Erkennen der Probleme. Insbesondere den folgenden Top10-Bloggern mit den meisten unwirksamen http-Urls wäre dies ans Herz zu legen:</p>
+    <table style="border-collapse:collapse;border:0;margin:0 auto;">
+        <thead>
+          <td>Blog</td>
+          <td>Unwirksame http-Urls</td>
+          <td>https-Blogadresse (Check)</td>
+        </thead>
+        <tbody title="data-bind=foreach:getCandidates()">
+          <tr>
+            <td><span class="label" title="data-bind=text:blog"></span></td>
+            <td class="aligncenter"><b title="data-bind=text:refs"></b></td>
+            <td title="data-bind=html:$parent.getLink(blog)"></td>
+          </tr>
+        </tbody>
+    </table>
+    <p class="aligncenter" style="margin-top:1em;font-size:0.85em">Anmerkung: <span class="label">quh</span> und <span class="label">corum</span> sind mit ihren Blogs bereits umgezogen.</p>
+    <p>Weitere Informationen zu den Detailproblemen in den Blogs kann man <a target="_blank" href="https://neonwilderness.twoday.net/stories/cleanupyourblog/">hier</a> finden &mdash; ansonsten gerne Frage als Kommentar hinterlassen oder ein Mail senden.</p>
+    <a href="https://rawgit.com/NeonWilderness/tdhttp/master/src/story/performance.js" class="storyScript" rel="#"></a>
+  </div>
+  <script src="https://static.twoday.net/cdn/files/yepnope154-min-js.js"></script>
+  <script src="https://static.twoday.net/sys.files/js/jquery/jquery.min.js"></script>
+  <script src="https://static.twoday.net/cdn/files/gdimages-min-js.js"></script>
+  <script>
+    $('.googledrive').gdimages().init({
+      gdDomain: 'http://www.s522667522.online.de',
+      gdRootFolder: '/public',
+      gdSubFolder: 'images',
+      addClass: 'neonimg th',
+      titleContent: 'keep'
+    });
+  </script>    
+  <script src="https://static.twoday.net/cdn/files/fastclick-min-js.js"></script>
+  <script src="https://static.twoday.net/cdn/files/foundation55-min-js.js"></script>
+  <script>
+    $('[title^=data-]').foundation2day().init({ validateDataAttribs: true, initFoundation5: {} });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.min.js"></script>
+  <script src="https://static.twoday.net/cdn/files/storyscript-min-js.js"></script>
+  <script>
+    toastr.options = {closeButton: true, positionClass: 'toast-top-right', timeOut: '9000'};
+    $('.storyScript').storyScript().init();
+  </script>
+</body>
+</html>
