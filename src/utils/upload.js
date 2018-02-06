@@ -1,6 +1,8 @@
 /**
  * upload: upload/update this story (html) on twoday
  * =================================================
+ * @param {string} build Target Blogname, e.g. --build (for prod blog)
+ * @param {string} story Story Type: select | performance, e.g. --story=select
  * 
  */
 const cheerio = require('cheerio');
@@ -8,6 +10,17 @@ const fs = require('fs');
 const path = require('path');
 const request = require('request-promise');
 const argv = require('yargs').argv;
+
+const stories = {
+    'select': {
+        name:  'cleanupyourblog',
+        title: 'Korrigiert Eure Blogs! Jetzt!'
+    },
+    'performance': {
+        name:  'cleanupresults',
+        title: 'Die Blogaufräum-Heldenliste'
+    }
+}
 
 //request.debug = true; // uncomment to activate debugging
 require('dotenv-safe').load();
@@ -23,11 +36,12 @@ const req = request.defaults({
 
 const loginUrl = 'https://www.twoday.net/members/login';
 const blogUrl = `http://${argv.build ? process.env.BUILD : process.env.DEV}.twoday.net/stories/`;
+const uploadStory = (argv.story || '')==='select' ? 'select' : 'performance';
 
 /**
  * Returns a GETs secretKey to be used in a subsequent POST
  */
-let getSecretKey = function(body, response, resolveWithFullResponse){
+const getSecretKey = function(body, response, resolveWithFullResponse){
     var $ = cheerio.load(body);
     return $('[name="secretKey"]').val();
 };
@@ -35,7 +49,7 @@ let getSecretKey = function(body, response, resolveWithFullResponse){
 /**
  * Returns GET story input field values to be used in a subsequent POST
  */
-let getIncomingData = function(body, response, resolveWithFullResponse){
+const getIncomingData = function(body, response, resolveWithFullResponse){
     var $ = cheerio.load(body);
     return { 
         secretKey: $('[name="secretKey"]').val(),
@@ -61,7 +75,7 @@ let getIncomingData = function(body, response, resolveWithFullResponse){
  *      src      string html file which includes the story content
  *      selector string cheerio selector to isolate the story's html
  */
-let updateStory = function(story){
+const updateStory = function(story){
     let $ = cheerio.load(fs.readFileSync(story.src, 'utf8'), {decodeEntities: false});
     let storyContent = $(story.selector).html();
     let storyEditUrl = `${blogUrl}${story.name}/edit`;
@@ -72,7 +86,7 @@ let updateStory = function(story){
     })
     .then( function(incoming){
         console.log('Updating story:', storyEditUrl);
-        let storyTitle = incoming.content_title || story.title;
+        let storyTitle = story.title || incoming.content_title;
         return req.post({
             uri: storyEditUrl,
             form: {
@@ -126,9 +140,9 @@ req.get({
 // process story upload
 .then( function(){
     return updateStory({ 
-        name: 'cleanupyourblog',
-        title: 'Korrigiert Eure Blogs! Jetzt!',
-        src: path.resolve(process.cwd(), 'src/story/select.html'),
+        name: stories[uploadStory].name,
+        title: stories[uploadStory].title,
+        src: path.resolve(process.cwd(), `src/story/${uploadStory}.html`),
         selector: '.storyContent'
     });
 })

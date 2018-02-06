@@ -20,8 +20,8 @@
     <p class="knockout"><img class="googledrive" alt="https-ergebnisse.jpg"></p>
     <p class="dropcaps">Jede Initiative, und besonders eine zur Verbesserung dieser Blogplattform, ist sinnlos, wenn man nicht deren Wirksamkeit misst, mindestens um zu analysieren, ob der Aufwand sich gelohnt hat, oder ob man die Maßnahme vielleicht verbessern kann, oder &mdash; ganz elementar &mdash; ob überhaupt noch Interesse an einer organisierten Heilung von Mängeln besteht.</p>
     <p>Nun ist von den inaktiven Blogs (die habe ich für mich mal definiert als die Blogs, bei denen die letzten 90 Tage kein neuer Artikel hinzugekommen ist) wahrscheinlich eh nichts mehr zu erwarten, aber immerhin bleiben noch <b><span title="data-bind=text:getTotal('active')"></span> aktive Blogs</b>, deren Besitzer:Innen noch ein Interesse an der Fehler&shy;freiheit und einer minimalen Erhal&shy;tungs&shy;pflege dieser Plattform haben könnten.</p>
-    <p>Doppelt schade, wenn man nach doch angemessener Zeit feststellt, dass nur wenige Mutige das Angebot aufgegriffen haben und die große Masse bislang nicht bereit war, das wenige eigene Mögliche beizusteuern, um Twoday zumindest graduell zu verbessern (oder sagen wir besser: nicht weiter absinken zu lassen).</p>
-    <p><b>Sieben</b>. Obwohl, eigentlich sind's nur sechs, da Frau Araxe gleich zwei ihrer Blogs in der Liste verantwortet. Sechs also haben mitgemacht. Hm, tatsächlich nicht besonders ermutigend, wenn eine Lösung von <b>weniger als <span title="data-bind=text:ceilPercent()"></span></b> derjenigen genutzt wird, für die sie gemacht wurde. Daher geht mein Dank an die Sechs, die Bloghelden, die Technik-Avantgardisten, die Nicht-Aufgeber, die Anpacker und Macher, die, die nicht nur Rumnörgeln, sondern selbst einen Beitrag leisten (Bonuslob für Herrn Blödbabbler für die 100%-Abdeckung, zweites Bonuslob für Frau Araxe als einzige teilnehmende Frau ;).</p>
+    <p>Doppelt schade, wenn man nach doch angemessener Zeit feststellt, dass nur wenige Mutige das Angebot aufgegriffen haben und die bei weitem überwiegende Menge bislang nicht bereit war, das wenige eigene Mögliche beizusteuern, um Twoday zumindest graduell zu verbessern (oder sagen wir besser: nicht weiter absinken zu lassen).</p>
+    <p><b>Sieben</b>. Obwohl, eigentlich sind's nur sechs, da Frau Araxe gleich zwei ihrer Blogs in der Liste verantwortet. Sechs also haben mitgemacht. Hm, tatsächlich nicht besonders ermutigend, wenn eine Lösung von <b>weniger als <span title="data-bind=text:ceilPercent()"></span></b> derjenigen genutzt wird, für die sie gemacht wurde. Daher geht mein Dank an die Sechs, die Bloghelden, die Technik-Avantgardisten, die Nicht-Aufgeber, die Anpacker und Macher, die, die nicht nur rumnörgeln, sondern selbst einen Beitrag leisten (Bonuslob an der Stelle für Herrn Blödbabbler für die 100%-Abdeckung, zweites Bonuslob für Frau Araxe als einzige teilnehmende Frau ;).</p>
     <style>.panel .fa-heart{color:#f04124;}.primus{border:3px solid #f04124;}</style>
     <table>
       <thead>
@@ -38,7 +38,7 @@
             <ul class="pricing-table">
               <li class="bullet-item">Letzte Änderung &lt;= <span title="data-bind=text:daysAgo()"></span></li>
               <li class="bullet-item"><b><span title="data-bind=text:getTotal('active')"></span></b> Twoday Blogs</li>
-              <li class="bullet-item">davon <b><span title="data-bind=text:getRefsIssue('active')"></span></b> mit http-Problemen</li>
+              <li class="bullet-item">davon <b><span title="data-bind=text:getRefsIssue('active')"></span></b> mit http-Urls</li>
               <li class="bullet-item">und <b><span title="data-bind=text:getRootIssue('active')"></span></b> mit altem rootStat-Skin</li>
               <li class="bullet-item">bereinigt wurden: <b><span title="data-bind=text:filterBlogs('active').length"></span></b></li>
             </ul>            
@@ -47,7 +47,7 @@
             <ul class="pricing-table">
               <li class="bullet-item">Letzte Änderung &gt; <span title="data-bind=text:daysAgo()"></span></li>
               <li class="bullet-item"><b><span title="data-bind=text:getTotal('inactive')"></span></b> Twoday Blogs</li>
-              <li class="bullet-item">davon <b><span title="data-bind=text:getRefsIssue('inactive')"></span></b> mit http-Problemen</li>
+              <li class="bullet-item">davon <b><span title="data-bind=text:getRefsIssue('inactive')"></span></b> mit http-Urls</li>
               <li class="bullet-item">und <b><span title="data-bind=text:getRootIssue('inactive')"></span></b> mit altem rootStat-Skin</li>
               <li class="bullet-item">bereinigt wurden: <b><span title="data-bind=text:filterBlogs('inactive').length"></span></b></li>
             </ul>            
@@ -86,7 +86,7 @@
     </table>
     <p style="margin-top:1em" class="panel callout aligncenter"><b><i class="fa fa-heart"></i> Sie <i class="fa fa-heart"></i> wollen auch auf die Heldenliste?&emsp;<a target="_blank" href="https://neonwilderness.twoday.net/stories/cleanupyourblog/">Hier</a> startet der sichere Weg dahin.</b></p>
     <h5 style="margin-top:1.5em">Motivationshilfe für Nachzügler</h5>
-    <p>Womöglich sind sich einige Blogger:Innen noch gar nicht richtig bewusst, was der <span class="label blue">https</span>-Modus für ihr Blog bedeutet und dass die meisten ihrer Besucher dort sehr viele leere Stellen bzw. nicht funktionierende Sidebar-Elemente sehen. Ein Aufruf des eigenen Blogs mit vorangehendem <span class="code">https://</span>-Kürzel hilft beim Erkennen der Probleme. Insbesondere den folgenden Top10-Bloggern mit den meisten unwirksamen http-Urls wäre dies ans Herz zu legen:</p>
+    <p>Womöglich sind sich einige Blogger:Innen noch gar nicht recht bewusst, was der <span class="label blue">https</span>-Modus für ihr Blog bedeutet und dass die meisten ihrer Besucher dort sehr viele leere Stellen bzw. nicht funktionierende Sidebar-Elemente sehen. Ein Aufruf des eigenen Blogs mit vorangehendem <span class="code">https://</span>-Kürzel hilft beim Erkennen der Probleme. Insbesondere den folgenden Top10-Bloggern mit den meisten unwirksamen http-Urls wäre dies ans Herz zu legen:</p>
     <table style="border-collapse:collapse;border:0;margin:0 auto;">
         <thead>
           <td>Blog</td>
