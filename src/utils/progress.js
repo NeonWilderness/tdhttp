@@ -85,6 +85,7 @@ let diff = Object.keys(file1.data).reduce((all, blog, index) => {
   return all;
 }, []);
 let result = {
+  date: file1.date,
   activeBlogs,
   inactiveBlogs,
   activeRefsBlogs,

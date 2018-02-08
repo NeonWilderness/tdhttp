@@ -4,7 +4,17 @@
     $(function () {
       const daysAgo = 90; // xx days ago last new story was added: qualifies blog as active (<=xx) or inactive (>xx)
       let ViewModel = function () {
-        this.daysAgo = function () { return `${daysAgo} Tage`; }
+        this.daysAgo = function () { return `${daysAgo} Tage`; };
+        this.formatDate = function() {
+          let date = json.date || Date.now();
+          return new Date(date).toLocaleString("de-DE", {
+            day: "2-digit", 
+            month: "2-digit", 
+            year: "numeric", 
+            hour: "2-digit", 
+            minute: "2-digit"
+          });
+        }; 
         this.getTotal = function (group) {
           return json[`${group}Blogs`];
         };
@@ -18,7 +28,7 @@
           return json.blogs.filter( function(blog){
             return ((group === 'active' && blog.daysLastChange <= daysAgo) || 
                     (group === 'inactive' && blog.daysLastChange > daysAgo));
-          })
+          });
         };
         this.updatePercent = function (type, group, count) {
           let total = json[`${group}${type}Blogs`];
@@ -54,7 +64,7 @@
           return this.updatePercent('Root', group, this.getRootCount(group));
         };
         this.listOfGoodGuys = function() {
-          return blogs = json.blogs.map( function(blog){
+          return json.blogs.map( function(blog){
             return {
               blog: blog.blog,
               refs: ((blog.refs+blog.change)===0 ? '--- (0)' : (blog.change<0 ? 'ja' : 'nein')),
