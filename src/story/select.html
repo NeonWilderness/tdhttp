@@ -68,10 +68,23 @@
     <p>Im Prinzip ist diese Umstellung sehr einfach: Sie müssen die unwirksamen http-Referenzen identifizieren und im Blog (= Ihren Twoday Skins oder Beiträgen) finden, dann prüfen, ob der Anbieter auch https bereitstellt, um anschließend das <span class="label red">http</span>-Kürzel auf <span class="label blue">https</span> zu ändern. Im folgenden beschreibe ich, wie das am effektivsten geht.</p>
     <h5 class="top20">1. Unwirksame http-Referenzen identifizieren</h5>
     <p>Zur Unterstützung habe ich ein kleines Tool entwickelt, das für die zuletzt geänderten 750 Twoday-Blogs (das sind die ersten fünfzig Seiten der Twoday-Blogroll) alle unwirksamen http-Aufrufe findet und auflistet.</p>
-    <cite>Das Tool durchsucht dabei nicht Ihren gesamten Blog, sondern nur die aktuelle Homepage und die derzeit dort angezeigten Beiträge. Die Analyseergebnisse werden nicht unmittelbar (also realtime) ermittelt, sondern reflektieren die Resultate des letzten Analyselaufs vom <span title="data-bind=text:lastUpdate"></span>.</cite>
+    <cite>Das Tool durchsucht dabei nicht Ihren gesamten Blog, sondern nur die aktuelle Homepage und die derzeit dort angezeigten Beiträge. <b style="color:#f04124">Die Analyseergebnisse werden nicht realtime ermittelt</b>, sondern reflektieren die Resultate <u>des letzten Analyselaufs</u> vom <span title="data-bind=text:lastUpdate()"></span>.<br><p class="aligncenter bottom0"><a href="#" class="button secondary tiny radius" title="data-bind=click:toggleRunDates">Zeige Analyseläufe bisher&emsp;<i class="fa" title="data-bind=css:{'fa-chevron-right':!visibleRunDates(),'fa-chevron-down':visibleRunDates()}"></i></a></p><table style="margin:0 auto;margin-bottom:1em;" title="data-bind=visible:visibleRunDates">
+      <thead>
+        <tr>
+          <th>Lauf</th>
+          <th>Datum</th>
+        </tr>
+      </thead>
+      <tbody title="data-bind=foreach:runDates()">
+        <tr>
+          <td>#<span title="data-bind=text:$index"></span></td>
+          <td title="data-bind=text:$data"></td>
+        </tr>
+      </tbody>
+    </table><p>Wenn Sie Änderungen in Ihrem Blog vornehmen, werden diese erst <u>nach dem nächsten Analyselauf</u> hier angezeigt!</p></cite>
     <p>Bitte wählen Sie in der nachstehenden Auswahlbox Ihren Blog aus, um unwirksame http-Aufrufe anzuzeigen, die in Ihrer Homepage verwendet werden:</p>
     <fieldset>
-      <legend>http-Referenzen von <span title="data-bind=text:blogCount"></span> Twoday-Blogs (Stand: <span title="data-bind=text:lastUpdate"></span>)</legend>
+      <legend>http-Referenzen von <span title="data-bind=text:blogCount"></span> Twoday-Blogs (Stand: <span title="data-bind=text:lastUpdate()"></span>)</legend>
       <div class="row">
         <div class="small-2 columns"><a href="#" title="data-bind=attr:{href:'https:'+optBlog()+'.twoday.net/'}"><img class="userIcon th" title="data-bind=event:{error:defaultIcon}, attr:{src:blogIcon}" src="https://static.twoday.net/icon.gif" width="58" alt="Icon"></a></div>
         <div class="small-10 columns">
@@ -187,17 +200,17 @@
             </ol>
           </cite>
           </div>
-        </div>
-        <div class="row"><div class="panel" style="margin:0 20px">Führen Sie diese zwei Schritte nacheinander <b>für jedes Ihrer Blogs</b> durch (respektive die Blogs, auf die Sie <u>Administrator&shy;zugriff</u> besitzen).</div></div>
-      </fieldset>
-      <h5 class="top20">6. Letzte <s>Worte</s> Tipps</h5>
-      <ol id="lasttipps">
-        <li>Verwenden Sie keine Ressourcen mehr, die <u>nur</u> über <span class="label red">http</span> erreichbar sind. Einzige Ausnahme sind Bilder, die (derzeit noch) im sicheren Modus angezeigt werden, auch wenn sie nur eine http-Url haben. Aber: Wenn der Bildspeicherplatz (wie z.B. Flickr, Cloudinary) ein https-Protokoll anbietet, nutzen Sie dieses und binden Bilder über https ein!</li>
-        <li>Verwenden Sie keine Flash-Ressourcen mehr (SWF-Dateien). Flash ist tot, böse und steht mit dem Teufel im Bunde. Es hat Gründe, weshalb Chrome, Firefox u.a. die Ausführung von Flash im Browser mittlerweile standardmäßig gesperrt haben. Wirklich! Kein Flash mehr!</li>
-        <li>Wenn Sie Videos noch über <span class="code">embed</span> einbinden wollen, verwenden Sie nur noch https-Adressen. Nutzen Sie für Videos und andere Dienste von derzeit 20 Plattformen alternativ das bewährte <a target="_blank" href="https://neonwilderness.twoday.net/stories/videoload2">Videoload-Tool</a>, welches immer die korrekten https-Adressen generiert.</li>
-      </ol>
-      <p class="bottom0">Ich werde die Analysedaten über die unwirksamen http-Adressen in unregelmäßigen Abständen aktualisieren. Sie können dann anhand der neuen Daten kontrollieren, ob Sie bereits alle Probleme erfolgreich bereinigt haben.</p>
-      <p class="aligncenter" style="font-size:.85em;color:#888">Dieses Tool ist Open Source — Lizenz <a target="_blank" href="https://opensource.org/licenses/MIT">MIT</a> — Code <a target="_blank" href="https://github.com/NeonWilderness/tdhttp">Github</a></p>
+      </div>
+      <div class="row"><div class="panel" style="margin:0 20px">Führen Sie diese zwei Schritte nacheinander <b>für jedes Ihrer Blogs</b> durch (respektive die Blogs, auf die Sie <u>Administrator&shy;zugriff</u> besitzen).</div></div>
+    </fieldset>
+    <h5 class="top20">6. Letzte <s>Worte</s> Tipps</h5>
+    <ol id="lasttipps">
+      <li>Verwenden Sie keine Ressourcen mehr, die <u>nur</u> über <span class="label red">http</span> erreichbar sind. Einzige Ausnahme sind Bilder, die (derzeit noch) im sicheren Modus angezeigt werden, auch wenn sie nur eine http-Url haben. Aber: Wenn der Bildspeicherplatz (wie z.B. Flickr, Cloudinary) ein https-Protokoll anbietet, nutzen Sie dieses und binden Bilder über https ein!</li>
+      <li>Verwenden Sie keine Flash-Ressourcen mehr (SWF-Dateien). Flash ist tot, böse und steht mit dem Teufel im Bunde. Es hat Gründe, weshalb Chrome, Firefox u.a. die Ausführung von Flash im Browser mittlerweile standardmäßig gesperrt haben. Wirklich! Kein Flash mehr!</li>
+      <li>Wenn Sie Videos noch über <span class="code">embed</span> einbinden wollen, verwenden Sie nur noch https-Adressen. Nutzen Sie für Videos und andere Dienste von derzeit 20 Plattformen alternativ das bewährte <a target="_blank" href="https://neonwilderness.twoday.net/stories/videoload2">Videoload-Tool</a>, welches immer die korrekten https-Adressen generiert.</li>
+    </ol>
+    <p class="bottom0">Ich werde die Analysedaten über die unwirksamen http-Adressen in unregelmäßigen Abständen aktualisieren. Sie können dann anhand der neuen Daten kontrollieren, ob Sie bereits alle Probleme erfolgreich bereinigt haben.</p>
+    <p class="aligncenter" style="font-size:.85em;color:#888">Dieses Tool ist Open Source — Lizenz <a target="_blank" href="https://opensource.org/licenses/MIT">MIT</a> — Code <a target="_blank" href="https://github.com/NeonWilderness/tdhttp">Github</a></p>
     <a href="https://rawgit.com/NeonWilderness/tdhttp/master/src/story/select.js" class="storyScript" rel="#"></a>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>

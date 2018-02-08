@@ -17,6 +17,7 @@ interface RefData {
 }
 interface RefFile {
   date: string;       // CreateDate or LastUpdate
+  runs: string[];     // Array of ISODate strings from all script runs
   blogs: Number;      // Number of blogs (=keys in data)
   data: {
     [blogname: string]: RefData: 
@@ -106,6 +107,14 @@ class Blogs {
     }
   }
 
+  getAllRunDates(currentRun) {
+    return fs.readdirSync(path.resolve(process.cwd(), 'archive')).reduce( (all, file, index) => {
+      let json = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), 'archive', file)));
+      all.push(json.date);
+      return all;
+    }, [currentRun]).sort();
+  }
+
   logHttpRefs() {
     let blogs = Object.keys(this.httpRefs);
     blogs.sort();
@@ -123,6 +132,7 @@ class Blogs {
     this.lastUpdate = new Date().toISOString();
     fs.writeFileSync(refFile, JSON.stringify({
       date: this.lastUpdate,
+      runs: this.getAllRunDates(this.lastUpdate),
       blogs: blogs.length, 
       data: this.httpRefs
     }), 'utf8');

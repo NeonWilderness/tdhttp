@@ -1,23 +1,36 @@
 (function($){
 
   // json = { date: "...", blogs: nnn, refs: {...} }
-  $.getJSON('https://rawgit.com/NeonWilderness/tdhttp/master/Twoday_HTTP_Refs.json', function(json){
-    $(function() {
+    $.getJSON('https://rawgit.com/NeonWilderness/tdhttp/master/Twoday_HTTP_Refs.json', function(json){
+      $(function() {
         let $copy2clipboard = $('#copy2clipboard');
         let ViewModel = function() {
           this.blogs = ko.observableArray(Object.keys(json.data).sort());
           this.blogCount = ko.pureComputed( function() {
             return json.blogs;
           }); 
-          this.lastUpdate = ko.pureComputed( function() {
-            return new Date(json.date).toLocaleString("de-DE", {
+          this.formatDate = function(isodate) {
+            return new Date(isodate).toLocaleString("de-DE", {
               day: "2-digit", 
               month: "2-digit", 
               year: "numeric", 
               hour: "2-digit", 
               minute: "2-digit"
             });
-          }); 
+          }; 
+          this.lastUpdate = function() {
+            return this.formatDate(json.date);
+          };
+          this.visibleRunDates = ko.observable(false);
+          this.toggleRunDates = function() {
+            this.visibleRunDates(!this.visibleRunDates());
+          }; 
+          this.runDates = ko.pureComputed( function() {
+            let self = this;
+            return json.runs.map( function(isodate) {
+              return self.formatDate(isodate);
+            });
+          }, this); 
           this.optBlog = ko.observable(this.blogs[0]);
           this.layoutName = ko.observable('');
           this.optBlog.subscribe( function(){
