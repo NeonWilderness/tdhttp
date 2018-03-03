@@ -19,6 +19,7 @@ class Stats {
     this.initCategories('j', 360, 18, 2);
     this.catKeys = Object.keys(this.categories);
     this.counter = this.initCounter();
+    this.total = 0;
     this.activeBlogs = [];
     this.activeAuthors = {};
   }
@@ -43,7 +44,8 @@ class Stats {
       let cat = this.catKeys[i];
       if (daysSinceLastUpdate <= this.categories[cat]) {
         this.counter[cat]++;
-        if (cat === '1m') {
+        this.total++;
+        if (daysSinceLastUpdate < 90) {
           let author = $el.find('td').eq(2).text();
           this.activeBlogs.push({
             author,
@@ -53,8 +55,8 @@ class Stats {
           });
           if (author in this.activeAuthors)
             this.activeAuthors[author]++;
-          else  
-            this.activeAuthors[author] = 1;  
+          else
+            this.activeAuthors[author] = 1;
         }
         break;
       }
@@ -64,10 +66,16 @@ class Stats {
   exportAsJSON() {
     fs.writeFileSync(path.resolve(__dirname, 'antville.json'),
       JSON.stringify({
+        date: new Date().toISOString(),
         categories: this.categories,
         counter: this.counter,
+        total: this.total,
         details: this.details,
-        active: { blogs: this.activeBlogs.length, authors: Object.keys(this.activeAuthors).length }
+        active: { 
+          blogs: this.activeBlogs.length,
+          list: this.activeBlogs, 
+          authors: Object.keys(this.activeAuthors).length
+        }
       }, null, 2)
     );
   }

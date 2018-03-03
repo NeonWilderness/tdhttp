@@ -4,7 +4,8 @@
   "description": "Finding outdated http references on Twoday",
   "main": "index.js",
   "scripts": {
-    "build": "node ./src/index --from=0 --to=49 --delay=50 --rebuild",
+    "antville": "node ./src/antville",
+    "build": "node ./src/index --from=0 --to=49 --delay=100 --rebuild",
     "progress": "node ./src/utils/progress",
     "progress1": "node ./src/utils/progress --second=1",
     "stats": "node ./src/utils/domains",
