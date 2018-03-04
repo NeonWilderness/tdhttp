@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Results of actual change</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://static.twoday.net/cdn/files/foundation55-min-css.css">
+  <link rel="stylesheet" href="https://static.twoday.net/cdn/files/awesomeeditorcore-min-css.css">
+  <link rel="stylesheet" href="https://static.twoday.net/cdn/files/rainy-min-css.css">
+  <style>
+    body { padding: 20px 0; }
+    .container { width:750px; margin: 0 auto; padding: 15px; }
+  </style>
+</head>
+<body>
+  <div class="container storyContent">
+    <p class="knockout"><img class="googledrive" alt="https-ergebnisse.jpg"></p>
+    <p class="dropcaps">Seit Twoday das Ende seiner Existenz terminlich festgelegt hat, setzen einige inbrünstige Hoffnung auf ein Weiterleben bei <a target="_blank" href="https://antville.org/">Antville</a>. Das wäre bequem, weil frei von Anstrengung. Es wäre einfach, weil man nichts neu erlernen muss. Aber ist "Weiter so" auch die richtige, nachhaltige, zukunftssichere Lösung? Es war <a target="_blank" href="https://info.twoday.net/stories/liebe-blogger-und-bloggerinnen-die-twoday-aera-geht-zu-ende/#1022646283">Zorras Kommentar</a>, der mich wirklich nachdenklich machte.</p>
+    <canvas id="barTwodayAntville"></canvas>
+    <a href="./twodayantville.js" class="storyScript" rel="#"></a>
+    <!--<a href="https://rawgit.com/NeonWilderness/tdhttp/master/src/story/twodayantville.js" class="storyScript" rel="#"></a>-->
+  </div>
+  <script src="https://static.twoday.net/cdn/files/yepnope154-min-js.js"></script>
+  <script src="https://static.twoday.net/sys.files/js/jquery/jquery.min.js"></script>
+  <script src="https://static.twoday.net/cdn/files/gdimages-min-js.js"></script>
+  <script>
+    $('.googledrive').gdimages().init({
+      gdDomain: 'http://www.s522667522.online.de',
+      gdRootFolder: '/public',
+      gdSubFolder: 'images',
+      addClass: 'neonimg th',
+      titleContent: 'keep'
+    });
+  </script>    
+  <script src="https://static.twoday.net/cdn/files/fastclick-min-js.js"></script>
+  <script src="https://static.twoday.net/cdn/files/foundation55-min-js.js"></script>
+  <script>
+    $('[title^=data-]').foundation2day().init({ validateDataAttribs: true, initFoundation5: {} });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.min.js"></script>
+  <script src="https://static.twoday.net/cdn/files/storyscript-min-js.js"></script>
+  <script>
+    toastr.options = {closeButton: true, positionClass: 'toast-top-right', timeOut: '9000'};
+    $('.storyScript').storyScript().init();
+  </script>
+</body>
+</html>
