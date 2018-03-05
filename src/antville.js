@@ -75,11 +75,12 @@ class Stats {
 
   countTwoday(fromJson) {
     this.twoday.date = fromJson.date;
-    this.twoday.total = fromJson.blogs;
     Object.keys(fromJson.data).forEach((alias) => {
       for (let i = 0, len = this.catKeys.length; i < len; i++) {
-        let cat = this.catKeys[i];
         let daysSinceLastUpdate = fromJson.data[alias].daysLastChange;
+        if (daysSinceLastUpdate < 0) break;
+        let cat = this.catKeys[i];
+        this.twoday.total++;
         if (daysSinceLastUpdate <= this.categories[cat]) {
           this.twoday.counter[cat]++;
           if (daysSinceLastUpdate < 90) {
