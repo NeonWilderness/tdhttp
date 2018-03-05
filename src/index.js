@@ -14,7 +14,7 @@ const Blogs = require('./blogs');
 const argv = require('yargs').argv;
 
 const from = argv.from || 0;
-const to = Math.min(argv.to || 4, 49);
+const to = Math.min(argv.to || 4, 102);
 const delay = Math.max(argv.delay || 20, 20);
 const rebuild = !!argv.rebuild;
 if (from>to) throw new Error('from-Page must be less of equal to to-Page!');

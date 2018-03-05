@@ -31,36 +31,36 @@
     "18j": 6480
   },
   "antville": {
-    "date": "2018-03-04T16:22:48.705Z",
+    "date": "2018-03-05T17:43:45.788Z",
     "counter": {
-      "1m": 47,
-      "2m": 24,
+      "1m": 49,
+      "2m": 22,
       "3m": 10,
       "4m": 7,
-      "5m": 17,
+      "5m": 16,
       "6m": 5,
       "7m": 8,
-      "8m": 3,
-      "9m": 4,
-      "10m": 11,
+      "8m": 4,
+      "9m": 3,
+      "10m": 12,
       "11m": 4,
       "12m": 8,
       "2j": 53,
-      "3j": 53,
-      "4j": 72,
+      "3j": 52,
+      "4j": 73,
       "5j": 57,
       "6j": 54,
       "7j": 70,
       "8j": 143,
       "9j": 50,
       "10j": 40,
-      "11j": 20,
-      "12j": 25,
+      "11j": 19,
+      "12j": 26,
       "13j": 44,
-      "14j": 50,
-      "15j": 88,
-      "16j": 432,
-      "17j": 140,
+      "14j": 49,
+      "15j": 89,
+      "16j": 429,
+      "17j": 143,
       "18j": 0
     },
     "total": 1539,
@@ -80,7 +80,7 @@
       {
         "author": "ichichich",
         "blog": "https://vari.antville.org/",
-        "date": "2018-03-04 07:37",
+        "date": "2018-03-04 21:04",
         "page": 1
       },
       {
@@ -116,7 +116,7 @@
       {
         "author": "don papp",
         "blog": "https://mks.antville.org/",
-        "date": "2018-03-04 13:05",
+        "date": "2018-03-05 17:08",
         "page": 4
       },
       {
@@ -194,7 +194,7 @@
       {
         "author": "codeislaw",
         "blog": "https://codeislaw.antville.org/",
-        "date": "2018-03-04 15:12",
+        "date": "2018-03-05 08:55",
         "page": 13
       },
       {
@@ -272,7 +272,7 @@
       {
         "author": "Mr.Yoda",
         "blog": "https://gi.antville.org/",
-        "date": "2018-01-28 13:33",
+        "date": "2018-03-05 15:15",
         "page": 24
       },
       {
@@ -290,7 +290,7 @@
       {
         "author": "cellophan",
         "blog": "https://cellophan.antville.org/",
-        "date": "2018-02-02 19:08",
+        "date": "2018-03-04 17:29",
         "page": 26
       },
       {
@@ -374,7 +374,7 @@
       {
         "author": "herr rick",
         "blog": "https://mdk.antville.org/",
-        "date": "2018-02-28 09:54",
+        "date": "2018-03-05 18:40",
         "page": 36
       },
       {
@@ -386,7 +386,7 @@
       {
         "author": "Lakritze",
         "blog": "https://normalverteilt.antville.org/",
-        "date": "2018-03-04 09:00",
+        "date": "2018-03-05 14:20",
         "page": 38
       },
       {
@@ -422,7 +422,7 @@
       {
         "author": "sakana",
         "blog": "https://sakana.antville.org/",
-        "date": "2018-03-03 17:09",
+        "date": "2018-03-04 23:26",
         "page": 47
       },
       {
@@ -452,13 +452,13 @@
       {
         "author": "Mr.Yoda",
         "blog": "https://heli.antville.org/",
-        "date": "2018-02-21 19:45",
+        "date": "2018-03-05 09:35",
         "page": 51
       },
       {
         "author": "kinomu",
         "blog": "https://st.antville.org/",
-        "date": "2018-01-28 13:37",
+        "date": "2018-03-05 11:54",
         "page": 51
       },
       {
@@ -524,7 +524,7 @@
       {
         "author": "kevathens",
         "blog": "https://videos.antville.org/",
-        "date": "2018-03-04 13:28",
+        "date": "2018-03-05 15:17",
         "page": 57
       },
       {
@@ -623,51 +623,83 @@
     }
   },
   "twoday": {
-    "date": "2018-03-03T17:15:10.448Z",
+    "date": "2018-03-05T17:39:40.816Z",
     "counter": {
-      "1m": 151,
+      "1m": 130,
       "2m": 37,
-      "3m": 33,
-      "4m": 29,
-      "5m": 25,
-      "6m": 17,
-      "7m": 20,
-      "8m": 17,
-      "9m": 19,
+      "3m": 29,
+      "4m": 32,
+      "5m": 23,
+      "6m": 20,
+      "7m": 19,
+      "8m": 15,
+      "9m": 20,
       "10m": 15,
       "11m": 19,
-      "12m": 20,
-      "2j": 114,
-      "3j": 26,
-      "4j": 22,
-      "5j": 37,
-      "6j": 24,
-      "7j": 22,
-      "8j": 23,
-      "9j": 29,
-      "10j": 20,
-      "11j": 10,
-      "12j": 12,
-      "13j": 4,
-      "14j": 0,
+      "12m": 21,
+      "2j": 212,
+      "3j": 254,
+      "4j": 121,
+      "5j": 83,
+      "6j": 69,
+      "7j": 62,
+      "8j": 69,
+      "9j": 60,
+      "10j": 55,
+      "11j": 49,
+      "12j": 33,
+      "13j": 14,
+      "14j": 4,
       "15j": 0,
       "16j": 1,
       "17j": 0,
       "18j": 0
     },
-    "total": 750,
+    "total": 1466,
     "activeBlogs": [
       {
-        "author": "moac03",
-        "blog": "https://moac03.twoday.net/"
+        "author": "quilt",
+        "blog": "https://quilt.twoday.net/"
+      },
+      {
+        "author": "netbitch1",
+        "blog": "https://netbitch1.twoday.net/"
+      },
+      {
+        "author": "stellinger",
+        "blog": "https://stellinger.twoday.net/"
+      },
+      {
+        "author": "assotsiationsklimbim",
+        "blog": "https://assotsiationsklimbim.twoday.net/"
+      },
+      {
+        "author": "ogvkorntal",
+        "blog": "https://ogvkorntal.twoday.net/"
+      },
+      {
+        "author": "mmm",
+        "blog": "https://mmm.twoday.net/"
+      },
+      {
+        "author": "parksuender",
+        "blog": "https://parksuender.twoday.net/"
+      },
+      {
+        "author": "funpkn",
+        "blog": "https://funpkn.twoday.net/"
       },
       {
         "author": "artificial",
         "blog": "https://artificial.twoday.net/"
       },
       {
-        "author": "acdo03",
-        "blog": "https://acdo03.twoday.net/"
+        "author": "stadtbuechereipeine",
+        "blog": "https://stadtbuechereipeine.twoday.net/"
+      },
+      {
+        "author": "spiegelei",
+        "blog": "https://spiegelei.twoday.net/"
       },
       {
         "author": "abendglueck",
@@ -678,64 +710,24 @@
         "blog": "https://nberlin.twoday.net/"
       },
       {
-        "author": "albannikolaiherbst",
-        "blog": "https://albannikolaiherbst.twoday.net/"
+        "author": "pantholzwei",
+        "blog": "https://pantholzwei.twoday.net/"
       },
       {
-        "author": "neonwilderness",
-        "blog": "https://neonwilderness.twoday.net/"
-      },
-      {
-        "author": "nimmermehr",
-        "blog": "https://nimmermehr.twoday.net/"
-      },
-      {
-        "author": "daiseegell",
-        "blog": "https://daiseegell.twoday.net/"
-      },
-      {
-        "author": "mastsanity",
-        "blog": "https://mastsanity.twoday.net/"
-      },
-      {
-        "author": "tour",
-        "blog": "https://tour.twoday.net/"
+        "author": "bonanzamargot",
+        "blog": "https://bonanzamargot.twoday.net/"
       },
       {
         "author": "spetzerfehn",
         "blog": "https://spetzerfehn.twoday.net/"
       },
       {
-        "author": "shhhhh",
-        "blog": "https://shhhhh.twoday.net/"
-      },
-      {
-        "author": "froggblog",
-        "blog": "https://froggblog.twoday.net/"
-      },
-      {
-        "author": "adenauerhut",
-        "blog": "https://adenauerhut.twoday.net/"
-      },
-      {
-        "author": "davidramirer",
-        "blog": "https://davidramirer.twoday.net/"
-      },
-      {
-        "author": "weltentanz",
-        "blog": "https://weltentanz.twoday.net/"
-      },
-      {
         "author": "zebu",
         "blog": "https://zebu.twoday.net/"
       },
       {
-        "author": "bloedbabbler",
-        "blog": "https://bloedbabbler.twoday.net/"
-      },
-      {
-        "author": "violine",
-        "blog": "https://violine.twoday.net/"
+        "author": "seitenschneider",
+        "blog": "https://seitenschneider.twoday.net/"
       },
       {
         "author": "wolfgangschmid",
@@ -746,24 +738,112 @@
         "blog": "https://hypnosestuttgart.twoday.net/"
       },
       {
-        "author": "gaga",
-        "blog": "https://gaga.twoday.net/"
-      },
-      {
-        "author": "fundstellen",
-        "blog": "https://fundstellen.twoday.net/"
-      },
-      {
-        "author": "felixjetter",
-        "blog": "https://felixjetter.twoday.net/"
+        "author": "gebattmer",
+        "blog": "https://gebattmer.twoday.net/"
       },
       {
         "author": "warteschlange",
         "blog": "https://warteschlange.twoday.net/"
       },
       {
-        "author": "gebattmer",
-        "blog": "https://gebattmer.twoday.net/"
+        "author": "mastsanity",
+        "blog": "https://mastsanity.twoday.net/"
+      },
+      {
+        "author": "gaga",
+        "blog": "https://gaga.twoday.net/"
+      },
+      {
+        "author": "derwahredicki",
+        "blog": "https://derwahredicki.twoday.net/"
+      },
+      {
+        "author": "froggblog",
+        "blog": "https://froggblog.twoday.net/"
+      },
+      {
+        "author": "sve2001",
+        "blog": "https://sve2001.twoday.net/"
+      },
+      {
+        "author": "moac03",
+        "blog": "https://moac03.twoday.net/"
+      },
+      {
+        "author": "acdo03",
+        "blog": "https://acdo03.twoday.net/"
+      },
+      {
+        "author": "nimmermehr",
+        "blog": "https://nimmermehr.twoday.net/"
+      },
+      {
+        "author": "albannikolaiherbst",
+        "blog": "https://albannikolaiherbst.twoday.net/"
+      },
+      {
+        "author": "nachdenkliche",
+        "blog": "https://nachdenkliche.twoday.net/"
+      },
+      {
+        "author": "ulmgasse",
+        "blog": "https://ulmgasse.twoday.net/"
+      },
+      {
+        "author": "tour",
+        "blog": "https://tour.twoday.net/"
+      },
+      {
+        "author": "felixjetter",
+        "blog": "https://felixjetter.twoday.net/"
+      },
+      {
+        "author": "weltentanz",
+        "blog": "https://weltentanz.twoday.net/"
+      },
+      {
+        "author": "friedensplenum",
+        "blog": "https://friedensplenum.twoday.net/"
+      },
+      {
+        "author": "schreibman",
+        "blog": "https://schreibman.twoday.net/"
+      },
+      {
+        "author": "writershome",
+        "blog": "https://writershome.twoday.net/"
+      },
+      {
+        "author": "sachmed4",
+        "blog": "https://sachmed4.twoday.net/"
+      },
+      {
+        "author": "neonwilderness",
+        "blog": "https://neonwilderness.twoday.net/"
+      },
+      {
+        "author": "daiseegell",
+        "blog": "https://daiseegell.twoday.net/"
+      },
+      {
+        "author": "shhhhh",
+        "blog": "https://shhhhh.twoday.net/"
+      },
+      {
+        "author": "adenauerhut",
+        "blog": "https://adenauerhut.twoday.net/"
+      },
+      {
+        "author": "davidramirer",
+        "blog": "https://davidramirer.twoday.net/"
+      },
+      {
+        "author": "bloedbabbler",
+        "blog": "https://bloedbabbler.twoday.net/"
+      },
+      {
+        "author": "fundstellen",
+        "blog": "https://fundstellen.twoday.net/"
       },
       {
         "author": "rossbolla",
@@ -774,10 +854,6 @@
         "blog": "https://treibgut.twoday.net/"
       },
       {
-        "author": "mmm",
-        "blog": "https://mmm.twoday.net/"
-      },
-      {
         "author": "oraclesyndicate",
         "blog": "https://oraclesyndicate.twoday.net/"
       },
@@ -786,16 +862,8 @@
         "blog": "https://schafferer08und09.twoday.net/"
       },
       {
-        "author": "assotsiationsklimbim",
-        "blog": "https://assotsiationsklimbim.twoday.net/"
-      },
-      {
         "author": "halbefrau",
         "blog": "https://halbefrau.twoday.net/"
-      },
-      {
-        "author": "ulmgasse",
-        "blog": "https://ulmgasse.twoday.net/"
       },
       {
         "author": "lebensmensch",
@@ -806,20 +874,12 @@
         "blog": "https://blackmage.twoday.net/"
       },
       {
-        "author": "netbitch1",
-        "blog": "https://netbitch1.twoday.net/"
-      },
-      {
         "author": "rosengarten",
         "blog": "https://rosengarten.twoday.net/"
       },
       {
         "author": "rudolf",
         "blog": "https://rudolf.twoday.net/"
-      },
-      {
-        "author": "spiegelei",
-        "blog": "https://spiegelei.twoday.net/"
       },
       {
         "author": "hannesgrassegger",
@@ -838,16 +898,8 @@
         "blog": "https://schlafmuetze.twoday.net/"
       },
       {
-        "author": "parksuender",
-        "blog": "https://parksuender.twoday.net/"
-      },
-      {
         "author": "labas",
         "blog": "https://labas.twoday.net/"
-      },
-      {
-        "author": "schreibman",
-        "blog": "https://schreibman.twoday.net/"
       },
       {
         "author": "gamile",
@@ -866,10 +918,6 @@
         "blog": "https://strickmamselle.twoday.net/"
       },
       {
-        "author": "bonanzamargot",
-        "blog": "https://bonanzamargot.twoday.net/"
-      },
-      {
         "author": "uwewoitzig",
         "blog": "https://uwewoitzig.twoday.net/"
       },
@@ -882,20 +930,12 @@
         "blog": "https://mondfeldammain.twoday.net/"
       },
       {
-        "author": "pantholzwei",
-        "blog": "https://pantholzwei.twoday.net/"
-      },
-      {
         "author": "foerdermittel",
         "blog": "https://foerdermittel.twoday.net/"
       },
       {
         "author": "tyralossetradelist",
         "blog": "https://tyralossetradelist.twoday.net/"
-      },
-      {
-        "author": "info",
-        "blog": "https://info.twoday.net/"
       },
       {
         "author": "lamamma",
@@ -906,20 +946,8 @@
         "blog": "https://boomerang.twoday.net/"
       },
       {
-        "author": "sve2001",
-        "blog": "https://sve2001.twoday.net/"
-      },
-      {
-        "author": "funpkn",
-        "blog": "https://funpkn.twoday.net/"
-      },
-      {
         "author": "herrmannehrlich",
         "blog": "https://herrmannehrlich.twoday.net/"
-      },
-      {
-        "author": "oskar",
-        "blog": "https://oskar.twoday.net/"
       },
       {
         "author": "santosstubbec",
@@ -982,20 +1010,12 @@
         "blog": "https://siebensachen.twoday.net/"
       },
       {
-        "author": "writershome",
-        "blog": "https://writershome.twoday.net/"
-      },
-      {
         "author": "winterschlaf",
         "blog": "https://winterschlaf.twoday.net/"
       },
       {
         "author": "taintedtalents",
         "blog": "https://taintedtalents.twoday.net/"
-      },
-      {
-        "author": "pixelbauer",
-        "blog": "https://pixelbauer.twoday.net/"
       },
       {
         "author": "daenel",
@@ -1074,14 +1094,6 @@
         "blog": "https://meinebescheidenemeinung.twoday.net/"
       },
       {
-        "author": "spirits",
-        "blog": "https://spirits.twoday.net/"
-      },
-      {
-        "author": "taucherin",
-        "blog": "https://taucherin.twoday.net/"
-      },
-      {
         "author": "moonblog",
         "blog": "https://moonblog.twoday.net/"
       },
@@ -1102,10 +1114,6 @@
         "blog": "https://motorradreisen.twoday.net/"
       },
       {
-        "author": "ogvkorntal",
-        "blog": "https://ogvkorntal.twoday.net/"
-      },
-      {
         "author": "baokki",
         "blog": "https://baokki.twoday.net/"
       },
@@ -1114,16 +1122,8 @@
         "blog": "https://b2bsalesblog.twoday.net/"
       },
       {
-        "author": "derwahredicki",
-        "blog": "https://derwahredicki.twoday.net/"
-      },
-      {
         "author": "peterfitzke",
         "blog": "https://peterfitzke.twoday.net/"
-      },
-      {
-        "author": "oslip",
-        "blog": "https://oslip.twoday.net/"
       },
       {
         "author": "agente",
@@ -1148,10 +1148,6 @@
       {
         "author": "parallalie",
         "blog": "https://parallalie.twoday.net/"
-      },
-      {
-        "author": "altefrau",
-        "blog": "https://altefrau.twoday.net/"
       },
       {
         "author": "herrtwiggs",
@@ -1212,10 +1208,6 @@
       {
         "author": "bornheimer",
         "blog": "https://bornheimer.twoday.net/"
-      },
-      {
-        "author": "sachmed4",
-        "blog": "https://sachmed4.twoday.net/"
       },
       {
         "author": "jhk",
@@ -1310,10 +1302,6 @@
         "blog": "https://sysout.twoday.net/"
       },
       {
-        "author": "rustyyears",
-        "blog": "https://rustyyears.twoday.net/"
-      },
-      {
         "author": "penforce",
         "blog": "https://penforce.twoday.net/"
       },
@@ -1358,10 +1346,6 @@
         "blog": "https://pummelfee.twoday.net/"
       },
       {
-        "author": "lachmaus",
-        "blog": "https://lachmaus.twoday.net/"
-      },
-      {
         "author": "mallory",
         "blog": "https://mallory.twoday.net/"
       },
@@ -1398,20 +1382,12 @@
         "blog": "https://luftreich.twoday.net/"
       },
       {
-        "author": "stadtbuechereipeine",
-        "blog": "https://stadtbuechereipeine.twoday.net/"
-      },
-      {
         "author": "notiertes",
         "blog": "https://notiertes.twoday.net/"
       },
       {
         "author": "castingveranstaltungen",
         "blog": "https://castingveranstaltungen.twoday.net/"
-      },
-      {
-        "author": "ferienwohnungberger",
-        "blog": "https://ferienwohnungberger.twoday.net/"
       },
       {
         "author": "lucia",
@@ -1438,10 +1414,6 @@
         "blog": "https://christianholzer.twoday.net/"
       },
       {
-        "author": "friedensplenum",
-        "blog": "https://friedensplenum.twoday.net/"
-      },
-      {
         "author": "ic",
         "blog": "https://ic.twoday.net/"
       },
@@ -1452,159 +1424,82 @@
       {
         "author": "auffahrtsallee",
         "blog": "https://auffahrtsallee.twoday.net/"
-      },
-      {
-        "author": "4therecords",
-        "blog": "https://4therecords.twoday.net/"
-      },
-      {
-        "author": "angstblog",
-        "blog": "https://angstblog.twoday.net/"
-      },
-      {
-        "author": "museum",
-        "blog": "https://museum.twoday.net/"
-      },
-      {
-        "author": "chadle",
-        "blog": "https://chadle.twoday.net/"
-      },
-      {
-        "author": "moseron",
-        "blog": "https://moseron.twoday.net/"
-      },
-      {
-        "author": "haklaren",
-        "blog": "https://haklaren.twoday.net/"
-      },
-      {
-        "author": "kartoffelbrei",
-        "blog": "https://kartoffelbrei.twoday.net/"
-      },
-      {
-        "author": "spieledemos",
-        "blog": "https://spieledemos.twoday.net/"
-      },
-      {
-        "author": "blackthing",
-        "blog": "https://blackthing.twoday.net/"
-      },
-      {
-        "author": "carmens",
-        "blog": "https://carmens.twoday.net/"
-      },
-      {
-        "author": "emeres",
-        "blog": "https://emeres.twoday.net/"
-      },
-      {
-        "author": "melodram",
-        "blog": "https://melodram.twoday.net/"
-      },
-      {
-        "author": "technikforschung",
-        "blog": "https://technikforschung.twoday.net/"
-      },
-      {
-        "author": "ullimehlich",
-        "blog": "https://ullimehlich.twoday.net/"
-      },
-      {
-        "author": "sebastianestan",
-        "blog": "https://sebastianestan.twoday.net/"
-      },
-      {
-        "author": "maschasmaschen",
-        "blog": "https://maschasmaschen.twoday.net/"
-      },
-      {
-        "author": "sonice",
-        "blog": "https://sonice.twoday.net/"
-      },
-      {
-        "author": "uniflensburg",
-        "blog": "https://uniflensburg.twoday.net/"
-      },
-      {
-        "author": "schenni",
-        "blog": "https://schenni.twoday.net/"
-      },
-      {
-        "author": "loreley",
-        "blog": "https://loreley.twoday.net/"
-      },
-      {
-        "author": "imagedesign",
-        "blog": "https://imagedesign.twoday.net/"
       }
     ],
     "activeAuthors": {
-      "moac03": 1,
+      "quilt": 1,
+      "netbitch1": 1,
+      "stellinger": 1,
+      "assotsiationsklimbim": 1,
+      "ogvkorntal": 1,
+      "mmm": 1,
+      "parksuender": 1,
+      "funpkn": 1,
       "artificial": 1,
-      "acdo03": 1,
+      "stadtbuechereipeine": 1,
+      "spiegelei": 1,
       "abendglueck": 1,
       "nberlin": 1,
-      "albannikolaiherbst": 1,
-      "neonwilderness": 1,
-      "nimmermehr": 1,
-      "daiseegell": 1,
-      "mastsanity": 1,
-      "tour": 1,
+      "pantholzwei": 1,
+      "bonanzamargot": 1,
       "spetzerfehn": 1,
-      "shhhhh": 1,
-      "froggblog": 1,
-      "adenauerhut": 1,
-      "davidramirer": 1,
-      "weltentanz": 1,
       "zebu": 1,
-      "bloedbabbler": 1,
-      "violine": 1,
+      "seitenschneider": 1,
       "wolfgangschmid": 1,
       "hypnosestuttgart": 1,
-      "gaga": 1,
-      "fundstellen": 1,
-      "felixjetter": 1,
-      "warteschlange": 1,
       "gebattmer": 1,
+      "warteschlange": 1,
+      "mastsanity": 1,
+      "gaga": 1,
+      "derwahredicki": 1,
+      "froggblog": 1,
+      "sve2001": 1,
+      "moac03": 1,
+      "acdo03": 1,
+      "nimmermehr": 1,
+      "albannikolaiherbst": 1,
+      "nachdenkliche": 1,
+      "ulmgasse": 1,
+      "tour": 1,
+      "felixjetter": 1,
+      "weltentanz": 1,
+      "friedensplenum": 1,
+      "schreibman": 1,
+      "writershome": 1,
+      "sachmed4": 1,
+      "neonwilderness": 1,
+      "daiseegell": 1,
+      "shhhhh": 1,
+      "adenauerhut": 1,
+      "davidramirer": 1,
+      "bloedbabbler": 1,
+      "fundstellen": 1,
       "rossbolla": 1,
       "treibgut": 1,
-      "mmm": 1,
       "oraclesyndicate": 1,
       "schafferer08und09": 1,
-      "assotsiationsklimbim": 1,
       "halbefrau": 1,
-      "ulmgasse": 1,
       "lebensmensch": 1,
       "blackmage": 1,
-      "netbitch1": 1,
       "rosengarten": 1,
       "rudolf": 1,
-      "spiegelei": 1,
       "hannesgrassegger": 1,
       "widder49": 1,
       "hammondcast": 1,
       "schlafmuetze": 1,
-      "parksuender": 1,
       "labas": 1,
-      "schreibman": 1,
       "gamile": 1,
       "apollox": 1,
       "jassrunde": 1,
       "strickmamselle": 1,
-      "bonanzamargot": 1,
       "uwewoitzig": 1,
       "wiedermal": 1,
       "mondfeldammain": 1,
-      "pantholzwei": 1,
       "foerdermittel": 1,
       "tyralossetradelist": 1,
-      "info": 1,
       "lamamma": 1,
       "boomerang": 1,
-      "sve2001": 1,
-      "funpkn": 1,
       "herrmannehrlich": 1,
-      "oskar": 1,
       "santosstubbec": 1,
       "tux": 1,
       "ostseemoewe": 1,
@@ -1620,10 +1515,8 @@
       "musikstube": 1,
       "wmt3fsl": 1,
       "siebensachen": 1,
-      "writershome": 1,
       "winterschlaf": 1,
       "taintedtalents": 1,
-      "pixelbauer": 1,
       "daenel": 1,
       "frischgepresst": 1,
       "wilhelmina": 1,
@@ -1643,26 +1536,20 @@
       "kreativerstrassenprotest": 1,
       "allyklein": 1,
       "meinebescheidenemeinung": 1,
-      "spirits": 1,
-      "taucherin": 1,
       "moonblog": 1,
       "kunstbetrieb": 1,
       "wollewoogs": 1,
       "clarisse": 1,
       "motorradreisen": 1,
-      "ogvkorntal": 1,
       "baokki": 1,
       "b2bsalesblog": 1,
-      "derwahredicki": 1,
       "peterfitzke": 1,
-      "oslip": 1,
       "agente": 1,
       "fiat500": 1,
       "feinstrick": 1,
       "nasendusche": 1,
       "hanspeterporzner": 1,
       "parallalie": 1,
-      "altefrau": 1,
       "herrtwiggs": 1,
       "kultur1": 1,
       "jubelndgenossen": 1,
@@ -1678,7 +1565,6 @@
       "wuerfelwelt": 1,
       "blrw2fsle": 1,
       "bornheimer": 1,
-      "sachmed4": 1,
       "jhk": 1,
       "grabrednerin": 1,
       "wmt1fsle": 1,
@@ -1702,7 +1588,6 @@
       "wwwerdbeermund": 1,
       "in1cognito": 1,
       "sysout": 1,
-      "rustyyears": 1,
       "penforce": 1,
       "lemiyu": 1,
       "rucola": 1,
@@ -1714,7 +1599,6 @@
       "spruced": 1,
       "bandini": 1,
       "pummelfee": 1,
-      "lachmaus": 1,
       "mallory": 1,
       "superwallah": 1,
       "ar29": 1,
@@ -1724,41 +1608,17 @@
       "attina": 1,
       "touristcity": 1,
       "luftreich": 1,
-      "stadtbuechereipeine": 1,
       "notiertes": 1,
       "castingveranstaltungen": 1,
-      "ferienwohnungberger": 1,
       "lucia": 1,
       "strickcafe": 1,
       "fliegendesteine": 1,
       "nessy": 1,
       "twylog": 1,
       "christianholzer": 1,
-      "friedensplenum": 1,
       "ic": 1,
       "tyfun": 1,
-      "auffahrtsallee": 1,
-      "4therecords": 1,
-      "angstblog": 1,
-      "museum": 1,
-      "chadle": 1,
-      "moseron": 1,
-      "haklaren": 1,
-      "kartoffelbrei": 1,
-      "spieledemos": 1,
-      "blackthing": 1,
-      "carmens": 1,
-      "emeres": 1,
-      "melodram": 1,
-      "technikforschung": 1,
-      "ullimehlich": 1,
-      "sebastianestan": 1,
-      "maschasmaschen": 1,
-      "sonice": 1,
-      "uniflensburg": 1,
-      "schenni": 1,
-      "loreley": 1,
-      "imagedesign": 1
+      "auffahrtsallee": 1
     }
   }
 }
