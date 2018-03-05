@@ -26,12 +26,23 @@
             return all;
           }, []);
         };
-        this.getData = function(platform) {
-          return Object.keys(json[platform].counter).reduce( (all, category, index) => {
-            all.push(json[platform][category]);
+        this.getSingleColor = function (colorName, index, size, opacity) {
+          let color = materialColors[colorName][index], palette = [];
+          for(let i=0; i<size; i++) {
+            palette.push((opacity < 1 ? getRgba(color, opacity) : color));
+          }
+          return palette;
+        };
+        this.getData = function (platform) {
+          return Object.keys(json[platform].counter).reduce((all, category, index) => {
+            let percent = json[platform].counter[category] * 100 / json[platform].total;
+            all.push(Math.round(percent*100)/100);
             return all;
           }, []);
         };
+        this.baseAntville = ko.pureComputed( function() {
+          return json.antville.total;
+        });
         this.sizeCategories = Object.keys(json.categories).length;
         this.barchartOptions = {
           type: 'bar',
@@ -42,16 +53,16 @@
                 label: 'Twoday',
                 data: this.getData('twoday'),
                 fill: false,
-                backgroundColor: this.getColorPalette(['pink', 'indigo', 'cyan'], this.sizeCategories, 0.5),
-                borderColor: this.getColorPalette(['pink', 'indigo', 'cyan'], this.sizeCategories, 1),
+                backgroundColor: this.getSingleColor('pink', 4, this.sizeCategories, 1),
+                borderColor: this.getSingleColor('pink', 4, this.sizeCategories, 1),
                 borderWidth: 1
               },
               {
                 label: 'Antville',
                 data: this.getData('antville'),
                 fill: false,
-                backgroundColor: this.getColorPalette(['purple', 'blue', 'teal'], this.sizeCategories, 0.5),
-                borderColor: this.getColorPalette(['purple', 'blue', 'teal'], this.sizeCategories, 1),
+                backgroundColor: this.getSingleColor('purple', 4, this.sizeCategories, 1),
+                borderColor: this.getSingleColor('purple', 4, this.sizeCategories, 1),
                 borderWidth: 1
               },
             ]
@@ -59,12 +70,18 @@
           options: {
             scales: {
               yAxes: [{ ticks: { beginAtZero: true } }]
+            },
+            title: {
+              display: true,
+              text: 'Bloggeraktivität auf Twoday und Antville (in %)'
             }
           }
         };
       };
       let vm = new ViewModel();
       ko.applyBindings(vm, document.getElementById('twodayantville'));
+      //console.log(JSON.stringify(vm.barchartOptions));
+      new Chart(document.getElementById('barTwodayAntville'), vm.barchartOptions);
     });
   })
     .fail(function () {

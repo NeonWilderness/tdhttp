@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Results of actual change</title>
+  <title>Zukunft Antville?</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://static.twoday.net/cdn/files/foundation55-min-css.css">
@@ -17,8 +17,12 @@
 </head>
 <body>
   <div class="container storyContent">
-    <p class="knockout"><img class="googledrive" alt="https-ergebnisse.jpg"></p>
-    <p class="dropcaps">Seit Twoday das Ende seiner Existenz terminlich festgelegt hat, setzen einige inbrünstige Hoffnung auf ein Weiterleben bei <a target="_blank" href="https://antville.org/">Antville</a>. Das wäre bequem, weil frei von Anstrengung. Es wäre einfach, weil man nichts neu erlernen muss. Aber ist "Weiter so" auch die richtige, nachhaltige, zukunftssichere Lösung? Es war <a target="_blank" href="https://info.twoday.net/stories/liebe-blogger-und-bloggerinnen-die-twoday-aera-geht-zu-ende/#1022646283">Zorras Kommentar</a>, der mich wirklich nachdenklich machte.</p>
+    <p class="knockout"><img class="googledrive" alt="futureantville.jpg"></p>
+    <p class="dropcaps">Seit Twoday das Ende seiner Existenz terminlich disponiert hat, setzen einige Blogger:innen inbrünstige Hoffnung auf ein Weiterleben bei <a target="_blank" href="https://antville.org/">Antville</a>. Das Angebot der vollständigen Datenbankübernahme ist generös und verspricht Bequemlichkeit: der Umzug wird von Antville gemanaged, man muss selber nichts tun und alles bleibt, wie es ist. Aber ist ein "Weiter so" für noch lebendige Blogs auch tatsächlich die richtige, weil nachhaltige und zukunftssichere Lösung?</p>
+    <p>Es war <a target="_blank" href="https://info.twoday.net/stories/liebe-blogger-und-bloggerinnen-die-twoday-aera-geht-zu-ende/#1022646283">Zorras Kommentar</a>, der mich nachdenklich machte. In der Tat will niemand nach der Erfahrung und Agonie des erlebten Twoday-Todes wieder auf einen sterbenden Gaul steigen &mdash; und wenn man auch solch geschenktem Tier üblicherweise nicht ins Maul schaut, macht es vielleicht doch Sinn, einmal etwas genauer hinzuschauen, bevor man sich wieder in ein womöglich eher kurzlebiges Abenteuer stürzt. Oder anders, nämlich als <em>advocatus diaboli</em>, ketzerisch gefragt: Wer rettet hier eigentlich wen?</p>
+    <cite>Die folgenden Auswertungen und Charts nutzen öffentlich verfügbare Daten der Plattformen Twoday und Antville.</cite>
+    <p>Der Blogger-Aktivitätslevel ist auf beiden Plattformen relativ einfach maschinell auswertbar. Antville stellt einen <a target="_blank" href="https://antville.org/sites">eigenen Link</a> zu seinen <span title="data-bind=text:baseAntville"></span> öffentlichen Blogs und deren letztem Änderungsdatum zur Verfügung. Bei Twoday liefert diese Information die Blogroll sowie das Datum des letzten veröffentlichten Beitrags.</p>
+    <p>Aktivität lässt sich am besten verdeutlichen, wenn man Änderungsereignisse in zeitliche Kategorien einrastert, z.B. nach Monaten für das erste Jahr, und danach einfach nach vollen Jahren. Jeder Blog wird entsprechend seiner letzten Beitragsaktivität einer Kategorie zugeordnet. Diese Methode lässt durchaus interessante Einblicke und Analysen zu.</p>
     <canvas id="barTwodayAntville"></canvas>
     <a href="./twodayantville.js" class="storyScript" rel="#"></a>
     <!--<a href="https://rawgit.com/NeonWilderness/tdhttp/master/src/story/twodayantville.js" class="storyScript" rel="#"></a>-->
@@ -42,6 +46,7 @@
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
   <script src="https://static.twoday.net/cdn/files/storyscript-min-js.js"></script>
   <script>
     toastr.options = {closeButton: true, positionClass: 'toast-top-right', timeOut: '9000'};

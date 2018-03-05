@@ -64,14 +64,15 @@ class Blogs {
         let timeLastChange = $(`a[href^="https://${blogname}.twoday.net/stories/"]`)
           .eq(0)
           .next()
-          .text()
-          .match(/vor ([0-9]+)\s(.*)/);
+          .text();
+        if (timeLastChange.length===0) return -1; // no story links found
+        timeLastChange = timeLastChange.match(/vor ([0-9]+)\s(.*)/);
         if (timeLastChange) {
           let [, count, unit] = timeLastChange;
           return (unit.substr(0,5)==='Tagen' ? parseInt(count) : 1);
-        } else return 1;
+        } else return 1; // Stunden, Minuten, gestern...
       } catch(e) {
-        return 0;
+        return -1;
       }
     }
 
