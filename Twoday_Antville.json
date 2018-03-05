@@ -31,7 +31,7 @@
     "18j": 6480
   },
   "antville": {
-    "date": "2018-03-05T17:43:45.788Z",
+    "date": "2018-03-05T18:18:43.224Z",
     "counter": {
       "1m": 49,
       "2m": 22,
@@ -116,7 +116,7 @@
       {
         "author": "don papp",
         "blog": "https://mks.antville.org/",
-        "date": "2018-03-05 17:08",
+        "date": "2018-03-05 18:54",
         "page": 4
       },
       {
@@ -158,7 +158,7 @@
       {
         "author": "Baba",
         "blog": "https://asthm.antville.org/",
-        "date": "2018-03-03 12:32",
+        "date": "2018-03-05 19:08",
         "page": 8
       },
       {
@@ -623,13 +623,13 @@
     }
   },
   "twoday": {
-    "date": "2018-03-05T17:39:40.816Z",
+    "date": "2018-03-05T18:18:14.247Z",
     "counter": {
-      "1m": 130,
-      "2m": 37,
+      "1m": 128,
+      "2m": 36,
       "3m": 29,
-      "4m": 32,
-      "5m": 23,
+      "4m": 31,
+      "5m": 24,
       "6m": 20,
       "7m": 19,
       "8m": 15,
@@ -638,16 +638,16 @@
       "11m": 19,
       "12m": 21,
       "2j": 212,
-      "3j": 254,
-      "4j": 121,
-      "5j": 83,
-      "6j": 69,
-      "7j": 62,
-      "8j": 69,
-      "9j": 60,
-      "10j": 55,
+      "3j": 255,
+      "4j": 161,
+      "5j": 85,
+      "6j": 70,
+      "7j": 66,
+      "8j": 70,
+      "9j": 59,
+      "10j": 56,
       "11j": 49,
-      "12j": 33,
+      "12j": 36,
       "13j": 14,
       "14j": 4,
       "15j": 0,
@@ -655,7 +655,7 @@
       "17j": 0,
       "18j": 0
     },
-    "total": 1466,
+    "total": 1519,
     "activeBlogs": [
       {
         "author": "quilt",
@@ -714,6 +714,10 @@
         "blog": "https://pantholzwei.twoday.net/"
       },
       {
+        "author": "oskar",
+        "blog": "https://oskar.twoday.net/"
+      },
+      {
         "author": "bonanzamargot",
         "blog": "https://bonanzamargot.twoday.net/"
       },
@@ -736,10 +740,6 @@
       {
         "author": "hypnosestuttgart",
         "blog": "https://hypnosestuttgart.twoday.net/"
-      },
-      {
-        "author": "gebattmer",
-        "blog": "https://gebattmer.twoday.net/"
       },
       {
         "author": "warteschlange",
@@ -796,10 +796,6 @@
       {
         "author": "felixjetter",
         "blog": "https://felixjetter.twoday.net/"
-      },
-      {
-        "author": "weltentanz",
-        "blog": "https://weltentanz.twoday.net/"
       },
       {
         "author": "friedensplenum",
@@ -1078,10 +1074,6 @@
         "blog": "https://schlechtelaune.twoday.net/"
       },
       {
-        "author": "jghd",
-        "blog": "https://jghd.twoday.net/"
-      },
-      {
         "author": "kreativerstrassenprotest",
         "blog": "https://kreativerstrassenprotest.twoday.net/"
       },
@@ -1220,10 +1212,6 @@
       {
         "author": "wmt1fsle",
         "blog": "https://wmt1fsle.twoday.net/"
-      },
-      {
-        "author": "gesundgeniessen",
-        "blog": "https://gesundgeniessen.twoday.net/"
       },
       {
         "author": "italiasiitalienwie",
@@ -1441,13 +1429,13 @@
       "abendglueck": 1,
       "nberlin": 1,
       "pantholzwei": 1,
+      "oskar": 1,
       "bonanzamargot": 1,
       "spetzerfehn": 1,
       "zebu": 1,
       "seitenschneider": 1,
       "wolfgangschmid": 1,
       "hypnosestuttgart": 1,
-      "gebattmer": 1,
       "warteschlange": 1,
       "mastsanity": 1,
       "gaga": 1,
@@ -1462,7 +1450,6 @@
       "ulmgasse": 1,
       "tour": 1,
       "felixjetter": 1,
-      "weltentanz": 1,
       "friedensplenum": 1,
       "schreibman": 1,
       "writershome": 1,
@@ -1532,7 +1519,6 @@
       "hollesgartenblog": 1,
       "amourfood": 1,
       "schlechtelaune": 1,
-      "jghd": 1,
       "kreativerstrassenprotest": 1,
       "allyklein": 1,
       "meinebescheidenemeinung": 1,
@@ -1568,7 +1554,6 @@
       "jhk": 1,
       "grabrednerin": 1,
       "wmt1fsle": 1,
-      "gesundgeniessen": 1,
       "italiasiitalienwie": 1,
       "ortsbuechereigingen": 1,
       "corum": 1,

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "antville": "node ./src/antville",
-    "build": "node ./src/index --from=0 --to=102 --delay=200 --rebuild",
+    "build": "node ./src/index --from=0 --to=106 --delay=300 --rebuild",
     "progress": "node ./src/utils/progress",
     "progress1": "node ./src/utils/progress --second=1",
     "stats": "node ./src/utils/domains",
