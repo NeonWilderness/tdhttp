@@ -10,6 +10,8 @@
     "progress1": "node ./src/utils/progress --second=1",
     "stats": "node ./src/utils/domains",
     "test": "node ./src/index --to=4 --delay=50 --rebuild",
+    "deploytestant": "node ./src/utils/upload --story=twodayantville",
+    "deployprodant": "node ./src/utils/upload --build --story=twodayantville",
     "deploytestper": "node ./src/utils/upload --story=performance",
     "deployprodper": "node ./src/utils/upload --build --story=performance",
     "deploytestsel": "node ./src/utils/upload --story=select",

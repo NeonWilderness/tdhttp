@@ -28,23 +28,31 @@
         };
         this.getSingleColor = function (colorName, index, size, opacity) {
           let color = materialColors[colorName][index], palette = [];
-          for(let i=0; i<size; i++) {
+          for (let i = 0; i < size; i++) {
             palette.push((opacity < 1 ? getRgba(color, opacity) : color));
           }
           return palette;
         };
         this.getData = function (platform) {
           return Object.keys(json[platform].counter).reduce((all, category, index) => {
-            let percent = json[platform].counter[category] * 100 / json[platform].total;
-            all.push(Math.round(percent*100)/100);
+            //let percent = json[platform].counter[category] * 100 / json[platform].total;
+            //all.push(Math.round(percent * 100) / 100);
+            all.push(json[platform].counter[category]);
             return all;
           }, []);
         };
-        this.baseAntville = ko.pureComputed( function() {
-          return json.antville.total;
+        this.getYear = function (platform) {
+          let pastYear = this.getData(platform).slice(0,12);
+          return pastYear.reduce((all, monthActivity, index) => {
+            all += monthActivity;
+            return all;
+          }, 0);
+        };
+        this.baseBlogs = (platform => {
+          return json[platform].total;
         });
         this.sizeCategories = Object.keys(json.categories).length;
-        this.barchartOptions = {
+        this.barchartAllCat = {
           type: 'bar',
           data: {
             labels: Object.keys(json.categories),
@@ -73,15 +81,49 @@
             },
             title: {
               display: true,
-              text: 'Bloggeraktivität auf Twoday und Antville (in %)'
+              text: 'Blogaktivität auf Twoday und Antville (zuletzt geänderte Blogs nach Periode)'
+            }
+          }
+        };
+        this.barchartPastYear = {
+          type: 'bar',
+          data: {
+            labels: ['Letztes Jahr'],
+            datasets: [
+              {
+                label: 'Twoday',
+                data: [this.getYear('twoday')],
+                fill: false,
+                backgroundColor: this.getSingleColor('pink', 4, 1, .6),
+                borderColor: this.getSingleColor('pink', 4, 1, 1),
+                borderWidth: 1
+              },
+              {
+                label: 'Antville',
+                data: [this.getYear('antville')],
+                fill: false,
+                backgroundColor: this.getSingleColor('purple', 4, 1, .6),
+                borderColor: this.getSingleColor('purple', 4, 1, 1),
+                borderWidth: 1
+              },
+            ]
+          },
+          options: {
+            scales: {
+              yAxes: [{ ticks: { beginAtZero: true } }]
+            },
+            title: {
+              display: true,
+              text: 'Geänderte Blogs auf Twoday und Antville (Summe vergangenes Jahr)'
             }
           }
         };
       };
       let vm = new ViewModel();
       ko.applyBindings(vm, document.getElementById('twodayantville'));
-      //console.log(JSON.stringify(vm.barchartOptions));
-      new Chart(document.getElementById('barTwodayAntville'), vm.barchartOptions);
+      new Chart(document.getElementById('barTwodayAntville'), vm.barchartAllCat);
+      console.log(JSON.stringify(vm.barchartPastYear));
+      new Chart(document.getElementById('barPastYear'), vm.barchartPastYear);
     });
   })
     .fail(function () {
