@@ -51,6 +51,9 @@
         this.baseBlogs = (platform => {
           return json[platform].total;
         });
+        this.baseDates = () => {
+          return `Twoday - ${new Date(json['twoday'].date).toLocaleString()}, Antville - ${new Date(json['antville'].date).toLocaleString()}`;
+        };
         this.sizeCategories = Object.keys(json.categories).length;
         this.barchartAllCat = {
           type: 'bar',
@@ -122,7 +125,6 @@
       let vm = new ViewModel();
       ko.applyBindings(vm, document.getElementById('twodayantville'));
       new Chart(document.getElementById('barTwodayAntville'), vm.barchartAllCat);
-      console.log(JSON.stringify(vm.barchartPastYear));
       new Chart(document.getElementById('barPastYear'), vm.barchartPastYear);
     });
   })
