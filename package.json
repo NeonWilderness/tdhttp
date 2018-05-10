@@ -6,6 +6,7 @@
   "scripts": {
     "antville": "node ./src/antville",
     "build": "node ./src/index --from=0 --to=106 --delay=300 --rebuild",
+    "info": "node ./src/info",
     "progress": "node ./src/utils/progress",
     "progress1": "node ./src/utils/progress --second=1",
     "stats": "node ./src/utils/domains",
@@ -28,10 +29,10 @@
   "devDependencies": {
     "@types/axios": "^0.14.0",
     "@types/cheerio": "^0.22.7",
-    "@types/jquery": "^3.3.0",
-    "@types/knockout": "^3.4.50",
+    "@types/jquery": "^3.3.1",
+    "@types/knockout": "^3.4.54",
     "dotenv-safe": "^4.0.4",
-    "request": "^2.83.0",
+    "request": "^2.85.0",
     "request-promise": "^4.2.2"
   }
 }
