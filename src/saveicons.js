@@ -1,3 +1,4 @@
+const { argv } = require('yargs');
 const axios = require('axios');
 const fs = require('fs');
 const info = require('../Twoday_Bloginfos.json');
@@ -10,10 +11,11 @@ class Icons {
 
   constructor(delay, limit) {
     this.delay = delay;
-    this.limit = limit;
+    this.limit = (!!argv.all ? Number.MAX_SAFE_INTEGER : limit);
     this.dir = path.resolve(process.cwd(), 'icons');
     this.sOk = 0;
     this.s404 = 0;
+    this.genericIcons = 0;
     this.totalDownloads = 0;
     this.totalDownloadSize = 0;
   }
@@ -36,7 +38,7 @@ class Icons {
 
     return new Promise((resolve, reject) => {
       response.data.on('end', () => {
-        console.log(`OK: ${alias}.${response.headers['content-type']}, len=${response.headers['content-length']}`);
+        console.log(`OK: ${alias} | ${response.headers['content-type']}, len=${response.headers['content-length']}`);
         this.sOk++;
         this.totalDownloadSize += parseInt(response.headers['content-length']);
         resolve();
@@ -53,7 +55,9 @@ class Icons {
   }
 
   hasOwnIcon(alias) {
-    return (info[alias].icon !== 'https://static.twoday.net/icon.gif');
+    let generic = (info[alias].icon == 'https://static.twoday.net/icon.gif');
+    this.genericIcons += Number(generic);
+    return !generic;
   }
 
   downloadTwodayIcons() {
@@ -73,6 +77,7 @@ class Icons {
       })
       .then(() => {
         console.log(`\nImages downloaded: ${this.sOk} | 404 errors: ${this.s404} | total download size: ${Math.ceil(this.totalDownloadSize / 1024)} KB.`);
+        console.log(`Blogs with generic icon: ${this.genericIcons}.`);
       });
   }
 
