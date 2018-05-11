@@ -3,4 +3,5 @@
 .vscode
 *.log
 archive
+icons
 node_modules

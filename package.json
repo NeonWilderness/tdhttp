@@ -6,6 +6,7 @@
   "scripts": {
     "antville": "node ./src/antville",
     "build": "node ./src/index --from=0 --to=106 --delay=300 --rebuild",
+    "icons": "node ./src/saveicons",
     "info": "node ./src/info",
     "progress": "node ./src/utils/progress",
     "progress1": "node ./src/utils/progress --second=1",
