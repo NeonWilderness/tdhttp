@@ -17,6 +17,8 @@
     "deployprodant": "node ./src/utils/upload --build --story=twodayantville",
     "deploytestper": "node ./src/utils/upload --story=performance",
     "deployprodper": "node ./src/utils/upload --build --story=performance",
+    "deploytestrank": "node ./src/utils/upload --story=siterank",
+    "deployprodrank": "node ./src/utils/upload --build --story=siterank",
     "deploytestsel": "node ./src/utils/upload --story=select",
     "deployprodsel": "node ./src/utils/upload --build --story=select"
   },

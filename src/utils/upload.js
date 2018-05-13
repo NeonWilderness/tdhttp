@@ -20,6 +20,10 @@ const stories = {
     name: 'cleanupresults',
     title: 'Die Blogaufräum-Heldenliste'
   },
+  'siterank': {
+    name: 'tag-18-twoday-blog-rank',
+    title: 'Tag 18 - Die ältesten, aktiven Blogs'
+  },
   'twodayantville': {
     name: 'twodayantville',
     title: 'Zukunft Antville?'
