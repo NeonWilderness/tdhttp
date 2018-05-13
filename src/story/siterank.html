@@ -30,14 +30,7 @@
       <div class="small-3 columns"><label>Selektierte Blogs</label><div style="margin-top:.85em" class="label blue" title="data-bind=text:getRank().length"></div></div>
       <div class="small-9 columns">
         <label>Blog-Aktivzeitraum (Tage) festlegen
-          <select title="data-bind=value:activeTime">
-            <option value="30">Einen Monat (30 Tage)</option>
-            <option value="60">Zwei Monate (60 Tage)</option>
-            <option value="90">Drei Monate (90 Tage)</option>
-            <option value="120">Vier Monate (120 Tage)</option>
-            <option value="150">Fünf Monate (150 Tage)</option>
-            <option value="180">Sechs Monate (180 Tage)</option>
-          </select>
+          <select title="data-bind=options:activeOptions, optionsText:name, optionsValue:val, value:activeTime"></select>
         </label>
       </div>
     </div>
