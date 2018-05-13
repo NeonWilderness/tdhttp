@@ -11,7 +11,7 @@
           { name: 'Fünf Monate (150 Tage)', val: '150'},
           { name: 'Sechs Monate (180 Tage)', val: '180'}
         ];
-        this.activeTime = ko.observable('180');
+        this.activeTime = ko.observable(this.activeOptions[5]);
         this.getRank = function () {
           var activeTimeSpan = parseInt(this.activeTime());
           return json.filter(function (blog) {
