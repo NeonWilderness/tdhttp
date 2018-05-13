@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Results of actual change</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://static.twoday.net/cdn/files/foundation55-min-css.css">
+  <link rel="stylesheet" href="https://static.twoday.net/cdn/files/awesomeeditorcore-min-css.css">
+  <link rel="stylesheet" href="https://static.twoday.net/cdn/files/rainy-min-css.css">
+  <style>
+    body { padding: 20px 0; }
+    .container { width:750px; margin: 0 auto; padding: 15px; }
+  </style>
+</head>
+<body>
+  <div class="container storyContent">
+    <p class="knockout bottom0"><img class="googledrive" alt="rank.jpg"></p>
+    <p class="alignright" style="font-size:.85em">Foto: Unsplash &mdash; <em>Sarah Outeiro</em></p>
+    <p class="dropcaps">Als Fortsetzung <a target="_blank" href="https://neonwilderness.twoday.net/stories/tag-20-boomerang-rocks/">dieses Beitrags</a> und auf persönlichen Wunsch einer <a target="_blank" href="https://neonwilderness.twoday.net/stories/tag-20-boomerang-rocks/#1022650946">einzelnen Dame</a> folgt hieramts nun die Langversion einer Ranking-Liste, die man wohl am besten mit <b>"Älteste, noch aktive Twoday-Blogs"</b> betiteln könnte.</p>
+    <p>Als Kriterium für einen <em>noch aktiven Blog</em> habe ich als Arbeitshypothese festgelegt, dass in den letzten 180 Tagen (6 Monaten) eine Änderung (z.B. ein neuer Blogbeitrag) erfolgt sein muss. Innerhalb dieser Zeitspanne entscheidet nur noch die bekannte <span class="code">&lt;% site.id %&gt;</span> (fortlaufende Blognummer), welcher Blog älter ist, denn es gilt der Satz: je kleiner die Blognummer, desto älter der Blog, d.h. desto früher wurde er seinerzeit durch den Blogeigner angelegt.</p>
+    <p>Seltsamerweise eskaliert die ID-Nummernvergabe ab ca. Blognummer 90.000 rapide und erreicht schließlich ihren absoluten Höchststand mit 8.388.964 (!). Ich vermute, dass zu diesem Zeitpunkt verstärkt Spam-Bots ihr Unwesen trieben und maschinell massenhaft neue Blogs anlegten, bis diese Funktion (wie wir alle schmerzlich erinnern) endgültig abgeschaltet wurde.</p>
+    <p>Die nachstehende Ergebnisliste reflektiert initial einen Aktivzeitraum von 180 Tagen. Blogs, die vor 181 Tagen und früher zum letzten Mal geändert wurden, tauchen in dieser Liste also nicht auf. Verspielte Naturen können die zugrunde gelegte Definition eines "noch aktiven Blogs" über die Auswahlbox ändern, indem eine andere Tageszahl für die Berücksichtigung in der Liste selektiert wird. Je kleiner der Zeitraum, desto weniger Blogs werden gelistet.</p>
+    <p>Das eigene Blog findet man am schnellsten, wenn man die Browser-Suchfunktion nutzt: in Chrome also z.B. per Strg-F (oder Cmd-F für Äppel) und dann den Blogalias eingeben.</p>
+    <p>Klarer Gewinner ist, wie schon im <a target="_blank" href="https://neonwilderness.twoday.net/stories/tag-20-boomerang-rocks/">Vorgängerbeitrag</a> ausgeführt, Herr Boomerang, ab einer Zeitraumeinstellung von 90 Tagen sogar "Top-notch", wenn man mal den <span class="label">Info</span>-Blog als Teil der Twoday-Plattform beiseite lässt. Grandiose Stamina, und, wie man bei Herrn Boomerang vermuten darf, völlig ungedopt! ;)</p>
+    <hr>
+    <div class="row collapse">
+      <div class="small-3 columns"><label>Selektierte Blogs</label><div style="margin-top:.85em" class="label blue" title="data-bind=text:getRank().length"></div></div>
+      <div class="small-9 columns">
+        <label>Blog-Aktivzeitraum (Tage) festlegen
+          <select title="data-bind=value:activeTime">
+            <option value="30">Einen Monat (30 Tage)</option>
+            <option value="60">Zwei Monate (60 Tage)</option>
+            <option value="90">Drei Monate (90 Tage)</option>
+            <option value="120">Vier Monate (120 Tage)</option>
+            <option value="150">Fünf Monate (150 Tage)</option>
+            <option value="180">Sechs Monate (180 Tage)</option>
+          </select>
+        </label>
+      </div>
+    </div>
+    <table style="border-collapse:collapse;border:0;margin:0 auto;">
+      <thead>
+        <td>#</td>
+        <td class="aligncenter">Blogalias</td>
+        <td>Titel</td>
+        <td>Site-ID</td>
+        <td>Letzte Änderung (Tage)</td>
+      </thead>
+      <tbody title="data-bind=foreach:getRank()">
+        <tr>
+          <td><span class="label" title="data-bind=text:index"></span></td>
+          <td class="aligncenter"><img width="48" alt="" title="data-bind=attr:{src:icon,alt:alias}" /><div style="font-size:.85em;margin-top:.5em" title="data-bind=text:alias"></div></td>
+          <td><a target="_blank" href="#" title="data-bind=text:title, attr:{href:href}">.</a></td>
+          <td><span class="label red" title="data-bind=text:siteId"></span></td>
+          <td><span title="data-bind=text:daysLastChange"></span></td>
+        </tr>
+      </tbody>
+    </table>
+    <a href="https://rawgit.com/NeonWilderness/tdhttp/master/src/story/siterank.js" class="storyScript" rel="#"></a>
+  </div>
+  <script src="https://static.twoday.net/cdn/files/yepnope154-min-js.js"></script>
+  <script src="https://static.twoday.net/sys.files/js/jquery/jquery.min.js"></script>
+  <script src="https://static.twoday.net/cdn/files/gdimages-min-js.js"></script>
+  <script>
+    $('.googledrive').gdimages().init({
+      gdDomain: 'http://www.s522667522.online.de',
+      gdRootFolder: '/public',
+      gdSubFolder: 'images',
+      addClass: 'neonimg th',
+      titleContent: 'keep'
+    });
+  </script>    
+  <script src="https://static.twoday.net/cdn/files/fastclick-min-js.js"></script>
+  <script src="https://static.twoday.net/cdn/files/foundation55-min-js.js"></script>
+  <script>
+    $('[title^=data-]').foundation2day().init({ validateDataAttribs: true, initFoundation5: {} });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.min.js"></script>
+  <script src="https://static.twoday.net/cdn/files/storyscript-min-js.js"></script>
+  <script>
+    toastr.options = {closeButton: true, positionClass: 'toast-top-right', timeOut: '9000'};
+    $('.storyScript').storyScript().init();
+  </script>
+</body>
+</html>

@@ -10,6 +10,7 @@
     "info": "node ./src/info",
     "progress": "node ./src/utils/progress",
     "progress1": "node ./src/utils/progress --second=1",
+    "rank": "node ./src/sitenumberrank",
     "stats": "node ./src/utils/domains",
     "test": "node ./src/index --to=4 --delay=50 --rebuild",
     "deploytestant": "node ./src/utils/upload --story=twodayantville",
