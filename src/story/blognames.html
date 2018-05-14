@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Results of actual change</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://static.twoday.net/cdn/files/foundation55-min-css.css">
+  <link rel="stylesheet" href="https://static.twoday.net/cdn/files/awesomeeditorcore-min-css.css">
+  <link rel="stylesheet" href="https://static.twoday.net/cdn/files/rainy-min-css.css">
+  <style>
+    body { padding: 20px 0; }
+    .container { width:750px; margin: 0 auto; padding: 15px; }
+  </style>
+</head>
+<body id="tag-17-twoday-long-short">
+  <div class="container storyContent">
+    <p class="knockout bottom0"><img class="googledrive" alt="blognames.jpg"></p>
+    <p class="alignright" style="font-size:.85em">Foto: Unsplash &mdash; <em>Einar H. Reynis</em></p>
+    <p class="dropcaps">Bei der Wahl eines Blognamens gibt es eigentlich nur drei Lager: 1. die Langnamenliebhaber: sie reizen die 30 verfügbaren Zeichen, die Twoday zur Verfügung stellt, gnadenlos aus. Perfide SEO-Techniken werden rigoros angewandt und alchimistisch in einen langen Blognamen gerührt. Der Nachteil: bevor man ihn mit <span class="code">https</span> und <span class="code">twoday.net</span> in voller Länger eingegeben hat, ist man schon fast wieder ein Jahr älter.</p>
+    <p>2. Die Kurznamenliebhaber: Alles über drei Buchstaben ist ihnen zuviel. Zwei sind schon mal besser. Einer grandios &mdash; nur leider gibt's da ja nur sehr abgezählte Möglichkeiten. Die kluge Überlegung: je kürzer der Blogname, desto einprägsamer, darum schneller und häufiger aufgerufen.</p>
+    <p>3. Die egomanen Leidenschaftslosen. Sie wählen einen Namen, der ihnen subjektiv gefällt und als erstes in den Kopf kommt.</p>
+    <p>Wen außer mir noch interessiert, was die kürzesten und die längsten Twoday-Blognamen sind (bald muss man ja sagen: waren), der findest in der untenstehenden Liste die Antworten. Manche reizen die 30 Buchstaben komplett und exakt aus, andere wieder merken leider erst zu spät, dass ihnen noch ein einziger Buchstabe zum vollkommenen Glück fehlt (Gruß an <span class="label">eintrachtfrankfurtaufstiegsblo</span>) &mdash; aber jetzt ist man schon so weit gekommen, da bleibt das "blo" eben so stehen. ;)</p>
+    <hr>
+    <div class="row collapse">
+    <table style="border-collapse:collapse;border:0;margin:0 auto;">
+      <thead>
+        <td>Twoday-Blogname</td>
+      </thead>
+      <tr>
+        <td>Die Längsten</td>
+      </tr>
+      <tbody title="data-bind=foreach:getNames('long')">
+        <tr>
+          <td><a target="_blank" title="data-bind=attr:{href:getUrl($data)}, text:$data"></a></td>
+        </tr>
+      </tbody>
+      <tr>
+        <td>Die Kürzesten</td>
+      </tr>
+      <tbody title="data-bind=foreach:getNames('short')">
+        <tr>
+          <td><a target="_blank" title="data-bind=attr:{href:getUrl($data)}, text:$data"></a></td>
+        </tr>
+      </tbody>
+    </table>
+    <a href="https://rawgit.com/NeonWilderness/tdhttp/master/src/story/blognames.js" class="storyScript" rel="#"></a>
+  </div>
+  <script src="https://static.twoday.net/cdn/files/yepnope154-min-js.js"></script>
+  <script src="https://static.twoday.net/sys.files/js/jquery/jquery.min.js"></script>
+  <script src="https://static.twoday.net/cdn/files/gdimages-min-js.js"></script>
+  <script>
+    $('.googledrive').gdimages().init({
+      gdDomain: 'http://www.s522667522.online.de',
+      gdRootFolder: '/public',
+      gdSubFolder: 'images',
+      addClass: 'neonimg th',
+      titleContent: 'keep'
+    });
+  </script>    
+  <script src="https://static.twoday.net/cdn/files/fastclick-min-js.js"></script>
+  <script src="https://static.twoday.net/cdn/files/foundation55-min-js.js"></script>
+  <script>
+    $('[title^=data-]').foundation2day().init({ validateDataAttribs: true, initFoundation5: {} });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.min.js"></script>
+  <script src="https://static.twoday.net/cdn/files/storyscript-min-js.js"></script>
+  <script>
+    toastr.options = {closeButton: true, positionClass: 'toast-top-right', timeOut: '9000'};
+    $('.storyScript').storyScript().init();
+  </script>
+</body>
+</html>

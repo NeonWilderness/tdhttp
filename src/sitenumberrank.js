@@ -22,3 +22,13 @@ let highestSiteId = Object.keys(info).reduce( (all, alias, index) => {
   return all;
 }, 0);
 console.log(`Highest siteId found: ${highestSiteId}`);
+
+let blognames = Object.keys(info).map((alias) => {
+  return `${alias.length.toString().padStart(2,"0")}-${alias}`;
+}).sort();
+let tdBlognames = {
+  short: blognames.slice(0,20).map( alias => alias.substr(3) ),
+  long: blognames.slice(blognames.length-20).reverse().map( alias => alias.substr(3) )
+};
+fs.writeFileSync(path.resolve(process.cwd(), 'Twoday_Blognames.json'), JSON.stringify(tdBlognames));
+console.log(`Selected blognames written.`);
