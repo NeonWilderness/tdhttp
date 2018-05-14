@@ -20,6 +20,10 @@ const stories = {
     name: 'cleanupresults',
     title: 'Die Blogaufräum-Heldenliste'
   },
+  'blognames': {
+    name: 'tag-17-twoday-long-short',
+    title: 'Tag 17 - Die längsten und kürzesten Blognamen'
+  },
   'siterank': {
     name: 'tag-18-twoday-blog-rank',
     title: 'Tag 18 - Die ältesten, aktiven Blogs'
