@@ -15,25 +15,27 @@
     .container { width:750px; margin: 0 auto; padding: 15px; }
   </style>
 </head>
-<body id="tag-17-twoday-long-short">
+<body>
   <div class="container storyContent">
     <p class="knockout bottom0"><img class="googledrive" alt="blognames.jpg"></p>
     <p class="alignright" style="font-size:.85em">Foto: Unsplash &mdash; <em>Einar H. Reynis</em></p>
-    <p class="dropcaps">Bei der Wahl eines Blognamens gibt es eigentlich nur drei Lager: 1. <b>die Langnamenliebhaber</b>: sie reizen die 30 verfügbaren Zeichen, die Twoday zur Verfügung stellt, gnadenlos aus. Perfide SEO-Techniken werden rigoros angewandt und alchimistisch in einen langen Blognamen gerührt. Der Nachteil: bevor man z.B. <span class="code">https://blogferienschulevhsberlinmitte.twoday.net/</span> in voller Länger eingegeben hat, ist man schon fast wieder ein Jahr älter.</p>
-    <p>2. <b>die Kurznamenliebhaber</b>: Alles über drei Buchstaben ist ihnen zuviel. Zwei sind schon mal besser als drei. Einer ist grandios &mdash; nur leider gibt's da ja nur sehr abgezählte Möglichkeiten. Die kluge Überlegung: je kürzer der Blogname, desto einprägsamer, darum schneller und häufiger aufgerufen. Prinzipiell gar nicht übel.</p>
+    <p class="dropcaps">Bei der Wahl eines Blognamens gibt es eigentlich nur drei Lager: 1. <b>die Langnamenliebhaber</b>: sie reizen die 30 verfügbaren Zeichen, die Twoday zur Verfügung stellt, gnadenlos aus. Perfide SEO-Techniken werden rigoros angewandt und alchimistisch in einen langen Blognamen gerührt. Der Nachteil: bevor man z.B. <span class="code">https://blogferienschulevhsberlinmitte.twoday.net/</span> in voller Länge eingegeben hat, ist man schon fast wieder ein Jahr älter.</p>
+    <p>2. <b>die Kurznamenliebhaber</b>: Alles über drei Buchstaben ist ihnen zuviel. Zwei sind schon mal besser als drei. Einer ist grandios &mdash; nur leider gibt's da ja nur sehr abgezählte Möglichkeiten. Die kluge Überlegung: je kürzer der Blogname, desto einprägsamer, darum schneller und häufiger aufgerufen. Prinzipiell gar nicht übel, aber etwas nerdig.</p>
     <p>3. <b>die egomanen Leidenschaftslosen</b>. Sie wählen einen Namen, der ihnen subjektiv gefällt und als erstes in den Kopf kommt. SEO? Egal. Effizienz? Whatever.</p>
-    <p>Wen noch interessiert, was die kürzesten und die längsten Twoday-Blognamen sind (bald muss man ja sagen: waren), der findest in der untenstehenden Liste die Antworten, zumindest 20 Exemplare beider Varianten. Manche reizen die 30 Buchstaben komplett und exakt aus, andere wieder merken leider erst zu spät, dass ihnen noch ein einziger Buchstabe zum vollkommenen Glück fehlt &mdash; Gruß an <span class="code">eintrachtfrankfurtaufstiegsblo</span> &mdash; aber jetzt ist man schon so weit gekommen, da bleibt das "blo" eben so stehen. ;)</p>
+    <p>Wen noch interessiert, welches die kürzesten und längsten Twoday-Blognamen "ever" sind (bald muss man ja sagen: waren), der findet in der untenstehenden Liste die Antworten, zumindest 20 Exemplare beider Varianten. Manche reizen die 30 Buchstaben komplett und exakt aus, andere wieder merken leider erst zu spät, dass ihnen noch ein einziger Buchstabe zum vollkommenen Glück fehlt &mdash; Gruß an <span class="code">eintrachtfrankfurtaufstiegsblo</span> &mdash; aber jetzt ist man schon so weit gekommen, da bleibt das "blo" eben so stehen. ;)</p>
     <hr>
-    <div class="row collapse">
-    <table style="border-collapse:collapse;border:0;margin:0 auto;">
+    <style>td.mono {font-family: Monaco,Menlo,Consolas,"Courier New",monospace;}</style>
+    <table style="border:0;margin:0 auto;">
       <thead>
+        <td>#</td>
         <td>Die Längsten</td>
         <td>Die Kürzesten</td>
       </thead>
       <tbody title="data-bind=foreach:getNames()">
         <tr>
-          <td><a target="_blank" title="data-bind=attr:{href:$parent.getUrl(long)}, text:long"></a></td>
-          <td><a target="_blank" title="data-bind=attr:{href:$parent.getUrl(short)}, text:short"></a></td>
+          <td><span class="label" title="data-bind=text:$index()+1"></span></td>
+          <td class="mono"><a target="_blank" title="data-bind=attr:{href:$parent.getUrl(long)}, text:long"></a></td>
+          <td class="mono aligncenter"><a target="_blank" title="data-bind=attr:{href:$parent.getUrl(short)}, text:short"></a></td>
         </tr>
       </tbody>
     </table>
