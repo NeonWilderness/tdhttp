@@ -32,3 +32,6 @@ let tdBlognames = {
 };
 fs.writeFileSync(path.resolve(process.cwd(), 'Twoday_Blognames.json'), JSON.stringify(tdBlognames));
 console.log(`Selected blognames written.`);
+
+fs.writeFileSync(path.resolve(process.cwd(), 'Twoday_Blogs.json'), JSON.stringify(Object.keys(info)));
+console.log(`Blogs array written.`);

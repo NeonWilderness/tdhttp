@@ -1,0 +1,22 @@
+<script>
+  (function ($) {
+    $.getJSON('https://rawgit.com/NeonWilderness/tdhttp/master/Twoday_Blogs.json', function (json) {
+      $(function () {
+        if (Date.now() >= 1527199201000) {
+          var user = '<% username %>'.toLowerCase();
+          var isTwodayBlogger = !!user && json.indexOf(user) >= 0;
+          if (!isTwodayBlogger) {
+            $('head')
+              .prepend('<link href="https://fonts.googleapis.com/css?family=Courgette:400|Roboto:400|Oswald:400" rel="stylesheet" type="text/css">');
+            $('body')
+              .removeClass().css({ margin: 0, paddingTop: '10%' })
+              .html('<div style="color:#fff;background-color:rgba(0,0,0,.4);padding:40px"><div style="font-size:60px;color:rgba(255,255,255,.5);text-align:center;font-family:Oswald;margin-bottom:40px;line-height:1.2">In a neon wilderness</div><div style="width:65%;margin:0 auto"><h1 style="display:inline-block;font-family:Courgette;font-size:45px;transform:rotate(-45deg);color:#f04124">Sorry,</h1><h2 style="font-family:Roboto;font-size:24px;margin:-20px 80px 0;color:#fff;line-height:1.2"><span style="font-size:36px;margin-right:6px"><u>we&rsquo;re closed for Non-Twoday-Bloggers</u>.</span>To view this blog, please login to your Twoday account.</h2></div></div>');
+          }
+        }
+      });
+    })
+      .fail(function () {
+        toastr.error('Sorry, die autorisierten Blogs können derzeit nicht gelesen werden!');
+      });
+  })(jQuery);
+</script>
