@@ -1,10 +1,10 @@
 <script>
   (function ($, imgUrl) {
-    $.getJSON('https://cdn.rawgit.com/NeonWilderness/tdhttp/6f549b0a/Twoday_Blogs.json', function (json) {
+    $.getJSON('https://cdn.rawgit.com/NeonWilderness/tdhttp/master/Twoday_Blogs.json', function (json) {
       $(function () {
         if (Date.now() >= 1527199201000) {
           var alias = '<% username as="url" %>'.match(/\/\/(.*?)\./);
-          if (!alias || json.indexOf(alias[1]) < 0) {
+          if (!alias || json.indexOf(alias[1].toLowerCase()) < 0) {
             var img = new Image();
             img.src = imgUrl;
             img.onload = function () {
