@@ -35,7 +35,7 @@ const stories = {
 }
 
 //request.debug = true; // uncomment to activate debugging
-require('dotenv-safe').load();
+require('dotenv-safe').config();
 
 // set some defaults
 const req = request.defaults({

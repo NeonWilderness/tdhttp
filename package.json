@@ -27,18 +27,18 @@
   "author": "NeonWilderness",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.19.2",
     "cheerio": "^1.0.0-rc.3"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
-    "@types/cheerio": "^0.22.12",
-    "@types/jquery": "^3.3.30",
-    "@types/knockout": "^3.4.66",
-    "dotenv-safe": "^4.0.4",
-    "request": "^2.88.0",
-    "request-promise": "^4.2.4",
-    "simple-node-logger": "^18.12.23",
-    "yargs": "^13.3.0"
+    "@types/cheerio": "^0.22.21",
+    "@types/jquery": "^3.5.0",
+    "@types/knockout": "^3.4.67",
+    "dotenv-safe": "^8.2.0",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5",
+    "simple-node-logger": "^18.12.24",
+    "yargs": "^13.3.2"
   }
 }
