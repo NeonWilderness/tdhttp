@@ -13,32 +13,31 @@
     "rank": "node ./src/sitenumberrank",
     "stats": "node ./src/utils/domains",
     "test": "node ./src/index --to=4 --delay=50 --rebuild",
-    "deploytestant": "node ./src/utils/upload --story=twodayantville",
-    "deployprodant": "node ./src/utils/upload --build --story=twodayantville",
-    "deploytestper": "node ./src/utils/upload --story=performance",
-    "deployprodper": "node ./src/utils/upload --build --story=performance",
-    "deploytestname": "node ./src/utils/upload --story=blognames",
-    "deployprodname": "node ./src/utils/upload --build --story=blognames",
-    "deploytestrank": "node ./src/utils/upload --story=siterank",
-    "deployprodrank": "node ./src/utils/upload --build --story=siterank",
-    "deploytestsel": "node ./src/utils/upload --story=select",
-    "deployprodsel": "node ./src/utils/upload --build --story=select"
+    "update": "ncu -u && npm i",
+    "deploytestant": "node ./src/utils/upload --platform=dev --story=twodayantville",
+    "deployprodant": "node ./src/utils/upload --platform=prod --story=twodayantville",
+    "deploytestper": "node ./src/utils/upload --platform=dev --story=performance",
+    "deployprodper": "node ./src/utils/upload --platform=prod --story=performance",
+    "deploytestname": "node ./src/utils/upload --platform=dev --story=blognames",
+    "deployprodname": "node ./src/utils/upload --platform=prod --story=blognames",
+    "deploytestrank": "node ./src/utils/upload --platform=dev --story=siterank",
+    "deployprodrank": "node ./src/utils/upload --platform=prod --story=siterank",
+    "deploytestsel": "node ./src/utils/upload --platform=dev --story=select",
+    "deployprodsel": "node ./src/utils/upload --platform=prod --story=select"
   },
   "author": "NeonWilderness",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.21.1",
-    "cheerio": "^1.0.0-rc.9"
+    "axios": "^1.3.6",
+    "cheerio": "^1.0.0-rc.12"
   },
   "devDependencies": {
+    "@neonwilderness/twoday": "^0.4.1",
     "@types/axios": "^0.14.0",
-    "@types/cheerio": "^0.22.28",
-    "@types/jquery": "^3.5.5",
-    "@types/knockout": "^3.4.70",
+    "@types/cheerio": "^0.22.31",
+    "@types/jquery": "^3.5.16",
+    "@types/knockout": "^3.4.72",
     "dotenv-safe": "^8.2.0",
-    "request": "^2.88.2",
-    "request-promise": "^4.2.6",
-    "simple-node-logger": "^18.12.24",
-    "yargs": "^17.0.1"
+    "yargs": "^17.7.1"
   }
 }
