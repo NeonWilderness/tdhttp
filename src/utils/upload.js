@@ -2,7 +2,7 @@
  * upload: updates the relevant stories (html) on twoday
  * =====================================================
  */
-const { argv } = require('yargs');
+const argv = require('minimist')(process.argv.slice(2));
 const cheerio = require('cheerio');
 const fs = require('fs');
 const path = require('path');

@@ -11,7 +11,7 @@
  *           or: node index --help
  */
 const Blogs = require('./blogs');
-const argv = require('yargs').argv;
+const argv = require('minimist')(process.argv.slice(2));
 
 const from = argv.from || 0;
 const to = Math.min(argv.to || 4, 106);

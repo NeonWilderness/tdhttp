@@ -1,4 +1,4 @@
-const { argv } = require('yargs');
+const argv = require('minimist')(process.argv.slice(2));
 const axios = require('axios');
 const fs = require('fs');
 const info = require('../Twoday_Bloginfos.json');

@@ -7,7 +7,7 @@
  */
 const fs = require('fs');
 const path = require('path');
-const argv = require('yargs').argv;
+const argv = require('minimist')(process.argv.slice(2));
 const daysAgo = 90; // xx days ago last new story was added: qualifies blog as active (<=xx) or inactive (>xx)
 
 /**
