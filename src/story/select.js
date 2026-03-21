@@ -1,9 +1,8 @@
 (function($){
 
   // json = { date: "...", blogs: nnn, refs: {...} }
-    $.getJSON('https://rawgit.com/NeonWilderness/tdhttp/master/Twoday_HTTP_Refs.json', function(json){
+    $.getJSON('https://raw.githubusercontent.com/NeonWilderness/tdhttp/refs/heads/master/Twoday_HTTP_Refs.json', function(json){
       $(function() {
-        let $copy2clipboard = $('#copy2clipboard');
         let ViewModel = function() {
           this.blogs = ko.observableArray(Object.keys(json.data).sort());
           this.blogCount = ko.pureComputed( function() {
@@ -71,7 +70,8 @@
           this.visibleLayoutGif = ko.observable(false);
           this.toggleLayoutGif = function(){ this.visibleLayoutGif(!this.visibleLayoutGif()); };
           this.StrgCmd = function(){
-            return (navigator.platform.substr(0,3).toLowerCase()=="mac" ? 'Cmd' : 'Strg');
+            const platform = navigator.userAgentData ? navigator.userAgentData.platform : navigator.platform;
+            return (platform.slice(0,3).toLowerCase()=="mac" ? 'Cmd' : 'Strg');
           };
           this.wasCopied = ko.observable(false);
           this.layoutUrl = ko.pureComputed( function() {
@@ -86,7 +86,7 @@
           this.toggleHostList = function(){
             this.visibleHostList(!this.visibleHostList());
             if (this.sortedHostList.length) return;
-            $.getJSON('https://rawgit.com/NeonWilderness/tdhttp/master/Twoday_HTTP_Hosts_Sorted.json', function(json){
+            $.getJSON('https://raw.githubusercontent.com/NeonWilderness/tdhttp/refs/heads/master/Twoday_HTTP_Hosts_Sorted.json', function(json){
               this.sortedHostList(json);
             }.bind(this));
           };
@@ -94,18 +94,9 @@
         let vm = new ViewModel();
         ko.applyBindings( vm, document.getElementById('cleanupyourblog') );
         $('#loadIcon').hide();
-        let clipboard = new Clipboard($copy2clipboard[0], {
+        let clipboard = new ClipboardJS('#copy2clipboard', {
           text: function(){
-            return `<!-- Begin Google Analytics Twoday -->
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-163565-3', 'auto');
-ga('send', 'pageview');
-</script>
-<!-- End Google Analytics Twoday -->`;
+            return `<!-- empty root.statsCounter -->`;
           }
         });
         clipboard.on('success', function(e) {
