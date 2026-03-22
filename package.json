@@ -37,7 +37,7 @@
     "@types/axios": "^0.14.4",
     "@types/cheerio": "^1.0.0",
     "@types/jquery": "^4.0.0",
-    "@types/knockout": "^3.4.78",
+    "@types/knockout": "^3.4.79",
     "dotenv-safe": "^9.1.0"
   }
 }
