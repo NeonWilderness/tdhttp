@@ -5,8 +5,8 @@
  * -- call pattern: node ./src/utils/progress --first={current|1|2|3...} --second={current|1|2|3...}
  * -- defaults: --first=current (if not given)
  */
-const fs = require('fs');
-const path = require('path');
+const fs = require('node:fs');
+const path = require('node:path');
 const argv = require('minimist')(process.argv.slice(2));
 const daysAgo = 90; // xx days ago last new story was added: qualifies blog as active (<=xx) or inactive (>xx)
 

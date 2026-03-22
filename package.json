@@ -1,6 +1,6 @@
 {
   "name": "tdhttp",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Finding outdated http references on Twoday",
   "main": "index.js",
   "scripts": {

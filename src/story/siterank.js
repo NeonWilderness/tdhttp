@@ -1,6 +1,6 @@
 (function ($) {
 
-  $.getJSON('https://rawgit.com/NeonWilderness/tdhttp/master/Twoday_SiteIdRank.json', function (json) {
+  $.getJSON('https://raw.githubusercontent.com/NeonWilderness/tdhttp/refs/heads/master/Twoday_SiteIdRank.json', function (json) {
     $(function () {
       var ViewModel = function () {
         this.activeOptions = [

@@ -1,8 +1,8 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
-const fs = require('fs');
+const fs = require('node:fs');
 const log = require('./hooklog');
-const path = require('path');
+const path = require('node:path');
 const setTimeout = require('timers').setTimeout;
 
 const tdHome = "https://www.twoday.net/main?start=";

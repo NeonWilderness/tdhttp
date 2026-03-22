@@ -1,6 +1,6 @@
 (function ($) {
 
-  $.getJSON('https://rawgit.com/NeonWilderness/tdhttp/master/Twoday_Antville.json', function (json) {
+  $.getJSON('https://raw.githubusercontent.com/NeonWilderness/tdhttp/refs/heads/master/Twoday_Antville.json', function (json) {
     $(function () {
       const materialColors = {
         pink: ["#fce4ec", "#f8bbd0", "#f48fb1", "#f06292", "#ec407a", "#e91e63", "#d81b60", "#c2185b", "#ad1457", "#880e4f", "#f50057", "#c51162"],

@@ -1,6 +1,6 @@
 (function ($) {
 
-  $.getJSON('https://rawgit.com/NeonWilderness/tdhttp/master/Twoday_Results.json', function (json) {
+  $.getJSON('https://raw.githubusercontent.com/NeonWilderness/tdhttp/refs/heads/master/Twoday_Results.json', function (json) {
     $(function () {
       const daysAgo = 90; // xx days ago last new story was added: qualifies blog as active (<=xx) or inactive (>xx)
       let ViewModel = function () {

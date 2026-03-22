@@ -1,7 +1,7 @@
-const fs = require('fs');
+const fs = require('node:fs');
 const info = require('../Twoday_Bloginfos.json');
 const refs = require('../Twoday_HTTP_Refs.json');
-const path = require('path');
+const path = require('node:path');
 
 const limitDaysLastChange = 6 * 30;
 

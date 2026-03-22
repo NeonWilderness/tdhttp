@@ -1,8 +1,8 @@
 const argv = require('minimist')(process.argv.slice(2));
 const axios = require('axios');
-const fs = require('fs');
+const fs = require('node:fs');
 const info = require('../Twoday_Bloginfos.json');
-const path = require('path');
+const path = require('node:path');
 
 const limit = 10;
 const delay = 200;

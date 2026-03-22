@@ -1,7 +1,7 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
-const fs = require('fs');
-const path = require('path');
+const fs = require('node:fs');
+const path = require('node:path');
 
 const pages = 1000;
 const delay = 200;

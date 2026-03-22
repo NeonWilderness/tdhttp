@@ -1,13 +1,13 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
-const fs = require('fs');
-const path = require('path');
+const fs = require('node:fs');
+const path = require('node:path');
 //const setTimeout = require('timers').setTimeout;
 
 const antvilleHome = 'https://antville.org/';
 const antvilleSites = 'https://antville.org/sites?page=';
-const refFile = path.resolve(process.cwd(), 'antville.json');
-const timeout = 30; // ms to pause
+//const refFile = path.resolve(process.cwd(), 'antville.json');
+//const timeout = 30; // ms to pause
 
 class Stats {
 

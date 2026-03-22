@@ -4,8 +4,8 @@
  */
 const argv = require('minimist')(process.argv.slice(2));
 const cheerio = require('cheerio');
-const fs = require('fs');
-const path = require('path');
+const fs = require('node:fs');
+const path = require('node:path');
 const Twoday = require('@neonwilderness/twoday');
 require('dotenv-safe').config();
 
