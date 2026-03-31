@@ -28,13 +28,12 @@
   "author": "NeonWilderness",
   "license": "MIT",
   "dependencies": {
-    "axios": "^1.13.6",
+    "axios": "^1.14.0",
     "cheerio": "^1.2.0",
     "minimist": "^1.2.8"
   },
   "devDependencies": {
-    "@neonwilderness/twoday": "^0.6.1",
-    "@types/axios": "^0.14.4",
+    "@neonwilderness/twoday": "^0.6.2",
     "@types/cheerio": "^1.0.0",
     "@types/jquery": "^4.0.0",
     "@types/knockout": "^3.4.79",
